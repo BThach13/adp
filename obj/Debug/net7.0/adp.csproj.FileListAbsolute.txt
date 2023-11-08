@@ -1,0 +1,14 @@
+C:\_UserData\GitHub\Repos\adp\bin\Debug\net7.0\adp.exe
+C:\_UserData\GitHub\Repos\adp\bin\Debug\net7.0\adp.deps.json
+C:\_UserData\GitHub\Repos\adp\bin\Debug\net7.0\adp.runtimeconfig.json
+C:\_UserData\GitHub\Repos\adp\bin\Debug\net7.0\adp.dll
+C:\_UserData\GitHub\Repos\adp\bin\Debug\net7.0\adp.pdb
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.GeneratedMSBuildEditorConfig.editorconfig
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.AssemblyInfoInputs.cache
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.AssemblyInfo.cs
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.csproj.CoreCompileInputs.cache
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.dll
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\refint\adp.dll
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.pdb
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\adp.genruntimeconfig.cache
+C:\_UserData\GitHub\Repos\adp\obj\Debug\net7.0\ref\adp.dll
