@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h8TiHHU3u1DmSqLLX3R2mqMvFGPD0N+avitf0lJOVzuuKx+fH+0eiYoksJvQS+DfI1hP17uMXOyPQN5b0hThmA==",
+  "dgSpecHash": "PAI54aFBYarMgHmeW3ESoerRHN3+gVCAYWEbnSIqxQFwHZekM6AnY/o3nTsyWEGDBtX09XqR3n2l1ryvlg+3iQ==",
   "success": true,
-  "projectFilePath": "C:\\_UserData\\GitHub\\Repos\\adp\\adp.csproj",
+  "projectFilePath": "/workspaces/adp/adp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,0 +1,15 @@
+/workspaces/adp/bin/Debug/net7.0/adp
+/workspaces/adp/bin/Debug/net7.0/adp.deps.json
+/workspaces/adp/bin/Debug/net7.0/adp.runtimeconfig.json
+/workspaces/adp/bin/Debug/net7.0/adp.dll
+/workspaces/adp/bin/Debug/net7.0/adp.pdb
+/workspaces/adp/obj/Debug/net7.0/adp.csproj.AssemblyReference.cache
+/workspaces/adp/obj/Debug/net7.0/adp.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/adp/obj/Debug/net7.0/adp.AssemblyInfoInputs.cache
+/workspaces/adp/obj/Debug/net7.0/adp.AssemblyInfo.cs
+/workspaces/adp/obj/Debug/net7.0/adp.csproj.CoreCompileInputs.cache
+/workspaces/adp/obj/Debug/net7.0/adp.dll
+/workspaces/adp/obj/Debug/net7.0/refint/adp.dll
+/workspaces/adp/obj/Debug/net7.0/adp.pdb
+/workspaces/adp/obj/Debug/net7.0/adp.genruntimeconfig.cache
+/workspaces/adp/obj/Debug/net7.0/ref/adp.dll
