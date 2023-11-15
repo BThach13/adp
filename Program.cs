@@ -4,28 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Algorithms.DynamicArray();
+        //DataStructures.DynamicArray();
+        var testCases = new TestCases();
 
-        //--------------------------------------------------------------------------------------------------
-        string filePath = @"C:\_UserData\GitHub\Repos\adp\testFiles\lijst_aflopend_2.json";
-        string currentPath = Directory.GetCurrentDirectory();
-        Console.WriteLine("Current Path: " + currentPath);
+        var jsonArray = testCases.Get_List<int>("lijst_willekeurig_10000");
+        var dynamicArray = new DynamicArray<int>(10);
 
-        // Ensure the file exists
-        if (File.Exists(filePath))
+        if (jsonArray != null)
         {
-            // Open the file with a StreamReader
-            using (StreamReader reader = new StreamReader(filePath))
+            foreach (var element in jsonArray)
             {
-                // Read the entire file
-                string content = reader.ReadToEnd();
-                Console.WriteLine("File Content:");
-                Console.WriteLine(content);
+                dynamicArray.Add(element);
             }
         }
-        else
-        {
-            Console.WriteLine("File not found.");
-        }
+        Console.WriteLine("SIZE: {0}", dynamicArray.Size);
     }
 }

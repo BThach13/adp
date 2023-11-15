@@ -1,13 +1,12 @@
-
 namespace ADP
 {
-    public static class Algorithms
+    public static class DataStructures
     {
         public static void DynamicArray()
         {
             Console.WriteLine("TESTEN -> Dynamic Array");
             Console.WriteLine("##############################");
-            var al = new ArrayList<string>(10);
+            var al = new DynamicArray<string>(10);
             Console.WriteLine("ADD");
             al.Add("Maandag");
             al.Add("Dinsdag");
@@ -25,7 +24,7 @@ namespace ADP
             Console.WriteLine("SIZE: {0}", al.Size);
         }
 
-        private static void showArrayContent(ArrayList<string> al) {
+        private static void showArrayContent(DynamicArray<string> al) {
               for (var i = 0; i < al.Size; ++i)
             {
                 Console.WriteLine(al[i]);

@@ -10,7 +10,7 @@ namespace ADP
     - contains(E element) V
     - indexOf(E element) or find(E element) V
     */
-    public class ArrayList<T> where T : System.IEquatable<T>
+    public class DynamicArray<T> where T : System.IEquatable<T>
     {
         private T[] _storage;
         private int _accessShift = 0;
@@ -23,7 +23,7 @@ namespace ADP
                 Array.Resize(ref _storage, Math.Max(1, _storage.Length * 2));
             }
         }
-        public ArrayList(int size)
+        public DynamicArray(int size)
         {
             _storage = new T[size];
         }
