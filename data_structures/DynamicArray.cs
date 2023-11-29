@@ -36,7 +36,6 @@ namespace ADP
         public void Add(T item)
         {
             ResizeStorageIfNeeded();
-
             _storage[_effectiveSize] = item;
             _effectiveSize += 1;
         }
@@ -92,9 +91,9 @@ namespace ADP
             }
             return -1;
         }
-        public int Size
+        public int Size()
         {
-            get => _effectiveSize;
+            return _effectiveSize;
         }
     }
 }
