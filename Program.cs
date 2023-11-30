@@ -7,7 +7,7 @@ class Program
         var testCases = new TestCases();
         var watch = new System.Diagnostics.Stopwatch();
         watch.Start();
-
+        /*
         //var testCaseArray = testCases.Get_List<int>("lijst_aflopend_2");
         //var testCaseArray = testCases.Get_List<int>("lijst_oplopend_2");
         var testCaseArray = testCases.Get_List<float>("lijst_float_8001");
@@ -41,7 +41,7 @@ class Program
         Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
 
         Console.WriteLine("SIZE: {0}", dynamicArray.Size());
-
+        */
         if (!watch.IsRunning)
             watch.Restart(); // Reset time to 0 and start measuring
   
@@ -54,6 +54,16 @@ class Program
 
         doubleLinkedList.Add(2, 1);
         doubleLinkedList.PrintList(); // Output: 1 2 3
+
+        Console.WriteLine("DATA: {0}", doubleLinkedList.Get(1)); // Output: 2
+
+        doubleLinkedList.Remove(1);
+        doubleLinkedList.PrintList(); // Output: 2 3
+
+        Console.WriteLine("INDEX: {0}", doubleLinkedList.IndexOf(3)); // Output: 1
+
+        doubleLinkedList.RemoveAt(1);
+        doubleLinkedList.PrintList(); // Output: 2
 
         Console.WriteLine("SIZE: {0}", doubleLinkedList.Size());
 

@@ -2,23 +2,43 @@ namespace ADP
 {
     /*
     OPERATIONS checklist
-    - add(E element)
-    - get(int index)
-    - set(int index, E element)
-    - remove(int index)
-    - remove(E element)
+    - add(E element) V
+    - get(int index) V
+    - set(int index, E element) V
+    - removeAt(int index) V
+    - remove(E element) V
     - contains(E element)
-    - indexOf(E element) or find(E element)
+    - indexOf(E element) or find(E element) V
     */
     public class DoubleLinkedList<T>
     {
         private Node<T>? _head;
         private Node<T>? _tail;
 
-        public void Add(T data)
+        private void RemoveNode(Node<T> current)
         {
-            Node<T> newNode = new Node<T>(data);
+            if (current.Previous != null)
+            {
+                current.Previous.Next = current.Next;
+            }
+            else
+            {
+                _head = current.Next;
+            }
 
+            if (current.Next != null)
+            {
+                current.Next.Previous = current.Previous;
+            }
+            else
+            {
+                _tail = current.Previous;
+            }
+        }
+
+        public void Add(T item)
+        {
+            Node<T> newNode = new Node<T>(item);
             if (_head == null)
             {
                 _head = newNode;
@@ -32,16 +52,15 @@ namespace ADP
             }
         }
 
-        public void Add(T data, int position)
+        public void Add(T item, int index)
         {
-            Node<T> newNode = new Node<T>(data);
-
-            if (position < 0)
+            Node<T> newNode = new Node<T>(item);
+            if (index < 0)
             {
                 throw new ArgumentException("Position should be a non-negative integer.");
             }
 
-            if (position == 0)
+            if (index == 0)
             {
                 newNode.Next = _head;
                 _head.Previous = newNode;
@@ -52,7 +71,7 @@ namespace ADP
                 Node<T> current = _head;
                 int currentPosition = 0;
 
-                while (current != null && currentPosition < position - 1)
+                while (current != null && currentPosition < index - 1)
                 {
                     current = current.Next;
                     currentPosition++;
@@ -79,35 +98,51 @@ namespace ADP
             }
         }
 
-        public void Remove(T data)
+        public T Get(int index)
         {
+            int currentPosition = 0;
             Node<T> current = _head;
-
             while (current != null)
             {
-                if (EqualityComparer<T>.Default.Equals(current.Data, data))
+                if (currentPosition == index)
                 {
-                    if (current.Previous != null)
-                    {
-                        current.Previous.Next = current.Next;
-                    }
-                    else
-                    {
-                        _head = current.Next;
-                    }
+                    return current.Data;    
+                }
+                current = current.Next;
+                currentPosition++;
+            }
+            return default; 
+        }
 
-                    if (current.Next != null)
+        public void RemoveAt(int index)
+        {
+            Node<T> current = _head;
+            if (index >= 0)
+            {
+                int currentPosition = 0;
+                while (current != null)
+                {
+                    if (currentPosition == index)
                     {
-                        current.Next.Previous = current.Previous;
+                        RemoveNode(current);
+                        return;    
                     }
-                    else
-                    {
-                        _tail = current.Previous;
-                    }
+                    current = current.Next;
+                    currentPosition++;
+                }
+            }
+        }
 
+        public void Remove(T item)
+        {
+            Node<T> current = _head;
+            while (current != null)
+            {
+                if (EqualityComparer<T>.Default.Equals(current.Data, item))
+                {
+                    RemoveNode(current);
                     return;
                 }
-
                 current = current.Next;
             }
         }
@@ -121,6 +156,38 @@ namespace ADP
                 current = current.Next;
             }
             Console.WriteLine();
+        }
+
+        public bool Contains(T item)
+        {
+            Node<T> current = _head;
+            int currentPosition = 0;
+            while (current != null)
+            {
+                if (EqualityComparer<T>.Default.Equals(current.Data, item))
+                {
+                    return true;
+                }
+                current = current.Next;
+                currentPosition++;
+            }
+            return false;
+        }
+
+        public int IndexOf(T item)
+        {
+            Node<T> current = _head;
+            int currentPosition = 0;
+            while (current != null)
+            {
+                if (EqualityComparer<T>.Default.Equals(current.Data, item))
+                {
+                    return currentPosition;
+                }
+                current = current.Next;
+                currentPosition++;
+            }
+            return -1;
         }
 
         public int Size()

@@ -6,7 +6,7 @@ namespace ADP
     - get(int index) V
     - set(int index, E element) V
     - remove(int index) V
-    - remove(E element) V
+    - removeAt(E element) V
     - contains(E element) V
     - indexOf(E element) or find(E element) V
     */
@@ -51,7 +51,7 @@ namespace ADP
             }
             _storage[index] = item;
         }
-        public void Remove(int index)
+        public void RemoveAt(int index)
         {
             if (index >= 0)
             {
@@ -67,7 +67,7 @@ namespace ADP
         {
             int index = IndexOf(value);
             if (index >= 0)
-                Remove(index);
+                RemoveAt(index);
         }
         public bool Contains(T item)
         {
