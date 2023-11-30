@@ -41,7 +41,7 @@ class Program
         Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
 
         Console.WriteLine("SIZE: {0}", dynamicArray.Size());
-        */
+        
         if (!watch.IsRunning)
             watch.Restart(); // Reset time to 0 and start measuring
   
@@ -65,10 +65,26 @@ class Program
         doubleLinkedList.RemoveAt(1);
         doubleLinkedList.PrintList(); // Output: 2
 
+        Console.WriteLine("CONTAINS: {0}", doubleLinkedList.Contains(20));
         Console.WriteLine("SIZE: {0}", doubleLinkedList.Size());
 
         watch.Stop();
         Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
+        */
+
+        Stack<int> myStack = new Stack<int>();
+
+        myStack.Push(10);
+        myStack.Push(30);
+        myStack.Push(20);
+        
+        Console.WriteLine("Top element: " + myStack.Top());
+        Console.WriteLine("Popped element: " + myStack.Pop());
+        Console.WriteLine("Remaining elements in the stack:");
+        while (!myStack.IsEmpty())
+        {
+            Console.WriteLine(myStack.Pop());
+        }
 
         Console.ReadLine();
     }
