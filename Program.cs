@@ -71,7 +71,7 @@ class Program
         watch.Stop();
         Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
         */
-
+        /*
         Stack<int> myStack = new Stack<int>();
 
         myStack.Push(10);
@@ -85,7 +85,28 @@ class Program
         {
             Console.WriteLine(myStack.Pop());
         }
+        */
+        // Create a deque
+        Deque<int> deque = new Deque<int>();
 
-        Console.ReadLine();
+        // Add elements to the front and back
+        deque.InsertRight(4);
+        deque.InsertRight(3);
+        deque.InsertLeft(2);
+        deque.InsertLeft(1);
+
+        // Display the elements in the deque
+        Console.WriteLine("Deque elements: " + string.Join(", ", deque));
+
+        // Remove elements from the front and back
+        int frontElement = deque.DeleteRight();
+        int backElement = deque.DeleteLeft();
+
+        // Display the removed elements
+        Console.WriteLine("Removed front element: " + frontElement);
+        Console.WriteLine("Removed back element: " + backElement);
+
+        // Display the remaining elements in the deque
+        Console.WriteLine("Remaining deque elements: " + string.Join(", ", deque));
     }
 }
