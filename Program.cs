@@ -7,10 +7,12 @@ class Program
         var testCases = new TestCases();
         var watch = new System.Diagnostics.Stopwatch();
         watch.Start();
+
+        // TESTCASES
         /*
         //var testCaseArray = testCases.Get_List<int>("lijst_aflopend_2");
         //var testCaseArray = testCases.Get_List<int>("lijst_oplopend_2");
-        var testCaseArray = testCases.Get_List<float>("lijst_float_8001");
+        //var testCaseArray = testCases.Get_List<float>("lijst_float_8001");
         //var testCaseArray = testCases.Get_List<int>("lijst_gesorteerd_aflopend_3");
         //var testCaseArray = testCases.Get_List<int>("lijst_gesorteerd_oplopend_3");
         //var testCaseArray = testCases.Get_List<int>("lijst_herhaald_1000");
@@ -21,10 +23,12 @@ class Program
         //var testCaseArray = testCases.Get_List<int>("lijst_oplopend_10000");
         //var testCaseArray = testCases.Get_List<int>("lijst_willekeurig_10000");
         //var testCaseArray = testCases.Get_List<int>("lijst_willekeurig_3");
-
-
         watch.Stop();
-        Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
+        Console.WriteLine($"TESTCASES - Elapsed Time: {watch.Elapsed}");
+        */
+
+        // DYNAMIC ARRAY
+        /*
         if (!watch.IsRunning)
             watch.Restart(); // Reset time to 0 and start measuring
 
@@ -36,12 +40,13 @@ class Program
                 dynamicArray.Add(element);
             }
         }
-        
         watch.Stop();
-        Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
-
         Console.WriteLine("SIZE: {0}", dynamicArray.Size());
-        
+        Console.WriteLine($"DYNAMIC ARRAY - Elapsed Time: {watch.Elapsed}");
+        */
+
+        // DOUBLE LINKED LIST
+        /*
         if (!watch.IsRunning)
             watch.Restart(); // Reset time to 0 and start measuring
   
@@ -67,11 +72,15 @@ class Program
 
         Console.WriteLine("CONTAINS: {0}", doubleLinkedList.Contains(20));
         Console.WriteLine("SIZE: {0}", doubleLinkedList.Size());
-
         watch.Stop();
-        Console.WriteLine($"Elapsed Time: {watch.Elapsed}");
+        Console.WriteLine($"DOUBLE LINKED LIST - Elapsed Time: {watch.Elapsed}");
         */
+
+        // STACK
         /*
+        if (!watch.IsRunning)
+            watch.Restart(); // Reset time to 0 and start measuring
+
         Stack<int> myStack = new Stack<int>();
 
         myStack.Push(10);
@@ -85,8 +94,15 @@ class Program
         {
             Console.WriteLine(myStack.Pop());
         }
+        watch.Stop();
+        Console.WriteLine($"STACK - Elapsed Time: {watch.Elapsed}");
         */
-        // Create a deque
+ 
+        // DEQUE
+        /*
+        if (!watch.IsRunning)
+            watch.Restart(); // Reset time to 0 and start measuring
+
         Deque<int> deque = new Deque<int>();
 
         // Add elements to the front and back
@@ -108,5 +124,27 @@ class Program
 
         // Display the remaining elements in the deque
         Console.WriteLine("Remaining deque elements: " + string.Join(", ", deque));
+        watch.Stop();
+        Console.WriteLine($"DEQUE - Elapsed Time: {watch.Elapsed}");
+        */
+
+        // PRIORITY QUEUE
+        if (!watch.IsRunning)
+            watch.Restart(); // Reset time to 0 and start measuring
+        PriorityQueue<string> priorityQueue = new PriorityQueue<string>();
+
+        priorityQueue.Add("Task 1", 3);
+        priorityQueue.Add("Task 2", 1);
+        priorityQueue.Add("Task 3", 2);
+
+        Console.WriteLine($"Peek: {priorityQueue.Peek()}");
+
+        while (!priorityQueue.IsEmpty())
+        {
+            string task = priorityQueue.Poll();
+            Console.WriteLine($"Processing: {task}");
+        }
+        watch.Stop();
+        Console.WriteLine($"PRIORITY QUEUE - Elapsed Time: {watch.Elapsed}");
     }
 }
