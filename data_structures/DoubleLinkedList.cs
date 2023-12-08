@@ -92,7 +92,6 @@ namespace ADP
                 }
                 else
                 {
-                    // If the new node is added at the end, update the tail
                     _tail = newNode;
                 }
             }
