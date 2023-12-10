@@ -4,46 +4,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        var testCases = new TestCases();
+        Console.WriteLine($"LOADING TESTDATA");
+        Console.WriteLine($"#####################################################");
         var watch = new System.Diagnostics.Stopwatch();
         watch.Start();
-
-        // TESTCASES
-        /*
-        //var testCaseArray = testCases.Get_List<int>("lijst_aflopend_2");
-        //var testCaseArray = testCases.Get_List<int>("lijst_oplopend_2");
-        //var testCaseArray = testCases.Get_List<float>("lijst_float_8001");
-        //var testCaseArray = testCases.Get_List<int>("lijst_gesorteerd_aflopend_3");
-        //var testCaseArray = testCases.Get_List<int>("lijst_gesorteerd_oplopend_3");
-        //var testCaseArray = testCases.Get_List<int>("lijst_herhaald_1000");
-        //var testCaseArray = testCases.Get_List<int>("lijst_leeg_0");
-        //var testCaseArray = testCases.Get_List<int>("lijst_null_1");
-        //var testCaseArray = testCases.Get_List<int>("lijst_null_3");
-        //var testCaseArray = testCases.Get_List<int>("lijst_onsorteerbaar_3");
-        //var testCaseArray = testCases.Get_List<int>("lijst_oplopend_10000");
-        //var testCaseArray = testCases.Get_List<int>("lijst_willekeurig_10000");
-        //var testCaseArray = testCases.Get_List<int>("lijst_willekeurig_3");
+        var testCases = new TestCases();
         watch.Stop();
         Console.WriteLine($"TESTCASES - Elapsed Time: {watch.Elapsed}");
-        */
+        Console.WriteLine($"#####################################################");      
 
         // DYNAMIC ARRAY
-        /*
-        if (!watch.IsRunning)
-            watch.Restart(); // Reset time to 0 and start measuring
-
-        var dynamicArray = new DynamicArray<float>(10);
-        if (testCaseArray != null)
-        {
-            foreach (var element in testCaseArray)
-            {
-                dynamicArray.Add(element);
-            }
-        }
-        watch.Stop();
-        Console.WriteLine("SIZE: {0}", dynamicArray.Size());
-        Console.WriteLine($"DYNAMIC ARRAY - Elapsed Time: {watch.Elapsed}");
-        */
+        var test_DS_DynamicArray = new Test_DS_DynamicArray();
+        test_DS_DynamicArray.run_loadData_tests(testCases);
 
         // DOUBLE LINKED LIST
         /*
@@ -129,6 +101,7 @@ class Program
         */
 
         // PRIORITY QUEUE
+        /*
         if (!watch.IsRunning)
             watch.Restart(); // Reset time to 0 and start measuring
         PriorityQueue<string> priorityQueue = new PriorityQueue<string>();
@@ -146,5 +119,6 @@ class Program
         }
         watch.Stop();
         Console.WriteLine($"PRIORITY QUEUE - Elapsed Time: {watch.Elapsed}");
+        */
     }
 }

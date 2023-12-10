@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
@@ -12,59 +13,55 @@ namespace ADP
         }
         private void ReadFile()
         {
-            string filePath = @"C:\_UserData\GitHub\Repos\adp\tests\dataset_sorteren.json";
+            string url = "https://han-aim.gitlab.io/dt-sd-asd/materials/ADP/bron/dataset_sorteren.json";
             string jsonString = string.Empty;
             // Ensure the file exists
-            if (File.Exists(filePath))
+            try
             {
-                // Open the file with a StreamReader
-                using (StreamReader reader = new StreamReader(filePath))
+                using (StreamReader reader = new StreamReader(WebRequest.Create(url).GetResponse().GetResponseStream()))
                 {
-                    // Read the entire file
                     jsonString = reader.ReadToEnd();
-                    // Create a JsonNode DOM from a JSON string.
                     _jsonNodes = JsonNode.Parse(jsonString)!;
                 }
             }
-            else
+            catch(Exception ex)
             {
-                Console.WriteLine("File not found.");
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public T[] Get_List<T>(string listName)
+        public string[] getNodeNames()
         {
-             // Get value from a JsonNode.
-            JsonNode jsonNode = _jsonNodes![listName]!;
-            string list = jsonNode.ToJsonString();
-            T[]? jsonArray = JsonSerializer.Deserialize<T[]>(list);
-            if (jsonArray != null)
-                return jsonArray;
-            else
-                return null;
+            string[] names = new string[20];
+            try
+            {
+                names = _jsonNodes.AsObject().Select(property => property.Key).ToArray();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return names;          
         }
 
-        public int[] List_Desc()
+        public T[]? Get_List<T>(string listName)
         {
-             // Get value from a JsonNode.
-            JsonNode lijst_aflopend_2 = _jsonNodes!["lijst_aflopend_2"]!;
-            string list = lijst_aflopend_2.ToJsonString();
-            int[]? jsonArray = JsonSerializer.Deserialize<int[]>(list);
-            if (jsonArray != null)
-                return jsonArray;
-            else
-                return null;
-        }
-        public float[] List_Float()
-        {
-             // Get value from a JsonNode.
-            JsonNode lijst_float_8001 = _jsonNodes!["lijst_float_8001"]!;
-            string list = lijst_float_8001.ToJsonString();
-            float[]? jsonArray = JsonSerializer.Deserialize<float[]>(list);
-            if (jsonArray != null)
-                return jsonArray;
-            else
-                return null;
+            try
+            {
+                JsonNode jsonNode = _jsonNodes![listName]!;
+                string list = jsonNode.ToJsonString();
+                T[]? jsonArray = JsonSerializer.Deserialize<T[]>(list);
+                if (jsonArray != null)
+                    return jsonArray;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("List not found!");
+            }
+            return null;
         }
     }
 }
