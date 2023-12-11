@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace ADP
 {
     /*
@@ -5,12 +7,12 @@ namespace ADP
     - add(E element) V
     - get(int index) V
     - set(int index, E element) V
-    - removeAt(int index) V
+    - remove(int index) V
     - remove(E element) V
-    - contains(E element)
+    - contains(E element) V
     - indexOf(E element) or find(E element) V
     */
-    public class DoubleLinkedList<T>
+    public class DoubleLinkedList<T> : IEnumerable<T>
     {
         private Node<T>? _head;
         private Node<T>? _tail;
@@ -35,7 +37,24 @@ namespace ADP
                 _tail = current.Previous;
             }
         }
-
+        private void RemoveAt(int index)
+        {
+            Node<T> current = _head;
+            if (index >= 0)
+            {
+                int currentPosition = 0;
+                while (current != null)
+                {
+                    if (currentPosition == index)
+                    {
+                        RemoveNode(current);
+                        return;    
+                    }
+                    current = current.Next;
+                    currentPosition++;
+                }
+            }
+        }
         public void Add(T item)
         {
             Node<T> newNode = new Node<T>(item);
@@ -51,7 +70,6 @@ namespace ADP
                 _tail = newNode;
             }
         }
-
         public void Add(T item, int index)
         {
             Node<T> newNode = new Node<T>(item);
@@ -96,7 +114,20 @@ namespace ADP
                 }
             }
         }
-
+        public void Set(int index, T item)
+        {
+            int currentPosition = 0;
+            Node<T> current = _head;
+            while (current != null)
+            {
+                if (currentPosition == index)
+                {
+                    current.Data = item;    
+                }
+                current = current.Next;
+                currentPosition++;
+            }
+        }
         public T Get(int index)
         {
             int currentPosition = 0;
@@ -112,26 +143,6 @@ namespace ADP
             }
             return default; 
         }
-
-        public void RemoveAt(int index)
-        {
-            Node<T> current = _head;
-            if (index >= 0)
-            {
-                int currentPosition = 0;
-                while (current != null)
-                {
-                    if (currentPosition == index)
-                    {
-                        RemoveNode(current);
-                        return;    
-                    }
-                    current = current.Next;
-                    currentPosition++;
-                }
-            }
-        }
-
         public void Remove(T item)
         {
             Node<T> current = _head;
@@ -145,18 +156,10 @@ namespace ADP
                 current = current.Next;
             }
         }
-
-        public void PrintList()
+        public void Remove(int index)
         {
-            Node<T> current = _head;
-            while (current != null)
-            {
-                Console.Write(current.Data + " ");
-                current = current.Next;
-            }
-            Console.WriteLine();
+            RemoveAt(index);
         }
-
         public bool Contains(T item)
         {
             Node<T> current = _head;
@@ -172,7 +175,6 @@ namespace ADP
             }
             return false;
         }
-
         public int IndexOf(T item)
         {
             Node<T> current = _head;
@@ -188,7 +190,6 @@ namespace ADP
             }
             return -1;
         }
-
         public int Size()
         {
             Node<T> current = _head;
@@ -199,6 +200,22 @@ namespace ADP
                 size++;
             }
             return size;
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> current = _head;
+            Node<T> currentToReturn = _head;
+            while (current != null)
+            {
+                currentToReturn = current;
+                current = current.Next;
+                yield return currentToReturn.Data;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

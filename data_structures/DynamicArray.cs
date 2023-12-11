@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace ADP
 {
     /*
@@ -6,11 +8,11 @@ namespace ADP
     - get(int index) V
     - set(int index, E element) V
     - remove(int index) V
-    - removeAt(E element) V
+    - remove(E element) V
     - contains(E element) V
     - indexOf(E element) or find(E element) V
     */
-    public class DynamicArray<T> where T : System.IEquatable<T>
+    public class DynamicArray<T> : IEnumerable<T>
     {
         private T[] _storage;
         private int _accessShift = 0;
@@ -23,35 +25,7 @@ namespace ADP
                 Array.Resize(ref _storage, Math.Max(1, _storage.Length * 2));
             }
         }
-        public DynamicArray(int size)
-        {
-            _storage = new T[size];
-        }
-
-        public T this[int index]
-        {
-            get => (T) _storage[index - _accessShift];
-            set => _storage[index - _accessShift] = value;
-        }
-        public void Add(T item)
-        {
-            ResizeStorageIfNeeded();
-            _storage[_effectiveSize] = item;
-            _effectiveSize += 1;
-        }
-        public void Set(T item, int index)
-        {
-            index -= _accessShift;
-            ResizeStorageIfNeeded();
-            _effectiveSize += 1;
-
-            for (var i = _effectiveSize - 1; i > index; --i)
-            {
-                _storage[i] = _storage[i - 1];
-            }
-            _storage[index] = item;
-        }
-        public void RemoveAt(int index)
+        private void RemoveAt(int index)
         {
             if (index >= 0)
             {
@@ -63,11 +37,34 @@ namespace ADP
             }
             _effectiveSize -= 1;
         }
-        public void Remove(T value)
+        public DynamicArray(int size)
         {
-            int index = IndexOf(value);
+            _storage = new T[size];
+        }
+        public T this[int index]
+        {
+            get => (T) _storage[index - _accessShift];
+            set => _storage[index - _accessShift] = value;
+        }
+        public void Add(T item)
+        {
+            ResizeStorageIfNeeded();
+            _storage[_effectiveSize] = item;
+            _effectiveSize += 1;
+        }
+        public void Set(int index, T item)
+        {
+            _storage[index] = item;
+        }
+        public void Remove(T item)
+        {
+            int index = IndexOf(item);
             if (index >= 0)
                 RemoveAt(index);
+        }
+        public void Remove(int index)
+        {
+            RemoveAt(index);
         }
         public bool Contains(T item)
         {
@@ -94,6 +91,17 @@ namespace ADP
         public int Size()
         {
             return _effectiveSize;
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < _effectiveSize; i++)
+            {
+                yield return _storage[i];
+            }
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

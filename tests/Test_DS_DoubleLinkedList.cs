@@ -2,34 +2,35 @@ using System.Diagnostics;
 
 namespace ADP
 {
-    public class Test_DS_DynamicArray
-    {    
+    public class Test_DS_DoubleLinkedList
+    {  
         private void test_readingInt(int[] testCaseArray)
         {
-            var dynamicArray = new DynamicArray<int>(10);
+            var doubleLinkedList = new DoubleLinkedList<int>();
             if (testCaseArray != null)
             {
                 foreach (var element in testCaseArray)
                 {
-                    dynamicArray.Add(element);
+                    doubleLinkedList.Add(element);
                 }
             }
             Console.WriteLine("DATATYPE: Integer");
-            Console.WriteLine("SIZE: {0} items", dynamicArray.Size());
+            Console.WriteLine("SIZE: {0} items", doubleLinkedList.Size());
         }
         private void test_readingFloat(float[] testCaseArray)
         {
-            var dynamicArray = new DynamicArray<float>(10);
+            var doubleLinkedList = new DoubleLinkedList<float>();
             if (testCaseArray != null)
             {
                 foreach (var element in testCaseArray)
                 {
-                    dynamicArray.Add(element);
+                    doubleLinkedList.Add(element);
                 }
             }
             Console.WriteLine("DATATYPE: Float");
-            Console.WriteLine("SIZE: {0} items", dynamicArray.Size());
+            Console.WriteLine("SIZE: {0} items", doubleLinkedList.Size());
         }
+
         public void run_loadData_tests(TestCases testCases)
         {
             var watch = new Stopwatch();
@@ -62,60 +63,60 @@ namespace ADP
             var watch = new Stopwatch();
             Console.WriteLine($"OPERATIONS");
             Console.WriteLine($"#####################################################");
-            var dynamicArray = new DynamicArray<string>(10);
+            var doubleLinkedList = new DoubleLinkedList<string>();
 
             Console.WriteLine($"OPERATION: Add");
-            dynamicArray.Add("Atalanta");
-            dynamicArray.Add("Inter Milan");
-            dynamicArray.Add("Roma");
-            dynamicArray.Add("Udinese");
+            doubleLinkedList.Add("Bari");
+            doubleLinkedList.Add("Como");
+            doubleLinkedList.Add("Parma");
+            doubleLinkedList.Add("SPAL");
 
-            foreach(var club in dynamicArray)
+            foreach(var club in doubleLinkedList)
             {
                 Console.WriteLine($"Club: {club}");
             }
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Get");
-            Console.WriteLine($"VALUE: Udinese");
-            Console.WriteLine($"Club 3: {dynamicArray[2]}");
+            Console.WriteLine($"VALUE: Parma");
+            Console.WriteLine($"Club 3: {doubleLinkedList.Get(2)}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Set");
-            Console.WriteLine($"Club 2 (BEFORE): {dynamicArray[1]}");
-            dynamicArray.Set(1, "AC Milan");
-            Console.WriteLine($"Club 2 (AFTER): {dynamicArray[1]}");
+            Console.WriteLine($"Club 2 (BEFORE): {doubleLinkedList.Get(1)}");
+            doubleLinkedList.Set(1, "Frosinone");
+            Console.WriteLine($"Club 2 (AFTER): {doubleLinkedList.Get(1)}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: 0 (Atalanta)");
-            dynamicArray.Remove(0);
-            foreach(var club in dynamicArray)
+            Console.WriteLine($"VALUE: 0 (Bari)");
+            doubleLinkedList.Remove(0);
+            foreach(var club in doubleLinkedList)
             {
                 Console.WriteLine($"Club: {club}");
             }
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: Udinese");
-            dynamicArray.Remove("Udinese");
-            foreach(var club in dynamicArray)
+            Console.WriteLine($"VALUE: Parma");
+            doubleLinkedList.Remove("Parma");
+            foreach(var club in doubleLinkedList)
             {
                 Console.WriteLine($"Club: {club}");
             }
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Contains");
-            Console.WriteLine($"VALUE: Roma");
-            Console.WriteLine(dynamicArray.Contains("Roma"));
+            Console.WriteLine($"VALUE: SPAL");
+            Console.WriteLine(doubleLinkedList.Contains("SPAL"));
 
-            Console.WriteLine($"VALUE: Bari");
-            Console.WriteLine(dynamicArray.Contains("Bari"));
-            Console.WriteLine($"-----------------------------------------------------"); 
+            Console.WriteLine($"VALUE: Roma");
+            Console.WriteLine(doubleLinkedList.Contains("Roma"));
+            Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: indexOf");
-            Console.WriteLine($"VALUE: AC Milan");
-            Console.WriteLine($"INDEX: {dynamicArray.IndexOf("AC Milan")}");
+            Console.WriteLine($"VALUE: Frosinone");
+            Console.WriteLine($"INDEX: {doubleLinkedList.IndexOf("Frosinone")}");
                   
             Console.WriteLine($"#####################################################");
         }

@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace ADP
 {
     /*
@@ -6,7 +8,7 @@ namespace ADP
 	- peek()
 	- poll()
     */
-    public class PriorityQueue<T>
+    public class PriorityQueue<T> : IEnumerable<T>
     {
         private SortedDictionary<int, Queue<T>> _queue;
         public PriorityQueue()
@@ -52,6 +54,22 @@ namespace ADP
         public bool IsEmpty()
         {
             return _queue.Count == 0;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            foreach(var queue in _queue.Values)
+            {
+                foreach (var item in queue)
+                {
+                    yield return item;
+                }
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

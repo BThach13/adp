@@ -2,33 +2,33 @@ using System.Diagnostics;
 
 namespace ADP
 {
-    public class Test_DS_DynamicArray
-    {    
+    public class Test_DS_Stack
+    { 
         private void test_readingInt(int[] testCaseArray)
         {
-            var dynamicArray = new DynamicArray<int>(10);
+            var stack = new Stack<int>(10);
             if (testCaseArray != null)
             {
                 foreach (var element in testCaseArray)
                 {
-                    dynamicArray.Add(element);
+                    stack.Push(element);
                 }
             }
             Console.WriteLine("DATATYPE: Integer");
-            Console.WriteLine("SIZE: {0} items", dynamicArray.Size());
+            Console.WriteLine("SIZE: {0} items", stack.Count());
         }
         private void test_readingFloat(float[] testCaseArray)
         {
-            var dynamicArray = new DynamicArray<float>(10);
+            var stack = new Stack<float>(10);
             if (testCaseArray != null)
             {
                 foreach (var element in testCaseArray)
                 {
-                    dynamicArray.Add(element);
+                    stack.Push(element);
                 }
             }
             Console.WriteLine("DATATYPE: Float");
-            Console.WriteLine("SIZE: {0} items", dynamicArray.Size());
+            Console.WriteLine("SIZE: {0} items", stack.Count());
         }
         public void run_loadData_tests(TestCases testCases)
         {
@@ -62,61 +62,38 @@ namespace ADP
             var watch = new Stopwatch();
             Console.WriteLine($"OPERATIONS");
             Console.WriteLine($"#####################################################");
-            var dynamicArray = new DynamicArray<string>(10);
+            var stack = new Stack<string>(10);
 
             Console.WriteLine($"OPERATION: Add");
-            dynamicArray.Add("Atalanta");
-            dynamicArray.Add("Inter Milan");
-            dynamicArray.Add("Roma");
-            dynamicArray.Add("Udinese");
-
-            foreach(var club in dynamicArray)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            stack.Push("Mantova");
+            Console.WriteLine($"OPERATION: Top");
+            Console.WriteLine($"Club added: {stack.Top()}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Get");
-            Console.WriteLine($"VALUE: Udinese");
-            Console.WriteLine($"Club 3: {dynamicArray[2]}");
+            Console.WriteLine($"OPERATION: Add");
+            stack.Push("Piacenza");
+            Console.WriteLine($"OPERATION: Top");
+            Console.WriteLine($"Club added: {stack.Top()}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Set");
-            Console.WriteLine($"Club 2 (BEFORE): {dynamicArray[1]}");
-            dynamicArray.Set(1, "AC Milan");
-            Console.WriteLine($"Club 2 (AFTER): {dynamicArray[1]}");
+            Console.WriteLine($"OPERATION: Add");
+            stack.Push("Renate");
+            Console.WriteLine($"OPERATION: Top");
+            Console.WriteLine($"Club added: {stack.Top()}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: 0 (Atalanta)");
-            dynamicArray.Remove(0);
-            foreach(var club in dynamicArray)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            Console.WriteLine($"OPERATION: Add");
+            stack.Push("Vicenza");
+            Console.WriteLine($"OPERATION: Top");
+            Console.WriteLine($"Club added: {stack.Top()}");
+            Console.WriteLine($"Number of clubs: {stack.Count()}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: Udinese");
-            dynamicArray.Remove("Udinese");
-            foreach(var club in dynamicArray)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            Console.WriteLine($"OPERATION: Pop");
+            stack.Pop();
+            Console.WriteLine($"Number of clubs: {stack.Count()}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Contains");
-            Console.WriteLine($"VALUE: Roma");
-            Console.WriteLine(dynamicArray.Contains("Roma"));
-
-            Console.WriteLine($"VALUE: Bari");
-            Console.WriteLine(dynamicArray.Contains("Bari"));
-            Console.WriteLine($"-----------------------------------------------------"); 
-
-            Console.WriteLine($"OPERATION: indexOf");
-            Console.WriteLine($"VALUE: AC Milan");
-            Console.WriteLine($"INDEX: {dynamicArray.IndexOf("AC Milan")}");
-                  
             Console.WriteLine($"#####################################################");
         }
     }
