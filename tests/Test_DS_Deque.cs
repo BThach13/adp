@@ -90,7 +90,7 @@ namespace ADP
 
             Console.WriteLine($"OPERATION: InsertLeft");
             Console.WriteLine($"INPUT: Vitesse");
-            Console.WriteLine($"EXPECTED RESULT: Vitesse added on the left side of previous item. Queue contains 3 clubs");
+            Console.WriteLine($"EXPECTED RESULT: Vitesse added on the left side of Feyenoord. Queue contains 3 clubs");
             if (!watch.IsRunning)
                 watch.Restart();
             deque.InsertLeft("Vitesse");
