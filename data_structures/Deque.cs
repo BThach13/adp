@@ -37,9 +37,9 @@ namespace ADP
 
             _list.RemoveFirst();
         }
-        public int Size
+        public int Size()
         {
-            get { return _list.Count; }
+            return _list.Count;
         }
         public override string ToString()
         {

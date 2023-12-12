@@ -30,6 +30,7 @@ namespace ADP
             Console.WriteLine("DATATYPE: Float");
             Console.WriteLine("SIZE: {0} items", stack.Count());
         }
+
         public void run_loadData_tests(TestCases testCases)
         {
             var watch = new Stopwatch();
@@ -65,35 +66,96 @@ namespace ADP
             var stack = new Stack<string>(10);
 
             Console.WriteLine($"OPERATION: Add");
+            Console.WriteLine($"INPUT: Mantova");
+            Console.WriteLine($"EXPECTED RESULT: Mantova added to stack. Stack contains 1 club");
+            if (!watch.IsRunning)
+                watch.Restart();
             stack.Push("Mantova");
-            Console.WriteLine($"OPERATION: Top");
-            Console.WriteLine($"Club added: {stack.Top()}");
-            Console.WriteLine($"-----------------------------------------------------");
+            watch.Stop();
 
+            Console.WriteLine($"Club added: {stack.Top()}, Total clubs: {stack.Count()}");
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+
+            Console.WriteLine("");
             Console.WriteLine($"OPERATION: Add");
+            Console.WriteLine($"INPUT: Piacenza");
+            Console.WriteLine($"EXPECTED RESULT: Piacenza added to stack. Stack contains 2 clubs");
+            if (!watch.IsRunning)
+                watch.Restart();
             stack.Push("Piacenza");
-            Console.WriteLine($"OPERATION: Top");
-            Console.WriteLine($"Club added: {stack.Top()}");
-            Console.WriteLine($"-----------------------------------------------------");
+            watch.Stop();
 
+            Console.WriteLine($"Club added: {stack.Top()}, Total clubs: {stack.Count()}");
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+
+            Console.WriteLine("");
             Console.WriteLine($"OPERATION: Add");
+            Console.WriteLine($"INPUT: Renate");
+            Console.WriteLine($"EXPECTED RESULT: Renate added to stack. Stack contains 3 clubs");
+            if (!watch.IsRunning)
+                watch.Restart();
             stack.Push("Renate");
-            Console.WriteLine($"OPERATION: Top");
-            Console.WriteLine($"Club added: {stack.Top()}");
-            Console.WriteLine($"-----------------------------------------------------");
+            watch.Stop();
 
+            Console.WriteLine($"Club added: {stack.Top()}, Total clubs: {stack.Count()}");
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+
+            Console.WriteLine("");
             Console.WriteLine($"OPERATION: Add");
+            Console.WriteLine($"INPUT: Vicenza");
+            Console.WriteLine($"EXPECTED RESULT: Vicenza added to stack. Stack contains 4 clubs");
+            if (!watch.IsRunning)
+                watch.Restart();
             stack.Push("Vicenza");
-            Console.WriteLine($"OPERATION: Top");
-            Console.WriteLine($"Club added: {stack.Top()}");
-            Console.WriteLine($"Number of clubs: {stack.Count()}");
+            watch.Stop();
+ 
+            Console.WriteLine($"Club added: {stack.Top()}, Total clubs: {stack.Count()}");
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Pop");
+            Console.WriteLine($"INPUT: NULL");
+            Console.WriteLine($"EXPECTED RESULT: Vicenza removed from stack. Stack contains 3 clubs");
+            if (!watch.IsRunning)
+                watch.Restart();
             stack.Pop();
-            Console.WriteLine($"Number of clubs: {stack.Count()}");
+            watch.Stop();
+
+            Console.WriteLine($"Total clubs: {stack.Count()}");
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
+            Console.WriteLine($"OPERATION: Top");
+            Console.WriteLine($"INPUT: NULL");
+            Console.WriteLine($"EXPECTED RESULT: Renate");
+            if (!watch.IsRunning)
+                watch.Restart();           
+            Console.WriteLine($"RESULT: {stack.Top()}");
+            watch.Stop();
+
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+            Console.WriteLine($"-----------------------------------------------------");
+
+            Console.WriteLine($"OPERATION: IsEmpty");
+            Console.WriteLine($"INPUT: NULL");
+            Console.WriteLine($"EXPECTED RESULT: False");
+            if (!watch.IsRunning)
+                watch.Restart();           
+            Console.WriteLine($"RESULT: {stack.IsEmpty()}");
+            watch.Stop();
+
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+            Console.WriteLine($"-----------------------------------------------------");
+
+            Console.WriteLine($"OPERATION: Count");
+            Console.WriteLine($"INPUT: NULL");
+            Console.WriteLine($"EXPECTED RESULT: 3");
+            if (!watch.IsRunning)
+                watch.Restart();           
+            Console.WriteLine($"RESULT: {stack.Count()}");
+            watch.Stop();
+
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"#####################################################");
         }
     }

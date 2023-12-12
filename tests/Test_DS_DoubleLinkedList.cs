@@ -30,7 +30,14 @@ namespace ADP
             Console.WriteLine("DATATYPE: Float");
             Console.WriteLine("SIZE: {0} items", doubleLinkedList.Size());
         }
-
+        private void test_iterate_array(DoubleLinkedList<string> doubleLinkedList)
+        {
+            Console.WriteLine($"RESULT:");
+            foreach(var club in doubleLinkedList)
+            {
+                Console.WriteLine($"- Club: {club}");
+            }
+        }
         public void run_loadData_tests(TestCases testCases)
         {
             var watch = new Stopwatch();
@@ -66,58 +73,97 @@ namespace ADP
             var doubleLinkedList = new DoubleLinkedList<string>();
 
             Console.WriteLine($"OPERATION: Add");
+            Console.WriteLine($"INPUT: Bari, Como, Parma, SPAL");
+            Console.WriteLine($"EXPECTED RESULT: Bari, Como, Parma, SPAL added to array");
+            if (!watch.IsRunning)
+                watch.Restart();
             doubleLinkedList.Add("Bari");
             doubleLinkedList.Add("Como");
             doubleLinkedList.Add("Parma");
             doubleLinkedList.Add("SPAL");
-
-            foreach(var club in doubleLinkedList)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            watch.Stop();
+ 
+            test_iterate_array(doubleLinkedList);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Get");
-            Console.WriteLine($"VALUE: Parma");
-            Console.WriteLine($"Club 3: {doubleLinkedList.Get(2)}");
+            Console.WriteLine($"INPUT: 2");
+            Console.WriteLine($"EXPECTED RESULT: Parma");
+            if (!watch.IsRunning)
+                watch.Restart();            
+            Console.WriteLine($"RESULT: {doubleLinkedList.Get(2)}");
+            watch.Stop();
+
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Set");
-            Console.WriteLine($"Club 2 (BEFORE): {doubleLinkedList.Get(1)}");
-            doubleLinkedList.Set(1, "Frosinone");
-            Console.WriteLine($"Club 2 (AFTER): {doubleLinkedList.Get(1)}");
+            Console.WriteLine($"INPUT: Index 1, Value Frosinone");
+            Console.WriteLine($"EXPECTED RESULT: Como changed to Frosinone");
+            if (!watch.IsRunning)
+                watch.Restart();
+            doubleLinkedList.Set(1, "Frosinone");;
+            watch.Stop();
+
+            test_iterate_array(doubleLinkedList);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: 0 (Bari)");
+            Console.WriteLine($"OPERATION: Remove by index");
+            Console.WriteLine($"INPUT: 0");
+            Console.WriteLine($"EXPECTED RESULT: Bari removed from array");
+            if (!watch.IsRunning)
+                watch.Restart();
             doubleLinkedList.Remove(0);
-            foreach(var club in doubleLinkedList)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            watch.Stop();           
+
+            test_iterate_array(doubleLinkedList);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: Parma");
+            Console.WriteLine($"OPERATION: Remove by item");
+            Console.WriteLine($"INPUT: Parma");
+            Console.WriteLine($"EXPECTED RESULT: Parma removed from array");
+            if (!watch.IsRunning)
+                watch.Restart();
             doubleLinkedList.Remove("Parma");
-            foreach(var club in doubleLinkedList)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            watch.Stop();
+
+            test_iterate_array(doubleLinkedList);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Contains");
-            Console.WriteLine($"VALUE: SPAL");
-            Console.WriteLine(doubleLinkedList.Contains("SPAL"));
+            Console.WriteLine($"INPUT: SPAL");
+            Console.WriteLine($"EXPECTED RESULT: True");
+            if (!watch.IsRunning)
+                watch.Restart();
+            Console.WriteLine($"RESULT: {doubleLinkedList.Contains("SPAL")}");
+            watch.Stop();
+            
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+            Console.WriteLine();
 
-            Console.WriteLine($"VALUE: Roma");
-            Console.WriteLine(doubleLinkedList.Contains("Roma"));
-            Console.WriteLine($"-----------------------------------------------------");
+            Console.WriteLine($"INPUT: Roma");
+            Console.WriteLine($"EXPECTED RESULT: False");
+            if (!watch.IsRunning)
+                watch.Restart();
+            Console.WriteLine($"RESULT: {doubleLinkedList.Contains("Roma")}");
+            watch.Stop();
+            
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+            Console.WriteLine($"-----------------------------------------------------"); 
 
             Console.WriteLine($"OPERATION: indexOf");
-            Console.WriteLine($"VALUE: Frosinone");
-            Console.WriteLine($"INDEX: {doubleLinkedList.IndexOf("Frosinone")}");
-                  
+            Console.WriteLine($"INPUT: Frosinone");
+            Console.WriteLine($"EXPECTED RESULT: 0");
+            if (!watch.IsRunning)
+                watch.Restart();
+            Console.WriteLine($"RESULT: {doubleLinkedList.IndexOf("Frosinone")}");
+            watch.Stop();
+            
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");                
             Console.WriteLine($"#####################################################");
         }
     }

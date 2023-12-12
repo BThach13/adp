@@ -30,6 +30,14 @@ namespace ADP
             Console.WriteLine("DATATYPE: Float");
             Console.WriteLine("SIZE: {0} items", dynamicArray.Size());
         }
+        private void test_iterate_array(DynamicArray<string> dynamicArray)
+        {
+            Console.WriteLine($"RESULT:");
+            foreach(var club in dynamicArray)
+            {
+                Console.WriteLine($"- Club: {club}");
+            }
+        }
         public void run_loadData_tests(TestCases testCases)
         {
             var watch = new Stopwatch();
@@ -65,58 +73,97 @@ namespace ADP
             var dynamicArray = new DynamicArray<string>(10);
 
             Console.WriteLine($"OPERATION: Add");
+            Console.WriteLine($"INPUT: Atalanta, Inter Milan, Roma, Udinese");
+            Console.WriteLine($"EXPECTED RESULT: Atalanta, Inter Milan, Roma, Udinese added to array");
+            if (!watch.IsRunning)
+                watch.Restart();
             dynamicArray.Add("Atalanta");
             dynamicArray.Add("Inter Milan");
             dynamicArray.Add("Roma");
             dynamicArray.Add("Udinese");
+            watch.Stop();
 
-            foreach(var club in dynamicArray)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            test_iterate_array(dynamicArray);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Get");
-            Console.WriteLine($"VALUE: Udinese");
-            Console.WriteLine($"Club 3: {dynamicArray[2]}");
+            Console.WriteLine($"INPUT: 2");
+            Console.WriteLine($"EXPECTED RESULT: Roma");
+            if (!watch.IsRunning)
+                watch.Restart();            
+            Console.WriteLine($"RESULT: {dynamicArray[2]}");
+            watch.Stop();
+
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Set");
-            Console.WriteLine($"Club 2 (BEFORE): {dynamicArray[1]}");
-            dynamicArray.Set(1, "AC Milan");
-            Console.WriteLine($"Club 2 (AFTER): {dynamicArray[1]}");
+            Console.WriteLine($"INPUT: Index 1, Value AC MILAN");
+            Console.WriteLine($"EXPECTED RESULT: Inter Milan changed to AC MILAN");
+            if (!watch.IsRunning)
+                watch.Restart();
+            dynamicArray.Set(1, "AC Milan");   
+            watch.Stop();
+
+            test_iterate_array(dynamicArray);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: 0 (Atalanta)");
+            Console.WriteLine($"OPERATION: Remove by index");
+            Console.WriteLine($"INPUT: 0");
+            Console.WriteLine($"EXPECTED RESULT: Atalanta removed from array");
+            if (!watch.IsRunning)
+                watch.Restart();
             dynamicArray.Remove(0);
-            foreach(var club in dynamicArray)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            watch.Stop();           
+
+            test_iterate_array(dynamicArray);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
-            Console.WriteLine($"OPERATION: Remove");
-            Console.WriteLine($"VALUE: Udinese");
+            Console.WriteLine($"OPERATION: Remove by item");
+            Console.WriteLine($"INPUT: Udinese");
+            Console.WriteLine($"EXPECTED RESULT: Udinese removed from array");
+            if (!watch.IsRunning)
+                watch.Restart();
             dynamicArray.Remove("Udinese");
-            foreach(var club in dynamicArray)
-            {
-                Console.WriteLine($"Club: {club}");
-            }
+            watch.Stop();
+
+            test_iterate_array(dynamicArray);
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------");
 
             Console.WriteLine($"OPERATION: Contains");
-            Console.WriteLine($"VALUE: Roma");
-            Console.WriteLine(dynamicArray.Contains("Roma"));
+            Console.WriteLine($"INPUT: Roma");
+            Console.WriteLine($"EXPECTED RESULT: True");
+            if (!watch.IsRunning)
+                watch.Restart();
+            Console.WriteLine($"RESULT: {dynamicArray.Contains("Roma")}");
+            
+            watch.Stop();
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
+            Console.WriteLine();
 
-            Console.WriteLine($"VALUE: Bari");
-            Console.WriteLine(dynamicArray.Contains("Bari"));
+            Console.WriteLine($"INPUT: Bari");
+            Console.WriteLine($"EXPECTED RESULT: False");
+            if (!watch.IsRunning)
+                watch.Restart();
+            Console.WriteLine($"RESULT: {dynamicArray.Contains("Bari")}");
+            watch.Stop();
+            
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");
             Console.WriteLine($"-----------------------------------------------------"); 
 
             Console.WriteLine($"OPERATION: indexOf");
-            Console.WriteLine($"VALUE: AC Milan");
-            Console.WriteLine($"INDEX: {dynamicArray.IndexOf("AC Milan")}");
-                  
+            Console.WriteLine($"INPUT: Roma");
+            Console.WriteLine($"EXPECTED RESULT: 1");
+            if (!watch.IsRunning)
+                watch.Restart();
+            Console.WriteLine($"RESULT: {dynamicArray.IndexOf("Roma")}");
+            watch.Stop();
+            
+            Console.WriteLine($"ELAPSED TIME: {watch.Elapsed}");      
             Console.WriteLine($"#####################################################");
         }
     }
