@@ -55,7 +55,6 @@ namespace ADP
         {
             return _queue.Count == 0;
         }
-
         public IEnumerator<T> GetEnumerator()
         {
             foreach(var queue in _queue.Values)
@@ -66,7 +65,6 @@ namespace ADP
                 }
             }
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

@@ -15,7 +15,6 @@ namespace ADP
     public class DynamicArray<T> : IEnumerable<T>
     {
         private T[] _storage;
-        private int _accessShift = 0;
         private int _effectiveSize = 0;
 
         private void ResizeStorageIfNeeded()
@@ -43,8 +42,8 @@ namespace ADP
         }
         public T this[int index]
         {
-            get => (T) _storage[index - _accessShift];
-            set => _storage[index - _accessShift] = value;
+            get => (T) _storage[index];
+            set => _storage[index] = value;
         }
         public void Add(T item)
         {

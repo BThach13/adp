@@ -15,7 +15,7 @@ namespace ADP
                 }
             }
             Console.WriteLine("DATATYPE: Integer");
-            Console.WriteLine("SIZE: {0} items", deque.Size);
+            Console.WriteLine("SIZE: {0} items", deque.Size());
         }
         private void test_readingFloat(float[] testCaseArray)
         {
@@ -28,7 +28,7 @@ namespace ADP
                 }
             }
             Console.WriteLine("DATATYPE: Float");
-            Console.WriteLine("SIZE: {0} items", deque.Size);
+            Console.WriteLine("SIZE: {0} items", deque.Size());
         }
         public void run_loadData_tests(TestCases testCases)
         {
