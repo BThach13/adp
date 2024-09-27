@@ -1,0 +1,15 @@
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\bin\Debug\net8.0\ADP_Implementations.exe
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\bin\Debug\net8.0\ADP_Implementations.deps.json
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\bin\Debug\net8.0\ADP_Implementations.runtimeconfig.json
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\bin\Debug\net8.0\ADP_Implementations.dll
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\bin\Debug\net8.0\ADP_Implementations.pdb
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.GeneratedMSBuildEditorConfig.editorconfig
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.AssemblyInfoInputs.cache
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.AssemblyInfo.cs
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.csproj.CoreCompileInputs.cache
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.sourcelink.json
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.dll
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\refint\ADP_Implementations.dll
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.pdb
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ADP_Implementations.genruntimeconfig.cache
+c:\_UserData\GitHub\Repos\adp\ADP_Implementations\obj\Debug\net8.0\ref\ADP_Implementations.dll
