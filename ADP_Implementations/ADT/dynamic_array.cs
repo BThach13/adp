@@ -38,7 +38,7 @@ public class DynamicArray<T>
             array[i] = array[i + 1];
         }
         count--;
-        array[count] = default;
+        array[count] = default!;
     }
 
     public int Size() {
