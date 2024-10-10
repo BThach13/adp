@@ -6,12 +6,12 @@ using System.ComponentModel;
     - Add(T item) - V
     - Get(int index) - V
     - InsertAt(int index, T item) - V
-    - IndexOf(T item) - X
+    - IndexOf(T item) - V
     - T? Find(T item) - X
-    - bool Contains(T item);
-    - bool Remove(T item);
+    - Contains(T item) - V
+    - Remove(T item) - V
     - RemoveAt(int index) - V
-    - Clear();
+    - Clear() - V
 */
 
 public class DynamicArray<T>
@@ -45,6 +45,19 @@ public class DynamicArray<T>
         _data[index] = item;
     }
 
+    public int IndexOf(T item) {
+        var comparer = EqualityComparer<T>.Default;
+        int index = -1;
+        for (int i = 0; i < _count; i++) {
+            if (comparer.Equals(item, _data[i])) {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
     public bool Contains(T item) {
         bool found = false;
         var comparer = EqualityComparer<T>.Default;
@@ -64,7 +77,7 @@ public class DynamicArray<T>
 
         for (var i = 0; i < _count; i++) {
             if (comparer.Equals(item, _data[i])) {
-                for (int j = 0; j < _count - 1; j++) {
+                for (int j = i; j < _count - 1; j++) {
                     _data[j] = _data[j + 1];
                 }
                 _count--;
@@ -80,6 +93,13 @@ public class DynamicArray<T>
         }
         _count--;
         _data[_count] = default!;
+    }
+
+    public void Clear() {
+        for (var i = 0; i < _count; i++) {
+            _data[i] = default!;
+        }
+        _count = 0;
     }
 
     public int Size() {

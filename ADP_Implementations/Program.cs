@@ -17,6 +17,8 @@ class Program
         Console.WriteLine("Size of dynamic array = {0}", dynamicArray.Size());
         dynamicArray.RemoveAt(1);
         dynamicArray.Print();
+        dynamicArray.Remove(75);
+        Console.WriteLine("Dynamic array contains 75 = {0}", dynamicArray.Contains(75));
         Console.WriteLine("Size of dynamic array = {0}", dynamicArray.Size());
         
     }

@@ -34,6 +34,18 @@ public class DynamicArrayTests
     }
 
     [Fact]
+    public void IndexOf_ShouldReturnIndexOfItem()
+    {
+        var dynamicArray = new DynamicArray<int>();
+        dynamicArray.Add(10);
+        dynamicArray.Add(20);
+        dynamicArray.Add(30);
+
+        Assert.Equal(3, dynamicArray.Size());
+        Assert.Equal(0, dynamicArray.IndexOf(10));
+    }
+
+    [Fact]
     public void Contains_ShouldContaintsElement()
     {
         var dynamicArray = new DynamicArray<int>();
@@ -81,5 +93,17 @@ public class DynamicArrayTests
 
         Assert.Equal(3, dynamicArray.Size());
         Assert.Equal(30, dynamicArray.Get(2));
+    }
+
+    [Fact]
+    public void Clear_ShouldEmptyArray()
+    {
+        var dynamicArray = new DynamicArray<int>(2);
+        dynamicArray.Add(10);
+        dynamicArray.Add(20);
+        dynamicArray.Add(30);
+        dynamicArray.Clear();
+
+        Assert.Equal(0, dynamicArray.Size());
     }
 }
