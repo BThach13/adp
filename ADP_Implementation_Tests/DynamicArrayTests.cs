@@ -23,14 +23,38 @@ public class DynamicArrayTests
     }
 
     [Fact]
-    public void Set_ShouldModifyElement()
+    public void InsertAt_ShouldModifyElement()
     {
         var dynamicArray = new DynamicArray<int>();
         dynamicArray.Add(10);
         dynamicArray.Add(20);
-        dynamicArray.Set(1, 25);
+        dynamicArray.InsertAt(1, 25);
 
         Assert.Equal(25, dynamicArray.Get(1));
+    }
+
+    [Fact]
+    public void Contains_ShouldContaintsElement()
+    {
+        var dynamicArray = new DynamicArray<int>();
+        dynamicArray.Add(10);
+        dynamicArray.Add(20);
+        dynamicArray.Add(30);
+
+        Assert.True(dynamicArray.Contains(20));
+    }
+
+    [Fact]
+    public void Remove_ShouldRemoveItem()
+    {
+        var dynamicArray = new DynamicArray<int>();
+        dynamicArray.Add(10);
+        dynamicArray.Add(20);
+        dynamicArray.Add(30);
+
+        dynamicArray.Remove(20);
+
+        Assert.False(dynamicArray.Contains(20));
     }
 
     [Fact]

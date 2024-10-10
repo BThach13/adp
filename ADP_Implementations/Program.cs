@@ -12,7 +12,7 @@ class Program
         dynamicArray.Add(100);
         Console.WriteLine("Size of dynamic array = {0}", dynamicArray.Size());
         Console.WriteLine("Value at index {0}: {1}", 0, dynamicArray.Get(0));
-        dynamicArray.Set(3, 125);
+        dynamicArray.InsertAt(3, 125);
         dynamicArray.Print();
         Console.WriteLine("Size of dynamic array = {0}", dynamicArray.Size());
         dynamicArray.RemoveAt(1);
