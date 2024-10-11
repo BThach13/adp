@@ -1,4 +1,5 @@
 namespace ADP_Implementation_Tests;
+using ADP_Implementations.DataStructures.DynamicArray;
 
 public class DynamicArrayTests
 {

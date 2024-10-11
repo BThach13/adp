@@ -1,3 +1,5 @@
+namespace ADP_Implementations.DataStructures.DynamicArray;
+
 /*
 ** To implement **
     - Add(T item) - V
