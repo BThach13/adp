@@ -2,15 +2,13 @@ namespace ADP_Implementations.DataStructures.DynamicArray;
 
 /*
 ** To implement **
-    - Add(T item) - V
-    - Get(int index) - V
-    - InsertAt(int index, T item) - V
-    - IndexOf(T item) - V
-    - T? Find(T item) - X
-    - Contains(T item) - V
-    - Remove(T item) - V
-    - RemoveAt(int index) - V
-    - Clear() - V
+    - [V]  Add(T element)
+    - [V]  Get(int index)
+    - [ ]  InsertAt(int index, T element)
+    - [V]  Remove(int index)
+    - [V]  RemoveAt(T element)
+    - [V]  Contains(T element)
+    - [V]  IndexOf(T element) or find(T element)
 */
 
 public class DynamicArray<T>
@@ -25,12 +23,12 @@ public class DynamicArray<T>
         _capacity = initialCapacity;
     }
 
-    public void Add(T item) {
+    public void Add(T element) {
         if (_count == _capacity) {
-            Console.WriteLine("Capacity reached while adding element {0}!", item);
+            Console.WriteLine("Capacity reached while adding element {0}!", element);
             Resize();
         }
-        _data[_count] = item;
+        _data[_count] = element;
         _count++;
     }
 
@@ -39,43 +37,41 @@ public class DynamicArray<T>
         return _data[index];
     }
 
-    public void InsertAt(int index, T item) {
+    public void InsertAt(int index, T element) {
         CheckIndex(index);
-        _data[index] = item;
+        _data[index] = element;
     }
 
-    public int IndexOf(T item) {
+    public int IndexOf(T element) {
         var comparer = EqualityComparer<T>.Default;
         int index = -1;
         for (int i = 0; i < _count; i++) {
-            if (comparer.Equals(item, _data[i])) {
+            if (comparer.Equals(element, _data[i])) {
                 index = i;
                 break;
             }
         }
-
         return index;
     }
 
-    public bool Contains(T item) {
+    public bool Contains(T element) {
         bool found = false;
         var comparer = EqualityComparer<T>.Default;
 
         for (var i = 0; i < _count; i++) {
-            if (comparer.Equals(item, _data[i])) {
+            if (comparer.Equals(element, _data[i])) {
                 found = true;
                 break;
             }
         }
-
         return found;
     }
 
-    public void Remove(T item) {
+    public void Remove(T element) {
         var comparer = EqualityComparer<T>.Default;
 
         for (var i = 0; i < _count; i++) {
-            if (comparer.Equals(item, _data[i])) {
+            if (comparer.Equals(element, _data[i])) {
                 for (int j = i; j < _count - 1; j++) {
                     _data[j] = _data[j + 1];
                 }
