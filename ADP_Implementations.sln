@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementations", "ADP_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementation_UnitTests", "ADP_Implementation_UnitTests\ADP_Implementation_UnitTests.csproj", "{67AF1912-6077-4FE3-8AA1-1D5A778559C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementations_BenchmarkTests", "ADP_Implementations_BenchmarkTests\ADP_Implementations_BenchmarkTests.csproj", "{C26A283B-3758-4CD1-816D-B03E3F15B481}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementations_HANTests", "ADP_Implementations_HANTests\ADP_Implementations_HANTests.csproj", "{C26A283B-3758-4CD1-816D-B03E3F15B481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementations_Benchmarks", "ADP_Implementations_Benchmarks\ADP_Implementations_Benchmarks.csproj", "{18F3804E-7689-4CBF-9E53-D5C826503BD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,9 @@ Global
 		{C26A283B-3758-4CD1-816D-B03E3F15B481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C26A283B-3758-4CD1-816D-B03E3F15B481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C26A283B-3758-4CD1-816D-B03E3F15B481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
