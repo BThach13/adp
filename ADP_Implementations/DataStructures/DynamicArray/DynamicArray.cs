@@ -25,7 +25,6 @@ public class DynamicArray<T>
 
     public void Add(T element) {
         if (_count == _capacity) {
-            Console.WriteLine("Capacity reached while adding element {0}!", element);
             Resize();
         }
         _data[_count] = element;
@@ -120,7 +119,7 @@ public class DynamicArray<T>
     }
 
     private void CheckIndex(int index) {
-        if (index >= _count || index < 0) {
+        if (index >= _capacity || index < 0) {
             throw new IndexOutOfRangeException("Index is out of range");
         }
     }

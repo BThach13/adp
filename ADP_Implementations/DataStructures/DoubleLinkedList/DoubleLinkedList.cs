@@ -6,10 +6,10 @@ namespace ADP_Implementations.DataStructures.DoubleLinkedList;
     - AddLast(T item) - V
     - InsertAt(int index, T item) - V
 
-    - RemoveFirst() - X
-    - RemoveLast() - X
-    - Remove(T item) - X
-    - RemoveAt(int index) - X
+    - RemoveFirst() - V
+    - RemoveLast() - V
+    - Remove(T item) - V
+    - RemoveAt(int index) - V
 
     - GetFirst() - V
     - GetLast() - V
@@ -85,6 +85,129 @@ public class DoubleLinkedList<T>
                 i++;
             }
             _count++;    
+        }
+    }
+
+    public T RemoveFirst()
+    {
+        if (_head == null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        var toRemove = _head;
+        if (_head.Next != null)
+        {
+            _head.Next.Prev = null;
+            _head = _head.Next;
+        }
+        else
+        {
+            _head = null;
+            _tail = null;
+        }
+
+        _count--;
+        return toRemove.Data;
+    }
+
+    public T RemoveLast()
+    {
+        if (_tail == null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        var toRemove = _tail;
+
+        if (_tail.Prev != null)
+        {
+            _tail.Prev.Next = null;
+            _tail = _tail.Prev;
+        }
+        else
+        {
+            _head = null;
+            _tail = null;
+        }
+
+        _count--;
+        return toRemove.Data;
+    }
+
+    public void Remove(T item)
+    {
+        var comparer = EqualityComparer<T>.Default;
+        var current = _head;
+
+        if (current == null)
+        {
+            return;
+        }
+
+        while (current != null)
+        {
+            if (comparer.Equals(current.Data, item))
+            {
+                if (current.Prev != null)
+                {
+                    current.Prev.Next = current.Next;
+                }
+                else
+                {
+                    _head = current.Next;
+                }
+
+                if (current.Next != null)
+                {
+                    current.Next.Prev = current.Prev;
+                }
+                else
+                {
+                    _tail = current.Prev;
+                }
+
+                _count--;
+            }
+
+            current = current.Next;
+        }
+    }
+
+    public void RemoveAt(int index)
+    {
+        CheckIndex(index);
+
+        var current = _head;
+        var i = 0;
+
+        while (current != null)
+        {
+            if (index == i)
+            {
+                if (current.Prev is not null)
+                {
+                    current.Prev.Next = current.Next;
+                }
+                else
+                {
+                    _head = current.Next;
+                }
+
+                if (current.Next is not null)
+                {
+                    current.Next.Prev = current.Prev;
+                }
+                else
+                {
+                    _tail = current.Prev;
+                }
+
+                _count--;
+            }
+
+            i++;
+            current = current.Next;
         }
     }
 
