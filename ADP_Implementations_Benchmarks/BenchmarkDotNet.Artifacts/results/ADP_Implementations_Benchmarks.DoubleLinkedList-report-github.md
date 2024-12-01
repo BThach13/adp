@@ -4,70 +4,60 @@ BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4460/23H2/2023Update/SunValley3)
 11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
 .NET SDK 8.0.402
   [Host]     : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
-  Job-BWDIFE : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-ORVRBA : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 InvocationCount=1  UnrollFactor=1  
 
 ```
-| Method               | N      | Mean          | Error        | StdDev        | Median       | Allocated |
-|--------------------- |------- |--------------:|-------------:|--------------:|-------------:|----------:|
-| **AddFirstBenchmark**    | **10**     |     **976.29 ns** |     **72.23 ns** |     **209.55 ns** |   **1,000.0 ns** |     **440 B** |
-| AddLastBenchmark     | 10     |     971.13 ns |     72.77 ns |     211.13 ns |   1,000.0 ns |     440 B |
-| SetBenchmark         | 10     |   1,245.36 ns |     74.13 ns |     215.07 ns |   1,200.0 ns |     440 B |
-| RemoveFirstBenchmark | 10     |     178.35 ns |     25.96 ns |      75.31 ns |     200.0 ns |     400 B |
-| RemoveLastBenchmark  | 10     |     126.80 ns |     30.06 ns |      87.22 ns |     100.0 ns |     400 B |
-| RemoveAtBenchmark    | 10     |     500.00 ns |     45.43 ns |     133.25 ns |     500.0 ns |     400 B |
-| GetFirstBenchmark    | 10     |     101.00 ns |     28.31 ns |      83.48 ns |     100.0 ns |     400 B |
-| GetLastBenchmark     | 10     |     107.00 ns |     23.74 ns |      70.00 ns |     100.0 ns |     400 B |
-| GetBenchmark         | 10     |     277.55 ns |     33.94 ns |      99.00 ns |     300.0 ns |     400 B |
-| ContainsBenchmark    | 10     |     624.49 ns |     36.53 ns |     106.55 ns |     600.0 ns |     400 B |
-| **AddFirstBenchmark**    | **99**     |     **942.27 ns** |     **65.03 ns** |     **188.65 ns** |     **900.0 ns** |     **440 B** |
-| AddLastBenchmark     | 99     |     911.00 ns |     64.83 ns |     191.17 ns |     900.0 ns |     440 B |
-| SetBenchmark         | 99     |   2,289.69 ns |    105.71 ns |     306.69 ns |   2,300.0 ns |     440 B |
-| RemoveFirstBenchmark | 99     |     198.99 ns |     28.19 ns |      82.68 ns |     200.0 ns |     400 B |
-| RemoveLastBenchmark  | 99     |     187.63 ns |     24.50 ns |      71.09 ns |     200.0 ns |     400 B |
-| RemoveAtBenchmark    | 99     |   1,310.00 ns |     60.21 ns |     177.53 ns |   1,250.0 ns |     400 B |
-| GetFirstBenchmark    | 99     |      72.15 ns |     17.36 ns |      45.11 ns |     100.0 ns |     400 B |
-| GetLastBenchmark     | 99     |     110.10 ns |     26.45 ns |      77.58 ns |     100.0 ns |     112 B |
-| GetBenchmark         | 99     |     770.00 ns |    101.63 ns |     299.66 ns |     800.0 ns |     400 B |
-| ContainsBenchmark    | 99     |   1,930.30 ns |    111.12 ns |     325.91 ns |   1,800.0 ns |     400 B |
-| **AddFirstBenchmark**    | **100**    |     **974.00 ns** |     **57.77 ns** |     **170.34 ns** |   **1,000.0 ns** |     **440 B** |
-| AddLastBenchmark     | 100    |   1,000.00 ns |     61.94 ns |     179.70 ns |   1,000.0 ns |     440 B |
-| SetBenchmark         | 100    |   2,218.56 ns |     87.08 ns |     252.62 ns |   2,200.0 ns |     440 B |
-| RemoveFirstBenchmark | 100    |     164.56 ns |     21.38 ns |      55.56 ns |     200.0 ns |     400 B |
-| RemoveLastBenchmark  | 100    |     204.04 ns |     27.52 ns |      80.71 ns |     200.0 ns |     400 B |
-| RemoveAtBenchmark    | 100    |   1,372.45 ns |     66.37 ns |     193.60 ns |   1,400.0 ns |     400 B |
-| GetFirstBenchmark    | 100    |     104.00 ns |     28.08 ns |      82.78 ns |     100.0 ns |     400 B |
-| GetLastBenchmark     | 100    |      74.68 ns |     16.84 ns |      43.76 ns |     100.0 ns |     400 B |
-| GetBenchmark         | 100    |     839.39 ns |    108.68 ns |     318.74 ns |     800.0 ns |     400 B |
-| ContainsBenchmark    | 100    |   2,015.00 ns |    125.92 ns |     371.29 ns |   1,900.0 ns |     400 B |
-| **AddFirstBenchmark**    | **1000**   |     **919.39 ns** |     **77.78 ns** |     **226.88 ns** |     **900.0 ns** |     **440 B** |
-| AddLastBenchmark     | 1000   |   1,053.16 ns |     75.14 ns |     215.59 ns |   1,050.0 ns |     104 B |
-| SetBenchmark         | 1000   |   8,909.79 ns |    687.71 ns |   1,995.18 ns |   8,150.0 ns |     440 B |
-| RemoveFirstBenchmark | 1000   |     209.28 ns |     26.36 ns |      76.49 ns |     200.0 ns |     400 B |
-| RemoveLastBenchmark  | 1000   |     201.03 ns |     31.27 ns |      90.71 ns |     200.0 ns |     400 B |
-| RemoveAtBenchmark    | 1000   |   9,995.88 ns |    950.67 ns |   2,758.05 ns |   9,800.0 ns |     400 B |
-| GetFirstBenchmark    | 1000   |     112.12 ns |     26.35 ns |      77.29 ns |     100.0 ns |     400 B |
-| GetLastBenchmark     | 1000   |     125.25 ns |     24.03 ns |      70.48 ns |     100.0 ns |     400 B |
-| GetBenchmark         | 1000   |   4,445.45 ns |    918.85 ns |   2,694.83 ns |   4,600.0 ns |     112 B |
-| ContainsBenchmark    | 1000   |  15,814.89 ns |    521.78 ns |   1,488.66 ns |  15,550.0 ns |     400 B |
-| **AddFirstBenchmark**    | **10000**  |   **1,102.56 ns** |     **62.43 ns** |     **161.14 ns** |   **1,100.0 ns** |     **440 B** |
-| AddLastBenchmark     | 10000  |   1,937.50 ns |    434.21 ns |   1,252.81 ns |   1,300.0 ns |     104 B |
-| SetBenchmark         | 10000  |  24,983.67 ns |    864.51 ns |   2,521.81 ns |  24,400.0 ns |     440 B |
-| RemoveFirstBenchmark | 10000  |     249.40 ns |     40.69 ns |     108.62 ns |     200.0 ns |     400 B |
-| RemoveLastBenchmark  | 10000  |     306.19 ns |     37.83 ns |     109.75 ns |     300.0 ns |     400 B |
-| RemoveAtBenchmark    | 10000  |  21,708.62 ns |    434.49 ns |     953.72 ns |  21,400.0 ns |     400 B |
-| GetFirstBenchmark    | 10000  |     170.79 ns |     20.50 ns |      56.81 ns |     200.0 ns |     400 B |
-| GetLastBenchmark     | 10000  |     210.00 ns |     21.54 ns |      60.06 ns |     200.0 ns |     400 B |
-| GetBenchmark         | 10000  |  14,926.00 ns |  1,995.48 ns |   5,883.73 ns |  14,550.0 ns |     400 B |
-| ContainsBenchmark    | 10000  |  31,723.96 ns |    634.99 ns |   1,832.10 ns |  31,250.0 ns |     400 B |
-| **AddFirstBenchmark**    | **100000** |   **3,461.29 ns** |    **394.77 ns** |   **1,119.88 ns** |   **3,200.0 ns** |     **440 B** |
-| AddLastBenchmark     | 100000 |   3,544.09 ns |    519.29 ns |   1,473.13 ns |   3,100.0 ns |     440 B |
-| SetBenchmark         | 100000 | 191,691.76 ns | 11,247.10 ns |  30,407.20 ns | 182,400.0 ns |     440 B |
-| RemoveFirstBenchmark | 100000 |   1,257.29 ns |    163.40 ns |     471.45 ns |   1,300.0 ns |     400 B |
-| RemoveLastBenchmark  | 100000 |   1,510.00 ns |    193.00 ns |     538.01 ns |   1,400.0 ns |     400 B |
-| RemoveAtBenchmark    | 100000 | 202,366.29 ns | 20,366.35 ns |  56,435.06 ns | 181,100.0 ns |     112 B |
-| GetFirstBenchmark    | 100000 |   1,062.22 ns |    220.85 ns |     615.63 ns |     900.0 ns |     400 B |
-| GetLastBenchmark     | 100000 |     881.91 ns |    142.07 ns |     405.33 ns |     900.0 ns |     400 B |
-| GetBenchmark         | 100000 | 102,786.02 ns | 24,129.22 ns |  68,450.60 ns |  87,100.0 ns |     400 B |
-| ContainsBenchmark    | 100000 | 281,444.51 ns | 42,602.85 ns | 119,462.96 ns | 239,050.0 ns |     400 B |
+| Method               | N      | Mean         | Error        | StdDev        | Median       | Allocated |
+|--------------------- |------- |-------------:|-------------:|--------------:|-------------:|----------:|
+| **AddFirstBenchmark**    | **10**     |   **1,661.6 ns** |    **132.12 ns** |     **387.48 ns** |   **1,700.0 ns** |     **152 B** |
+| AddLastBenchmark     | 10     |   1,842.7 ns |    113.65 ns |     327.91 ns |   1,900.0 ns |     440 B |
+| SetBenchmark         | 10     |   2,029.0 ns |    144.46 ns |     409.82 ns |   2,000.0 ns |     440 B |
+| RemoveFirstBenchmark | 10     |     279.6 ns |     57.40 ns |     167.43 ns |     300.0 ns |     400 B |
+| RemoveLastBenchmark  | 10     |     321.0 ns |     46.06 ns |     135.81 ns |     300.0 ns |     400 B |
+| RemoveAtBenchmark    | 10     |     630.3 ns |     63.03 ns |     184.86 ns |     600.0 ns |     400 B |
+| GetFirstBenchmark    | 10     |     157.1 ns |     29.94 ns |      87.34 ns |     200.0 ns |     400 B |
+| GetLastBenchmark     | 10     |     151.5 ns |     31.98 ns |      93.80 ns |     150.0 ns |     400 B |
+| GetBenchmark         | 10     |     454.1 ns |     55.89 ns |     163.04 ns |     450.0 ns |     400 B |
+| ContainsBenchmark    | 10     |     975.3 ns |     68.40 ns |     198.45 ns |   1,000.0 ns |     400 B |
+| **AddFirstBenchmark**    | **100**    |   **1,593.9 ns** |    **100.74 ns** |     **293.86 ns** |   **1,600.0 ns** |     **440 B** |
+| AddLastBenchmark     | 100    |   1,589.9 ns |    125.66 ns |     368.53 ns |   1,600.0 ns |     440 B |
+| SetBenchmark         | 100    |   3,579.4 ns |    201.29 ns |     583.98 ns |   3,500.0 ns |     440 B |
+| RemoveFirstBenchmark | 100    |     281.0 ns |     42.49 ns |     125.28 ns |     300.0 ns |     400 B |
+| RemoveLastBenchmark  | 100    |     245.5 ns |     50.21 ns |     147.27 ns |     200.0 ns |     400 B |
+| RemoveAtBenchmark    | 100    |   2,292.0 ns |    151.04 ns |     445.33 ns |   2,250.0 ns |     400 B |
+| GetFirstBenchmark    | 100    |     160.9 ns |     38.25 ns |     107.88 ns |     200.0 ns |     400 B |
+| GetLastBenchmark     | 100    |     131.2 ns |     34.07 ns |      96.66 ns |     100.0 ns |     400 B |
+| GetBenchmark         | 100    |   1,181.2 ns |    163.44 ns |     471.57 ns |   1,200.0 ns |     400 B |
+| ContainsBenchmark    | 100    |   3,276.5 ns |    198.79 ns |     579.87 ns |   3,200.0 ns |     400 B |
+| **AddFirstBenchmark**    | **1000**   |   **1,440.4 ns** |    **159.77 ns** |     **468.59 ns** |   **1,400.0 ns** |     **440 B** |
+| AddLastBenchmark     | 1000   |   2,111.6 ns |    164.57 ns |     472.18 ns |   2,200.0 ns |     440 B |
+| SetBenchmark         | 1000   |  13,103.2 ns |  1,042.07 ns |   2,956.18 ns |  12,400.0 ns |     440 B |
+| RemoveFirstBenchmark | 1000   |     372.3 ns |     61.55 ns |     175.61 ns |     300.0 ns |     112 B |
+| RemoveLastBenchmark  | 1000   |     341.9 ns |     37.23 ns |     105.63 ns |     300.0 ns |     400 B |
+| RemoveAtBenchmark    | 1000   |  11,924.7 ns |  1,147.25 ns |   3,291.67 ns |  10,950.0 ns |     400 B |
+| GetFirstBenchmark    | 1000   |     112.4 ns |     33.84 ns |      98.17 ns |     100.0 ns |     400 B |
+| GetLastBenchmark     | 1000   |     138.3 ns |     31.73 ns |      90.53 ns |     100.0 ns |     400 B |
+| GetBenchmark         | 1000   |   6,124.5 ns |  1,257.25 ns |   3,667.45 ns |   6,000.0 ns |     400 B |
+| ContainsBenchmark    | 1000   |  27,674.7 ns |  1,510.54 ns |   4,430.15 ns |  27,600.0 ns |     400 B |
+| **AddFirstBenchmark**    | **10000**  |   **1,789.8 ns** |    **228.64 ns** |     **629.73 ns** |   **1,500.0 ns** |     **104 B** |
+| AddLastBenchmark     | 10000  |   2,067.0 ns |    301.88 ns |     875.80 ns |   1,700.0 ns |     440 B |
+| SetBenchmark         | 10000  |  33,568.3 ns |  1,668.47 ns |   4,733.16 ns |  32,350.0 ns |     440 B |
+| RemoveFirstBenchmark | 10000  |     447.3 ns |     93.93 ns |     266.45 ns |     300.0 ns |     112 B |
+| RemoveLastBenchmark  | 10000  |     510.9 ns |    119.33 ns |     336.58 ns |     400.0 ns |     400 B |
+| RemoveAtBenchmark    | 10000  |  31,013.7 ns |  1,336.46 ns |   3,747.58 ns |  30,150.0 ns |     400 B |
+| GetFirstBenchmark    | 10000  |     439.6 ns |    113.40 ns |     327.18 ns |     300.0 ns |     400 B |
+| GetLastBenchmark     | 10000  |     191.0 ns |     49.46 ns |     137.05 ns |     200.0 ns |     400 B |
+| GetBenchmark         | 10000  |  20,023.0 ns |  2,977.17 ns |   8,778.27 ns |  20,500.0 ns |     400 B |
+| ContainsBenchmark    | 10000  |  48,237.4 ns |  2,946.70 ns |   8,262.86 ns |  45,200.0 ns |      64 B |
+| **AddFirstBenchmark**    | **100000** |   **5,487.6 ns** |    **732.21 ns** |   **2,124.28 ns** |   **5,100.0 ns** |     **440 B** |
+| AddLastBenchmark     | 100000 |   4,542.6 ns |    607.03 ns |   1,731.89 ns |   4,500.0 ns |     440 B |
+| SetBenchmark         | 100000 | 391,985.0 ns | 60,953.75 ns | 179,723.52 ns | 329,000.0 ns |     440 B |
+| RemoveFirstBenchmark | 100000 |   1,982.6 ns |    262.26 ns |     739.71 ns |   1,950.0 ns |     400 B |
+| RemoveLastBenchmark  | 100000 |   1,443.5 ns |    241.57 ns |     681.35 ns |   1,300.0 ns |     400 B |
+| RemoveAtBenchmark    | 100000 | 297,095.8 ns | 33,315.83 ns |  95,589.36 ns | 268,800.0 ns |     400 B |
+| GetFirstBenchmark    | 100000 |     929.9 ns |    144.12 ns |     418.12 ns |     900.0 ns |     400 B |
+| GetLastBenchmark     | 100000 |   1,317.0 ns |    262.12 ns |     747.85 ns |   1,100.0 ns |     400 B |
+| GetBenchmark         | 100000 | 136,773.1 ns | 24,681.19 ns |  70,016.44 ns | 126,600.0 ns |     400 B |
+| ContainsBenchmark    | 100000 | 309,062.1 ns | 39,809.08 ns | 114,219.73 ns | 261,700.0 ns |     400 B |

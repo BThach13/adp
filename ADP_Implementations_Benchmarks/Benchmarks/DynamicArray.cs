@@ -7,7 +7,7 @@ namespace ADP_Implementations_Benchmarks;
 public class DynamicArray
 {
     private DynamicArray<int> _list = null!;
-    [Params(99, 10, 100, 1_000, 10_000, 100_000)]
+    [Params(10, 100, 1000, 10000, 100000)]
     public int N;
     private Random _random = null!;
 

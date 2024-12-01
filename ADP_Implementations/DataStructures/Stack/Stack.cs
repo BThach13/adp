@@ -3,8 +3,7 @@ namespace ADP_Implementations.DataStructures.Stack;
 /*
     - [V]  Push(T element)
     - [V]  Pop()
-    - [X]  Top(int index, T element)
-    - [V]  Peek(int index)
+    - [V]  Peek()
     - [V]  IsEmpty()
     - [V]  Size()
 */
@@ -13,28 +12,32 @@ public class Stack<T>
 {
     private T[] _data;
     private int _count;
+    private int _top;
     private int _capacity;
 
     public Stack(int initialCapacity = 10) {
         _data = new T[initialCapacity];
-        _count = -1;
+        _top = -1;
+        _count = 0;
         _capacity = initialCapacity;
     }
 
     public void Push(T element) {
-        if (_count + 1 == _capacity)
+        if (_count == _capacity)
             ResizeUp();
 
         _count++;
-        _data[_count] = element;
+        _top++;
+        _data[_top] = element;
     }
 
     public T Pop() {
         CheckIndex();
-        var Top = _data[_count];
+        var Top = _data[_top];
         _count--;
+        _top--;
         
-        if (_count + 1 < _capacity / 2)
+        if (_count < _capacity / 2)
             ResizeDown();
         return Top;
     }
@@ -42,16 +45,16 @@ public class Stack<T>
     public T Peek()
     {
         CheckIndex();
-        return _data[_count];
+        return _data[_top];
     }
 
     public bool IsEmpty()
     {
-        return _count == -1;
+        return _top == -1;
     }
 
     public int Size() {
-        return _count + 1;
+        return _count;
     }
 
     private void ResizeUp() {
@@ -66,7 +69,7 @@ public class Stack<T>
 
     private void Resize() {
         T[] newArray = new T[_capacity];
-        for (int i = 0; i < _count + 1; i++)
+        for (int i = 0; i < _count; i++)
         {
             newArray[i] = _data[i];
         }
