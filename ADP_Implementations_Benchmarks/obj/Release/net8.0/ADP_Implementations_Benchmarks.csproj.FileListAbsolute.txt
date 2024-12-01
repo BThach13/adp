@@ -84,3 +84,8 @@ C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\obj\Release\net8.0\
 C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\obj\Release\net8.0\ADP_Implementations_Benchmarks.pdb
 C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\obj\Release\net8.0\ADP_Implementations_Benchmarks.genruntimeconfig.cache
 C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\obj\Release\net8.0\ref\ADP_Implementations_Benchmarks.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\ADP_Implementations.deps.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\ADP_Implementations.runtimeconfig.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\ADP_Implementations.exe
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\ADP_Implementations.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\ADP_Implementations.pdb

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.DoubleLinkedListBenchmarks-20241130-164851</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4460/23H2/2023Update/SunValley3)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-ABLFMZ : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method     </th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>AddFirstBenchmark</td><td>10</td><td>859.2 ns</td><td>73.65 ns</td><td>214.8 ns</td><td>900.0 ns</td><td>440 B</td>
+</tr><tr><td>AddFirstBenchmark</td><td>99</td><td>779.6 ns</td><td>55.52 ns</td><td>162.0 ns</td><td>750.0 ns</td><td>440 B</td>
+</tr><tr><td>AddFirstBenchmark</td><td>100</td><td>813.0 ns</td><td>75.09 ns</td><td>221.4 ns</td><td>900.0 ns</td><td>440 B</td>
+</tr><tr><td>AddFirstBenchmark</td><td>1000</td><td>942.8 ns</td><td>69.16 ns</td><td>200.6 ns</td><td>950.0 ns</td><td>440 B</td>
+</tr><tr><td>AddFirstBenchmark</td><td>10000</td><td>838.0 ns</td><td>65.70 ns</td><td>193.7 ns</td><td>800.0 ns</td><td>440 B</td>
+</tr><tr><td>AddFirstBenchmark</td><td>100000</td><td>706.5 ns</td><td>58.30 ns</td><td>165.4 ns</td><td>700.0 ns</td><td>440 B</td>
+</tr></tbody></table>
+</body>
+</html>

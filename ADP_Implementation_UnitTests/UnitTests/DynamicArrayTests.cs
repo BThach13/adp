@@ -24,12 +24,12 @@ public class DynamicArrayTests
     }
 
     [Fact]
-    public void InsertAt_ShouldModifyElement()
+    public void Set_ShouldModifyElement()
     {
         var dynamicArray = new DynamicArray<int>();
         dynamicArray.Add(10);
         dynamicArray.Add(20);
-        dynamicArray.InsertAt(1, 25);
+        dynamicArray.Set(1, 25);
 
         Assert.Equal(25, dynamicArray.Get(1));
     }

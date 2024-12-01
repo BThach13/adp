@@ -8,10 +8,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-        var doubleLinkedList = new DoubleLinkedList<int>();
         var dynamicArray = new DynamicArray<int>(2);
-
+        var doubleLinkedList = new DoubleLinkedList<int>();
         /*
             lijst_aflopend_2
             lijst_oplopend_2
@@ -37,14 +35,12 @@ class Program
             bool success = int.TryParse(x, out number);
             if (success)
             {
-                //dynamicArray.Add(Int32.Parse(x));
-                doubleLinkedList.AddFirst(Int32.Parse(x));
+                dynamicArray.Add(Int32.Parse(x));
+                //doubleLinkedList.AddFirst(Int32.Parse(x));
                 //doubleLinkedList.AddLast(Int32.Parse(x));
             }
             else
-            {
                 Console.WriteLine($"Attempted conversion of '{x ?? "<null>"}' failed.");
-            }
         }
 
         Stopwatch stopWatch = new Stopwatch();
@@ -55,13 +51,11 @@ class Program
             bool success = int.TryParse(x, out number);
             if (success)
             {
-                //dynamicArray.Remove(Int32.Parse(x));
-                doubleLinkedList.Remove(Int32.Parse(x));
+                dynamicArray.Remove(Int32.Parse(x));
+                //doubleLinkedList.Remove(Int32.Parse(x));
             }
             else
-            {
                 Console.WriteLine($"Attempted conversion of '{x ?? "<null>"}' failed.");
-            }
         }
         stopWatch.Stop();
         // Get the elapsed time as a TimeSpan value.
@@ -72,7 +66,5 @@ class Program
             ts.Hours, ts.Minutes, ts.Seconds,
             ts.Milliseconds / 10);
         Console.WriteLine("RunTime " + elapsedTime);
-        
-        //dynamicArray.Print();
     }
 }

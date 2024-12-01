@@ -1,10 +1,9 @@
 namespace ADP_Implementations.DataStructures.DynamicArray;
 
 /*
-** To implement **
     - [V]  Add(T element)
     - [V]  Get(int index)
-    - [ ]  InsertAt(int index, T element)
+    - [V]  Set(int index, T element)
     - [V]  Remove(int index)
     - [V]  RemoveAt(T element)
     - [V]  Contains(T element)
@@ -17,16 +16,16 @@ public class DynamicArray<T>
     private int _count;
     private int _capacity;
 
-    public DynamicArray(int initialCapacity = 1) {
+    public DynamicArray(int initialCapacity = 10) {
         _data = new T[initialCapacity];
         _count = 0;
         _capacity = initialCapacity;
     }
 
     public void Add(T element) {
-        if (_count == _capacity) {
-            Resize();
-        }
+        if (_count == _capacity)
+            ResizeUp();
+
         _data[_count] = element;
         _count++;
     }
@@ -36,21 +35,37 @@ public class DynamicArray<T>
         return _data[index];
     }
 
-    public void InsertAt(int index, T element) {
+    public void Set(int index, T element) {
         CheckIndex(index);
         _data[index] = element;
     }
 
-    public int IndexOf(T element) {
+    public void Remove(T element) {
         var comparer = EqualityComparer<T>.Default;
-        int index = -1;
-        for (int i = 0; i < _count; i++) {
+
+        for (var i = 0; i < _count; i++) {
             if (comparer.Equals(element, _data[i])) {
-                index = i;
+                for (int j = i; j < _count - 1; j++) {
+                    _data[j] = _data[j + 1];
+                }
+                _count--;
                 break;
             }
         }
-        return index;
+
+        if (_count < _capacity / 2)
+            ResizeDown();
+    }
+
+    public void RemoveAt(int index) {
+        CheckIndex(index);
+        for (int i = index; i < _count - 1; i++) {
+            _data[i] = _data[i + 1];
+        }
+        _count--;
+
+        if (_count < _capacity / 2)
+            ResizeDown();
     }
 
     public bool Contains(T element) {
@@ -66,27 +81,16 @@ public class DynamicArray<T>
         return found;
     }
 
-    public void Remove(T element) {
+    public int IndexOf(T element) {
         var comparer = EqualityComparer<T>.Default;
-
-        for (var i = 0; i < _count; i++) {
+        int index = -1;
+        for (int i = 0; i < _count; i++) {
             if (comparer.Equals(element, _data[i])) {
-                for (int j = i; j < _count - 1; j++) {
-                    _data[j] = _data[j + 1];
-                }
-                _count--;
+                index = i;
                 break;
             }
         }
-    }
-
-    public void RemoveAt(int index) {
-        CheckIndex(index);
-        for (int i = index; i < _count - 1; i++) {
-            _data[i] = _data[i + 1];
-        }
-        _count--;
-        _data[_count] = default!;
+        return index;
     }
 
     public void Clear() {
@@ -102,14 +106,22 @@ public class DynamicArray<T>
 
     public void Print() {
         for (int i = 0; i < _count; i++) {
-            Console.WriteLine(_data[i]);
+            Console.WriteLine($"Index: '{i}' - value: '{_data[i]}'");
         }
         Console.WriteLine();
     }
 
-    private void Resize() {
+    private void ResizeUp() {
         _capacity = _capacity * 2;
-        
+        Resize();
+    }
+
+    private void ResizeDown() {
+        _capacity = (int)Math.Ceiling((double)_capacity / 2);
+        Resize();
+    }
+
+    private void Resize() {
         T[] newArray = new T[_capacity];
         for (int i = 0; i < _count; i++)
         {

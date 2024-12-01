@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ADP_Implementations/1.0.0": {
+        "runtime": {
+          "ADP_Implementations.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ADP_Implementations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

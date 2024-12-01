@@ -6,3 +6,6 @@ dotnet build
 
 - Run the Tests:
 dotnet test
+
+
+dotnet run -c Release
