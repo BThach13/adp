@@ -5,8 +5,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        BenchmarkRunner.Run<DynamicArray>();
+        //BenchmarkRunner.Run<DynamicArray>();
         //BenchmarkRunner.Run<DoubleLinkedList>();
-        //BenchmarkRunner.Run<Stack>();
+        BenchmarkRunner.Run<Stack>();
     }
 }
