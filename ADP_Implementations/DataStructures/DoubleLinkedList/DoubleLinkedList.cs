@@ -50,7 +50,7 @@ public class DoubleLinkedList<T>
         Node<T>? Current = _head;
         int i = 0;
         T? foundItem = default;
-        while (Current is not null)
+        while (Current != null)
         {
             if (index == i)
             {

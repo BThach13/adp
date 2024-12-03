@@ -110,6 +110,7 @@ public class Tests {
         Console.WriteLine("Hawai8: " + PizzaList.Contains(Hawai8));
         Console.WriteLine("Pepperoni: " + PizzaList.Contains(Pepperoni));
 
+        Hawai8 = new Pizza("Hawai", 10);
         PizzaList.Remove(Hawai8);
         Console.WriteLine("Size of array: " + PizzaList.Size());
         Console.WriteLine("Hawai4: " + PizzaList.Contains(Hawai4));
