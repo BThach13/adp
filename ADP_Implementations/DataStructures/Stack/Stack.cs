@@ -37,6 +37,7 @@ public class Stack<T>
         _count--;
         _top--;
         
+        //Delen door aanpassen naar 3 of 4
         if (_count < _capacity / 2)
             ResizeDown();
         return Top;

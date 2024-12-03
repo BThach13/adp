@@ -7,7 +7,7 @@ public class Tests {
 
     public static void readJsonData() {
         var dynamicArray = new DynamicArray<int>(2);
-        var doubleLinkedList = new DoubleLinkedList<int>();
+        //var doubleLinkedList = new DoubleLinkedList<int>();
         /*
             lijst_aflopend_2
             lijst_oplopend_2
@@ -86,7 +86,8 @@ public class Tests {
         Console.WriteLine("Hawai8: " + PizzaArray.Contains(Hawai8));
         Console.WriteLine("Pepperoni: " + PizzaArray.Contains(Pepperoni));
 
-        PizzaArray.Remove(Hawai8);
+        Pizza Hawai4b = new Pizza("Hawai", 4);
+        PizzaArray.Remove(Hawai4b);
         Console.WriteLine("Size of array: " + PizzaArray.Size());
         Console.WriteLine("Hawai4: " + PizzaArray.Contains(Hawai4));
         Console.WriteLine("Hawai8: " + PizzaArray.Contains(Hawai8));

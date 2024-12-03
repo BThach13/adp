@@ -8,6 +8,8 @@ namespace ADP_Implementations.DataStructures.DynamicArray;
     - [V]  RemoveAt(T element)
     - [V]  Contains(T element)
     - [V]  IndexOf(T element) or find(T element)
+
+    EqualityComparer beter implementeren
 */
 
 public class DynamicArray<T>

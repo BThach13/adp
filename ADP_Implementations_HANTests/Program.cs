@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         //Tests.readJsonData();
-        //Tests.PizzaTest_DynamicArray();
-        Tests.PizzaTest_DoubleLinkedList();
+        Tests.PizzaTest_DynamicArray();
+        //Tests.PizzaTest_DoubleLinkedList();
     }
 }

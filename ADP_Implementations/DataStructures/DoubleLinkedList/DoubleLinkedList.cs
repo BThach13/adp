@@ -7,6 +7,9 @@ namespace ADP_Implementations.DataStructures.DoubleLinkedList;
     - [V]  Remove(int index)
     - [V]  RemoveAt(T element)
     - [V]  Contains(T element)
+    - [X]  IndexOf(T element) or find(T element) IMPLEMENTEREN
+
+    EqualityComparer beter implementeren
 */
 
 public class DoubleLinkedList<T>
