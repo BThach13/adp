@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>ADP_Implementations_Benchmarks.DynamicArray-20241202-234758</title>
+<title>ADP_Implementations_Benchmarks.DynamicArray-20241203-204243</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -17,44 +17,49 @@ BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4460/23H2/2023Update/SunValley3)
 11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
 .NET SDK 8.0.402
   [Host]     : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
-  Job-TEQDEJ : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-RJANJP : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 </code></pre>
 <pre><code>InvocationCount=1  UnrollFactor=1  
 </code></pre>
 
 <table>
-<thead><tr><th>Method     </th><th>N</th><th>Mean  </th><th>Error </th><th>StdDev</th><th>Median</th><th>Allocated</th>
+<thead><tr><th>Method     </th><th>N</th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>AddBenchmark</td><td>10</td><td>267.0 ns</td><td>45.49 ns</td><td>134.1 ns</td><td>300.0 ns</td><td>400 B</td>
-</tr><tr><td>SetBenchmark</td><td>10</td><td>1,308.2 ns</td><td>82.61 ns</td><td>241.0 ns</td><td>1,300.0 ns</td><td>400 B</td>
-</tr><tr><td>IndexOfBenchmark</td><td>10</td><td>1,050.5 ns</td><td>74.09 ns</td><td>217.3 ns</td><td>1,000.0 ns</td><td>400 B</td>
-</tr><tr><td>ContainsBenchmark</td><td>10</td><td>958.2 ns</td><td>79.06 ns</td><td>230.6 ns</td><td>1,000.0 ns</td><td>400 B</td>
-</tr><tr><td>RemoveBenchmark</td><td>10</td><td>2,431.6 ns</td><td>157.54 ns</td><td>452.0 ns</td><td>2,400.0 ns</td><td>552 B</td>
-</tr><tr><td>RemoveAtBenchmark</td><td>10</td><td>2,803.1 ns</td><td>231.28 ns</td><td>674.6 ns</td><td>2,700.0 ns</td><td>552 B</td>
-</tr><tr><td>AddBenchmark</td><td>100</td><td>5,937.5 ns</td><td>270.03 ns</td><td>779.1 ns</td><td>5,800.0 ns</td><td>1696 B</td>
-</tr><tr><td>SetBenchmark</td><td>100</td><td>5,747.9 ns</td><td>306.51 ns</td><td>884.4 ns</td><td>5,650.0 ns</td><td>400 B</td>
-</tr><tr><td>IndexOfBenchmark</td><td>100</td><td>5,537.1 ns</td><td>365.98 ns</td><td>1,061.8 ns</td><td>5,500.0 ns</td><td>400 B</td>
-</tr><tr><td>ContainsBenchmark</td><td>100</td><td>4,966.0 ns</td><td>345.41 ns</td><td>1,018.4 ns</td><td>4,950.0 ns</td><td>400 B</td>
-</tr><tr><td>RemoveBenchmark</td><td>100</td><td>4,592.9 ns</td><td>268.81 ns</td><td>784.1 ns</td><td>4,550.0 ns</td><td>552 B</td>
-</tr><tr><td>RemoveAtBenchmark</td><td>100</td><td>6,907.1 ns</td><td>460.28 ns</td><td>1,349.9 ns</td><td>6,900.0 ns</td><td>552 B</td>
-</tr><tr><td>AddBenchmark</td><td>1000</td><td>25,753.2 ns</td><td>1,798.75 ns</td><td>5,131.9 ns</td><td>24,250.0 ns</td><td>10728 B</td>
-</tr><tr><td>SetBenchmark</td><td>1000</td><td>53,154.1 ns</td><td>2,537.08 ns</td><td>7,400.8 ns</td><td>51,650.0 ns</td><td>400 B</td>
-</tr><tr><td>IndexOfBenchmark</td><td>1000</td><td>41,883.0 ns</td><td>2,874.43 ns</td><td>8,200.9 ns</td><td>39,500.0 ns</td><td>400 B</td>
-</tr><tr><td>ContainsBenchmark</td><td>1000</td><td>43,114.4 ns</td><td>2,780.23 ns</td><td>8,065.9 ns</td><td>42,300.0 ns</td><td>400 B</td>
-</tr><tr><td>RemoveBenchmark</td><td>1000</td><td>26,324.5 ns</td><td>2,263.18 ns</td><td>6,601.8 ns</td><td>25,750.0 ns</td><td>552 B</td>
-</tr><tr><td>RemoveAtBenchmark</td><td>1000</td><td>45,703.2 ns</td><td>3,018.78 ns</td><td>8,612.8 ns</td><td>43,300.0 ns</td><td>552 B</td>
-</tr><tr><td>AddBenchmark</td><td>10000</td><td>47,752.5 ns</td><td>2,862.20 ns</td><td>8,394.3 ns</td><td>47,400.0 ns</td><td>82480 B</td>
-</tr><tr><td>SetBenchmark</td><td>10000</td><td>114,379.1 ns</td><td>4,397.79 ns</td><td>12,331.9 ns</td><td>111,900.0 ns</td><td>400 B</td>
-</tr><tr><td>IndexOfBenchmark</td><td>10000</td><td>73,400.0 ns</td><td>3,161.28 ns</td><td>9,019.3 ns</td><td>71,950.0 ns</td><td>400 B</td>
-</tr><tr><td>ContainsBenchmark</td><td>10000</td><td>74,972.2 ns</td><td>3,575.67 ns</td><td>10,486.8 ns</td><td>73,650.0 ns</td><td>400 B</td>
-</tr><tr><td>RemoveBenchmark</td><td>10000</td><td>34,740.6 ns</td><td>2,154.84 ns</td><td>6,217.2 ns</td><td>32,500.0 ns</td><td>552 B</td>
-</tr><tr><td>RemoveAtBenchmark</td><td>10000</td><td>75,038.3 ns</td><td>2,788.71 ns</td><td>7,956.4 ns</td><td>72,950.0 ns</td><td>552 B</td>
-</tr><tr><td>AddBenchmark</td><td>100000</td><td>512,481.9 ns</td><td>22,116.06 ns</td><td>63,098.4 ns</td><td>506,800.0 ns</td><td>1311376 B</td>
-</tr><tr><td>SetBenchmark</td><td>100000</td><td>680,897.8 ns</td><td>22,632.35 ns</td><td>62,714.1 ns</td><td>671,100.0 ns</td><td>400 B</td>
-</tr><tr><td>IndexOfBenchmark</td><td>100000</td><td>378,222.0 ns</td><td>15,560.22 ns</td><td>43,632.5 ns</td><td>374,100.0 ns</td><td>400 B</td>
-</tr><tr><td>ContainsBenchmark</td><td>100000</td><td>452,152.0 ns</td><td>39,882.18 ns</td><td>117,593.5 ns</td><td>395,550.0 ns</td><td>400 B</td>
-</tr><tr><td>RemoveBenchmark</td><td>100000</td><td>156,261.4 ns</td><td>5,012.11 ns</td><td>13,804.8 ns</td><td>153,100.0 ns</td><td>552 B</td>
-</tr><tr><td>RemoveAtBenchmark</td><td>100000</td><td>425,826.1 ns</td><td>16,018.21 ns</td><td>45,179.7 ns</td><td>417,400.0 ns</td><td>552 B</td>
+</thead><tbody><tr><td>AddBenchmark</td><td>10</td><td>217.2 ns</td><td>31.20 ns</td><td>91.52 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>GetBenchmark</td><td>10</td><td>224.0 ns</td><td>38.30 ns</td><td>112.92 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>SetBenchmark</td><td>10</td><td>283.8 ns</td><td>39.78 ns</td><td>116.68 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>IndexOfBenchmark</td><td>10</td><td>491.9 ns</td><td>54.17 ns</td><td>158.87 ns</td><td>500.0 ns</td><td>400 B</td>
+</tr><tr><td>ContainsBenchmark</td><td>10</td><td>612.6 ns</td><td>49.61 ns</td><td>142.35 ns</td><td>600.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveBenchmark</td><td>10</td><td>474.7 ns</td><td>52.31 ns</td><td>153.43 ns</td><td>500.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveAtBenchmark</td><td>10</td><td>514.9 ns</td><td>44.20 ns</td><td>126.11 ns</td><td>500.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>100</td><td>262.9 ns</td><td>25.74 ns</td><td>71.32 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>GetBenchmark</td><td>100</td><td>251.5 ns</td><td>23.54 ns</td><td>69.05 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>SetBenchmark</td><td>100</td><td>289.9 ns</td><td>38.20 ns</td><td>112.03 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>IndexOfBenchmark</td><td>100</td><td>1,030.0 ns</td><td>142.14 ns</td><td>419.11 ns</td><td>1,100.0 ns</td><td>400 B</td>
+</tr><tr><td>ContainsBenchmark</td><td>100</td><td>1,377.6 ns</td><td>161.43 ns</td><td>470.91 ns</td><td>1,400.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveBenchmark</td><td>100</td><td>1,408.6 ns</td><td>61.64 ns</td><td>174.86 ns</td><td>1,400.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveAtBenchmark</td><td>100</td><td>1,534.1 ns</td><td>74.28 ns</td><td>208.28 ns</td><td>1,500.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>1000</td><td>227.3 ns</td><td>26.60 ns</td><td>78.01 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>GetBenchmark</td><td>1000</td><td>230.0 ns</td><td>38.11 ns</td><td>112.37 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>SetBenchmark</td><td>1000</td><td>303.1 ns</td><td>26.35 ns</td><td>76.02 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>IndexOfBenchmark</td><td>1000</td><td>7,827.0 ns</td><td>1,659.98 ns</td><td>4,894.50 ns</td><td>7,600.0 ns</td><td>400 B</td>
+</tr><tr><td>ContainsBenchmark</td><td>1000</td><td>6,832.0 ns</td><td>1,332.95 ns</td><td>3,930.25 ns</td><td>7,000.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveBenchmark</td><td>1000</td><td>12,008.2 ns</td><td>1,028.56 ns</td><td>3,000.37 ns</td><td>12,000.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveAtBenchmark</td><td>1000</td><td>12,085.7 ns</td><td>971.29 ns</td><td>2,833.31 ns</td><td>11,600.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>10000</td><td>276.8 ns</td><td>24.76 ns</td><td>72.60 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>GetBenchmark</td><td>10000</td><td>222.2 ns</td><td>28.22 ns</td><td>82.75 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>SetBenchmark</td><td>10000</td><td>319.4 ns</td><td>25.89 ns</td><td>75.52 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>IndexOfBenchmark</td><td>10000</td><td>15,072.9 ns</td><td>1,111.80 ns</td><td>3,207.80 ns</td><td>15,400.0 ns</td><td>400 B</td>
+</tr><tr><td>ContainsBenchmark</td><td>10000</td><td>14,309.4 ns</td><td>1,319.78 ns</td><td>3,807.86 ns</td><td>15,100.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveBenchmark</td><td>10000</td><td>21,107.1 ns</td><td>1,018.49 ns</td><td>2,987.06 ns</td><td>20,000.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveAtBenchmark</td><td>10000</td><td>20,147.8 ns</td><td>799.46 ns</td><td>2,228.58 ns</td><td>19,300.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>100000</td><td>328.1 ns</td><td>24.48 ns</td><td>70.64 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>GetBenchmark</td><td>100000</td><td>278.4 ns</td><td>27.80 ns</td><td>80.66 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>SetBenchmark</td><td>100000</td><td>485.7 ns</td><td>37.16 ns</td><td>108.41 ns</td><td>500.0 ns</td><td>400 B</td>
+</tr><tr><td>IndexOfBenchmark</td><td>100000</td><td>39,741.0 ns</td><td>6,255.78 ns</td><td>18,445.31 ns</td><td>37,600.0 ns</td><td>400 B</td>
+</tr><tr><td>ContainsBenchmark</td><td>100000</td><td>38,262.9 ns</td><td>4,674.27 ns</td><td>13,560.90 ns</td><td>37,200.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveBenchmark</td><td>100000</td><td>80,776.8 ns</td><td>3,533.69 ns</td><td>10,138.81 ns</td><td>81,900.0 ns</td><td>400 B</td>
+</tr><tr><td>RemoveAtBenchmark</td><td>100000</td><td>80,270.8 ns</td><td>3,683.31 ns</td><td>10,627.19 ns</td><td>79,850.0 ns</td><td>400 B</td>
 </tr></tbody></table>
 </body>
 </html>

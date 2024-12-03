@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>ADP_Implementations_Benchmarks.Stack-20241203-000259</title>
+<title>ADP_Implementations_Benchmarks.Stack-20241203-204410</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -17,26 +17,26 @@ BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4460/23H2/2023Update/SunValley3)
 11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
 .NET SDK 8.0.402
   [Host]     : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
-  Job-YNCUYQ : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-YOTSZK : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 </code></pre>
 <pre><code>InvocationCount=1  UnrollFactor=1  
 </code></pre>
 
 <table>
-<thead><tr><th>Method </th><th>N</th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median </th><th>Allocated</th>
+<thead><tr><th>Method </th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>PushBenchmark</td><td>10</td><td>1,572.73 ns</td><td>139.98 ns</td><td>410.53 ns</td><td>1,600.0000 ns</td><td>504 B</td>
-</tr><tr><td>PopBenchmark</td><td>10</td><td>125.26 ns</td><td>33.32 ns</td><td>95.61 ns</td><td>100.0000 ns</td><td>400 B</td>
-</tr><tr><td>PeekBenchmark</td><td>10</td><td>145.96 ns</td><td>36.34 ns</td><td>106.59 ns</td><td>150.0000 ns</td><td>400 B</td>
-</tr><tr><td>PushBenchmark</td><td>100</td><td>62.37 ns</td><td>25.94 ns</td><td>73.59 ns</td><td>0.0000 ns</td><td>400 B</td>
-</tr><tr><td>PopBenchmark</td><td>100</td><td>56.12 ns</td><td>28.73 ns</td><td>83.81 ns</td><td>0.0000 ns</td><td>400 B</td>
-</tr><tr><td>PeekBenchmark</td><td>100</td><td>177.78 ns</td><td>37.59 ns</td><td>110.25 ns</td><td>200.0000 ns</td><td>400 B</td>
-</tr><tr><td>PushBenchmark</td><td>1000</td><td>63.83 ns</td><td>23.47 ns</td><td>66.96 ns</td><td>100.0000 ns</td><td>400 B</td>
-</tr><tr><td>PopBenchmark</td><td>1000</td><td>146.39 ns</td><td>29.04 ns</td><td>84.24 ns</td><td>200.0000 ns</td><td>400 B</td>
-</tr><tr><td>PeekBenchmark</td><td>1000</td><td>137.37 ns</td><td>41.78 ns</td><td>122.55 ns</td><td>100.0000 ns</td><td>400 B</td>
-</tr><tr><td>PushBenchmark</td><td>10000</td><td>64.58 ns</td><td>25.63 ns</td><td>73.95 ns</td><td>0.0000 ns</td><td>400 B</td>
-</tr><tr><td>PopBenchmark</td><td>10000</td><td>137.23 ns</td><td>34.86 ns</td><td>99.44 ns</td><td>100.0000 ns</td><td>400 B</td>
-</tr><tr><td>PeekBenchmark</td><td>10000</td><td>148.94 ns</td><td>31.58 ns</td><td>90.10 ns</td><td>100.0000 ns</td><td>112 B</td>
+</thead><tbody><tr><td>PushBenchmark</td><td>10</td><td>78.79 ns</td><td>21.93 ns</td><td>64.32 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PopBenchmark</td><td>10</td><td>85.86 ns</td><td>24.84 ns</td><td>72.86 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PeekBenchmark</td><td>10</td><td>77.38 ns</td><td>15.67 ns</td><td>42.09 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PushBenchmark</td><td>100</td><td>85.71 ns</td><td>23.09 ns</td><td>67.35 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PopBenchmark</td><td>100</td><td>111.58 ns</td><td>25.35 ns</td><td>72.73 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PeekBenchmark</td><td>100</td><td>79.59 ns</td><td>22.54 ns</td><td>65.74 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PushBenchmark</td><td>1000</td><td>134.34 ns</td><td>27.19 ns</td><td>79.75 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PopBenchmark</td><td>1000</td><td>152.04 ns</td><td>24.23 ns</td><td>70.68 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PeekBenchmark</td><td>1000</td><td>69.23 ns</td><td>18.00 ns</td><td>46.45 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PushBenchmark</td><td>10000</td><td>79.38 ns</td><td>19.23 ns</td><td>55.79 ns</td><td>100.00 ns</td><td>400 B</td>
+</tr><tr><td>PopBenchmark</td><td>10000</td><td>173.74 ns</td><td>23.15 ns</td><td>67.89 ns</td><td>200.00 ns</td><td>400 B</td>
+</tr><tr><td>PeekBenchmark</td><td>10000</td><td>72.73 ns</td><td>22.09 ns</td><td>64.79 ns</td><td>50.00 ns</td><td>400 B</td>
 </tr></tbody></table>
 </body>
 </html>
