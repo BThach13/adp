@@ -1,8 +1,8 @@
 namespace ADP_Implementations.DataStructures.Deque;
 
 /*
-    - [X]  InsertLeft()
-    - [X]  InsertRight()
+    - [V]  InsertLeft()
+    - [V]  InsertRight()
     - [X]  DeleteLeft()
     - [X]  DeleteRight()
     - [X]  Size() - Optional
@@ -35,10 +35,56 @@ public class Deque<T>
             _tail = NewNode;
         }
         else {
-            NewNode.Prev = _head;
             _head.Next = NewNode;
+            NewNode.Prev = _head;
             _head = NewNode;
         }
         _count++;
+    }
+
+    public T DeleteLeft()
+    {
+        if (_tail == null)
+            throw new InvalidOperationException();
+
+        var toRemove = _tail;
+
+        if (_tail.Next != null)
+        {
+            _tail.Next.Prev = null;
+            _tail = _tail.Next;
+        }
+        else
+        {
+            _head = null;
+            _tail = null;
+        }
+        _count--;
+        return toRemove.Data;
+    }
+
+    public T DeleteRight()
+    {
+        if (_head == null)
+            throw new InvalidOperationException();
+
+        var toRemove = _head;
+        if (_head.Prev != null)
+        {
+            _head.Prev.Next = null;
+            _head = _head.Prev;
+        }
+        else
+        {
+            _head = null;
+            _tail = null;
+        }
+        _count--;
+        return toRemove.Data;
+    }
+
+    public int Size()
+    {
+        return _count;
     }
 }
