@@ -3,9 +3,9 @@ namespace ADP_Implementations.DataStructures.Deque;
 /*
     - [V]  InsertLeft()
     - [V]  InsertRight()
-    - [X]  DeleteLeft()
-    - [X]  DeleteRight()
-    - [X]  Size() - Optional
+    - [V]  DeleteLeft()
+    - [V]  DeleteRight()
+    - [V]  Size() - Optional
 */
 
 public class Deque<T>
