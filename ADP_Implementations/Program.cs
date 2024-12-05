@@ -2,6 +2,7 @@
 
 using ADP_Implementations.DataStructures.DynamicArray;
 using ADP_Implementations.DataStructures.Stack;
+using ADP_Implementations.DataStructures.Deque;
 
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -14,13 +15,12 @@ class Program
         //doubleLinkedList.AddFirst(30);
         //doubleLinkedList.AddLast(50);
         //doubleLinkedList.InsertAt(1, 40);
-        var stack = new Stack<int>();
+        //var stack = new Stack<int>();
+        var deque = new Deque<int>();
 
-        Console.WriteLine(stack.Size());
-        stack.Push(30);
-        stack.Push(25);
-        Console.WriteLine(stack.Peek());
-        Console.WriteLine(stack.Pop());
-        Console.WriteLine(stack.Peek());
+        deque.InsertLeft(1);
+        deque.InsertRight(2);
+
+
     }
 }

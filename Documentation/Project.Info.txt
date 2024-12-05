@@ -1,0 +1,16 @@
+Develop implementations of a series of algorithms and data structures
+
+[V] - Dynamic Array - Rework needed
+[V] - Doubly-linked list - Rework needed
+[V] - Stack - Rework needed
+[ ] - Deque
+[ ] - Priority queue
+[ ] - Binary search
+[ ] - Insertion sort
+[ ] - Selection sort
+[ ] - Quicksort
+[ ] - Parallele Merge sort
+[ ] - Hashtable
+[ ] - Graph / Graaf
+[ ] - Dijkstra's algorithm / Dijkstra’s kortstepadenalgoritme
+[ ] - AVL tree / AVL-zoekboom
