@@ -10,11 +10,9 @@ class Program
     static void Main(string[] args)
     {
         var deque = new Deque<int>();
-
-        deque.InsertLeft(1);
-        deque.InsertRight(2);
-        deque.InsertRight(3);
-        Console.WriteLine(deque.DeleteLeft());
+        deque.InsertLeft(10);
+        deque.InsertLeft(20);
+        deque.InsertLeft(30);
         Console.WriteLine(deque.DeleteLeft());
         Console.WriteLine(deque.Size());
     }

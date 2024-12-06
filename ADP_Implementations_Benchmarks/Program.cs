@@ -7,6 +7,12 @@ public class Program
     {
         //BenchmarkRunner.Run<DynamicArray>();
         //BenchmarkRunner.Run<DoubleLinkedList>();
-        BenchmarkRunner.Run<Stack>();
+        //BenchmarkRunner.Run<Stack>();
+        BenchmarkRunner.Run<Deque>();
+
+        // Run commands
+        // cd .\ADP_Implementations_Benchmarks\
+        // dotnet run -c Release
+
     }
 }
