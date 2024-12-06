@@ -9,6 +9,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        /*
         var pqueue = new PriorityQueue<int>();
         pqueue.Add(75);
         pqueue.Add(41);
@@ -41,5 +42,7 @@ class Program
             i++;
             Console.WriteLine("Name: {0}", pqueue2.Poll());
         }
+        */
+
     }
 }

@@ -5,6 +5,7 @@ using ADP_Implementations.DataStructures.Deque;
 using ADP_Implementations.DataStructures.DoubleLinkedList;
 using ADP_Implementations.DataStructures.DynamicArray;
 using ADP_Implementations.DataStructures.PriorityQueue;
+using ADP_Implementations.Algorithms.BinarySearch;
 
 public class Tests {
     public static void readJsonData(Utilities.Datastructures dataStructure, Utilities.JSonList listToTest) {
@@ -16,13 +17,13 @@ public class Tests {
 
         DataSet dataSet= new DataSet();
         string ListToTest = listToTest.ToString().ToLower();
-        var lijstenArray = dataSet.GetList(ListToTest);
+        var listAsArray = dataSet.GetList(ListToTest);
         Console.WriteLine($"List to read: '{ListToTest}'");
 
 
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
-        foreach(var x in lijstenArray) {
+        foreach(var x in listAsArray) {
             int number;
 
             bool success = int.TryParse(x, out number);
@@ -69,6 +70,11 @@ public class Tests {
         string elapsedTimeInNanoSeconds = String.Format("{0}",
             ts.TotalNanoseconds);
         Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
+    }
+
+    public static int binarySearchTest(int[] _array, int value)
+    {
+        return BinarySearch.Search(_array, value);
     }
 
     public static void PizzaTest_DynamicArray() {

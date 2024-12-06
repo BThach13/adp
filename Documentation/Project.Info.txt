@@ -3,8 +3,8 @@ Develop implementations of a series of algorithms and data structures
 [V] - Dynamic Array - Rework needed
 [V] - Doubly-linked list - Rework needed
 [V] - Stack - Rework needed
-[ ] - Deque
-[ ] - Priority queue
+[V] - Deque
+[V] - Priority queue
 [ ] - Binary search
 [ ] - Insertion sort
 [ ] - Selection sort
