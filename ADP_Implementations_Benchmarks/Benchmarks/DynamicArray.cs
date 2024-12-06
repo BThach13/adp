@@ -16,6 +16,7 @@ public class DynamicArray
         | ContainsBenchmark | 10     |    612.6 ns |    49.61 ns |    142.35 ns |    600.0 ns |     400 B |
         | RemoveBenchmark   | 10     |    474.7 ns |    52.31 ns |    153.43 ns |    500.0 ns |     400 B |
         | RemoveAtBenchmark | 10     |    514.9 ns |    44.20 ns |    126.11 ns |    500.0 ns |     400 B |
+        
         | AddBenchmark      | 100    |    262.9 ns |    25.74 ns |     71.32 ns |    300.0 ns |     400 B |
         | GetBenchmark      | 100    |    251.5 ns |    23.54 ns |     69.05 ns |    200.0 ns |     400 B |
         | SetBenchmark      | 100    |    289.9 ns |    38.20 ns |    112.03 ns |    300.0 ns |     400 B |
@@ -23,6 +24,7 @@ public class DynamicArray
         | ContainsBenchmark | 100    |  1,377.6 ns |   161.43 ns |    470.91 ns |  1,400.0 ns |     400 B |
         | RemoveBenchmark   | 100    |  1,408.6 ns |    61.64 ns |    174.86 ns |  1,400.0 ns |     400 B |
         | RemoveAtBenchmark | 100    |  1,534.1 ns |    74.28 ns |    208.28 ns |  1,500.0 ns |     400 B |
+        
         | AddBenchmark      | 1000   |    227.3 ns |    26.60 ns |     78.01 ns |    200.0 ns |     400 B |
         | GetBenchmark      | 1000   |    230.0 ns |    38.11 ns |    112.37 ns |    200.0 ns |     400 B |
         | SetBenchmark      | 1000   |    303.1 ns |    26.35 ns |     76.02 ns |    300.0 ns |     400 B |
@@ -30,6 +32,7 @@ public class DynamicArray
         | ContainsBenchmark | 1000   |  6,832.0 ns | 1,332.95 ns |  3,930.25 ns |  7,000.0 ns |     400 B |
         | RemoveBenchmark   | 1000   | 12,008.2 ns | 1,028.56 ns |  3,000.37 ns | 12,000.0 ns |     400 B |
         | RemoveAtBenchmark | 1000   | 12,085.7 ns |   971.29 ns |  2,833.31 ns | 11,600.0 ns |     400 B |
+        
         | AddBenchmark      | 10000  |    276.8 ns |    24.76 ns |     72.60 ns |    300.0 ns |     400 B |
         | GetBenchmark      | 10000  |    222.2 ns |    28.22 ns |     82.75 ns |    200.0 ns |     400 B |
         | SetBenchmark      | 10000  |    319.4 ns |    25.89 ns |     75.52 ns |    300.0 ns |     400 B |
@@ -37,6 +40,7 @@ public class DynamicArray
         | ContainsBenchmark | 10000  | 14,309.4 ns | 1,319.78 ns |  3,807.86 ns | 15,100.0 ns |     400 B |
         | RemoveBenchmark   | 10000  | 21,107.1 ns | 1,018.49 ns |  2,987.06 ns | 20,000.0 ns |     400 B |
         | RemoveAtBenchmark | 10000  | 20,147.8 ns |   799.46 ns |  2,228.58 ns | 19,300.0 ns |     400 B |
+        
         | AddBenchmark      | 100000 |    328.1 ns |    24.48 ns |     70.64 ns |    300.0 ns |     400 B |
         | GetBenchmark      | 100000 |    278.4 ns |    27.80 ns |     80.66 ns |    300.0 ns |     400 B |
         | SetBenchmark      | 100000 |    485.7 ns |    37.16 ns |    108.41 ns |    500.0 ns |     400 B |

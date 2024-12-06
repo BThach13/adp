@@ -8,7 +8,8 @@ public class Program
         //BenchmarkRunner.Run<DynamicArray>();
         //BenchmarkRunner.Run<DoubleLinkedList>();
         //BenchmarkRunner.Run<Stack>();
-        BenchmarkRunner.Run<Deque>();
+        //BenchmarkRunner.Run<Deque>();
+        BenchmarkRunner.Run<PriorityQueue>();
 
         // Run commands
         // cd .\ADP_Implementations_Benchmarks\

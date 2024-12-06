@@ -19,6 +19,7 @@ public class DoubleLinkedList
         | GetLastBenchmark     | 10     |     118.04 ns |     27.94 ns |     81.07 ns |     150.0 ns |     400 B |
         | GetBenchmark         | 10     |     529.29 ns |     57.48 ns |    168.58 ns |     500.0 ns |     400 B |
         | ContainsBenchmark    | 10     |   1,000.00 ns |     65.30 ns |    187.37 ns |   1,000.0 ns |     400 B |
+        
         | AddFirstBenchmark    | 100    |   1,490.62 ns |    131.15 ns |    378.38 ns |   1,400.0 ns |     440 B |
         | AddLastBenchmark     | 100    |   1,516.49 ns |     95.79 ns |    277.89 ns |   1,500.0 ns |     440 B |
         | SetBenchmark         | 100    |   3,505.26 ns |    168.56 ns |    483.64 ns |   3,500.0 ns |     440 B |
@@ -29,6 +30,7 @@ public class DoubleLinkedList
         | GetLastBenchmark     | 100    |     157.00 ns |     30.77 ns |     90.74 ns |     150.0 ns |     400 B |
         | GetBenchmark         | 100    |   1,182.00 ns |    187.96 ns |    554.21 ns |   1,100.0 ns |     400 B |
         | ContainsBenchmark    | 100    |   3,116.49 ns |    189.88 ns |    550.89 ns |   3,100.0 ns |     400 B |
+        
         | AddFirstBenchmark    | 1000   |   1,453.68 ns |    114.22 ns |    327.73 ns |   1,400.0 ns |     440 B |
         | AddLastBenchmark     | 1000   |   1,458.76 ns |    124.75 ns |    361.93 ns |   1,500.0 ns |     440 B |
         | SetBenchmark         | 1000   |  11,841.11 ns |    756.06 ns |  2,107.59 ns |  11,850.0 ns |     440 B |
@@ -39,6 +41,7 @@ public class DoubleLinkedList
         | GetLastBenchmark     | 1000   |      74.19 ns |     24.32 ns |     69.00 ns |     100.0 ns |     400 B |
         | GetBenchmark         | 1000   |   5,454.17 ns |  1,206.76 ns |  3,481.77 ns |   5,000.0 ns |     400 B |
         | ContainsBenchmark    | 1000   |  25,772.11 ns |  1,476.13 ns |  4,235.29 ns |  25,150.0 ns |     400 B |
+        
         | AddFirstBenchmark    | 10000  |   3,788.78 ns |    281.31 ns |    820.60 ns |   4,100.0 ns |     440 B |
         | AddLastBenchmark     | 10000  |   1,690.53 ns |    159.16 ns |    456.65 ns |   1,500.0 ns |     440 B |
         | SetBenchmark         | 10000  |  33,589.25 ns |  1,007.61 ns |  2,858.41 ns |  33,200.0 ns |     440 B |
@@ -49,6 +52,7 @@ public class DoubleLinkedList
         | GetLastBenchmark     | 10000  |     278.87 ns |     76.50 ns |    221.95 ns |     250.0 ns |     400 B |
         | GetBenchmark         | 10000  |  18,513.13 ns |  2,438.73 ns |  7,152.36 ns |  18,100.0 ns |     400 B |
         | ContainsBenchmark    | 10000  |  41,135.71 ns |  1,404.64 ns |  4,097.40 ns |  41,000.0 ns |     112 B |
+        
         | AddFirstBenchmark    | 100000 |   4,305.32 ns |    513.11 ns |  1,463.93 ns |   4,200.0 ns |     152 B |
         | AddLastBenchmark     | 100000 |   4,291.49 ns |    463.53 ns |  1,322.48 ns |   4,200.0 ns |     440 B |
         | SetBenchmark         | 100000 | 262,798.96 ns | 27,172.21 ns | 78,398.04 ns | 234,000.0 ns |     440 B |

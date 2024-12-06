@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.PriorityQueue-20241206-143321</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-QXMLUZ : .NET 8.0.8 (8.0.824.36612), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method </th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>AddBenchmark</td><td>10</td><td>2,148.5 ns</td><td>141.62 ns</td><td>415.36 ns</td><td>2,100.0 ns</td><td>440 B</td>
+</tr><tr><td>PeekBenchmark</td><td>10</td><td>125.0 ns</td><td>35.55 ns</td><td>104.81 ns</td><td>100.0 ns</td><td>400 B</td>
+</tr><tr><td>PollBenchmark</td><td>10</td><td>156.4 ns</td><td>30.65 ns</td><td>87.45 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>100</td><td>3,991.9 ns</td><td>178.29 ns</td><td>522.88 ns</td><td>4,000.0 ns</td><td>440 B</td>
+</tr><tr><td>PeekBenchmark</td><td>100</td><td>118.0 ns</td><td>32.11 ns</td><td>94.69 ns</td><td>100.0 ns</td><td>112 B</td>
+</tr><tr><td>PollBenchmark</td><td>100</td><td>243.0 ns</td><td>35.51 ns</td><td>104.69 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>1000</td><td>1,806.6 ns</td><td>209.15 ns</td><td>586.48 ns</td><td>1,700.0 ns</td><td>440 B</td>
+</tr><tr><td>PeekBenchmark</td><td>1000</td><td>262.8 ns</td><td>71.40 ns</td><td>203.72 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>PollBenchmark</td><td>1000</td><td>409.8 ns</td><td>91.69 ns</td><td>266.01 ns</td><td>350.0 ns</td><td>400 B</td>
+</tr><tr><td>AddBenchmark</td><td>10000</td><td>2,006.2 ns</td><td>179.13 ns</td><td>516.84 ns</td><td>1,950.0 ns</td><td>440 B</td>
+</tr><tr><td>PeekBenchmark</td><td>10000</td><td>699.0 ns</td><td>258.51 ns</td><td>745.87 ns</td><td>750.0 ns</td><td>400 B</td>
+</tr><tr><td>PollBenchmark</td><td>10000</td><td>945.8 ns</td><td>254.59 ns</td><td>730.48 ns</td><td>950.0 ns</td><td>400 B</td>
+</tr></tbody></table>
+</body>
+</html>
