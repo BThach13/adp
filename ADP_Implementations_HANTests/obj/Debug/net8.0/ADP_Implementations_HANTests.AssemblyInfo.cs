@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADP_Implementations_HANTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5c0ff3e6a4a4f8f056f0d0f0256cb144fd7a0e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5ba891743a08108d8d2085c094ecb04f613c803")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADP_Implementations_HANTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADP_Implementations_HANTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

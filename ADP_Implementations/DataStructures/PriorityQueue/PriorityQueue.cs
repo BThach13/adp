@@ -1,9 +1,9 @@
 namespace ADP_Implementations.DataStructures.PriorityQueue;
 
 /*
-    - [X]  Add()
-    - [X]  Peek()
-    - [X]  Poll()
+    - [V]  Add()
+    - [V]  Poll()
+    - [V]  Peek()
 */
 
 public class PriorityQueue<T> where T : IComparable<T>
@@ -22,19 +22,19 @@ public class PriorityQueue<T> where T : IComparable<T>
         
         if (_head.Data.CompareTo(item) > 0)
         {
-            NewNode.Next = _head;
+            NewNode.Prev = _head;
             _head = NewNode;
             return;
         }
 
         var current = _head;
-        while (current.Next != null && current.Next.Data.CompareTo(item) <= 0)
+        while (current.Prev != null && current.Prev.Data.CompareTo(item) <= 0)
         {
-            current = current.Next;
+            current = current.Prev;
         }
 
-        NewNode.Next = current.Next;
-        current.Next = NewNode;
+        NewNode.Prev = current.Prev;
+        current.Prev = NewNode;
 
         if (current == _tail)
         {
@@ -62,5 +62,13 @@ public class PriorityQueue<T> where T : IComparable<T>
         }
         
         return toReturn.Data;
+    }
+
+    public T? Peek()
+    {
+        if (_head == null)
+            return default;
+        else
+            return _head.Data;
     }
 }

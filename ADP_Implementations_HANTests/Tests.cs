@@ -4,6 +4,7 @@ using System.Diagnostics;
 using ADP_Implementations.DataStructures.Deque;
 using ADP_Implementations.DataStructures.DoubleLinkedList;
 using ADP_Implementations.DataStructures.DynamicArray;
+using ADP_Implementations.DataStructures.PriorityQueue;
 
 public class Tests {
     public static void readJsonData(Utilities.Datastructures dataStructure, Utilities.JSonList listToTest) {
@@ -11,6 +12,7 @@ public class Tests {
         var doubleLinkedList = new DoubleLinkedList<int>();
         var stack = new Stack<int>();
         var deque = new Deque<int>();
+        var pqueue = new PriorityQueue<int>();
 
         DataSet dataSet= new DataSet();
         string ListToTest = listToTest.ToString().ToLower();
@@ -41,6 +43,9 @@ public class Tests {
                     case Utilities.Datastructures.Deque:
                         deque.InsertRight(Int32.Parse(x));
                         break;
+                    case Utilities.Datastructures.PriorityQueue:
+                        pqueue.Add(Int32.Parse(x));
+                        break;
                     default:
                         Console.WriteLine("Structure does not exists!");
                         break;
@@ -62,7 +67,7 @@ public class Tests {
         */
 
         string elapsedTimeInNanoSeconds = String.Format("{0}",
-            ts.Nanoseconds);
+            ts.TotalNanoseconds);
         Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
     }
 

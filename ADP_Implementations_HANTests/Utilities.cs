@@ -7,7 +7,8 @@ public class Utilities
         DynamicArray = 1,
         DoubleLinkedList = 2,
         Stack = 3,
-        Deque = 4
+        Deque = 4,
+        PriorityQueue = 5
     }
 
     public enum JSonList
