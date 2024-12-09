@@ -74,7 +74,32 @@ public class Tests {
 
     public static int binarySearchTest(int[] _array, int value)
     {
-        return BinarySearch.Search(_array, value);
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        int result = BinarySearch.Search(_array, value, 0, _array.Length - 1);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+        Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
+        return result;
+    }
+
+    public static int binarySearchTest_DoWhile(int[] _array, int value)
+    {
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        int result = BinarySearch.Search_DoWhile(_array, value);
+        
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+        Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
+        return result;
     }
 
     public static void PizzaTest_DynamicArray() {
