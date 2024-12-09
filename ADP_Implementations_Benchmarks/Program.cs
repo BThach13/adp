@@ -9,7 +9,8 @@ public class Program
         //BenchmarkRunner.Run<DoubleLinkedList>();
         //BenchmarkRunner.Run<Stack>();
         //BenchmarkRunner.Run<Deque>();
-        BenchmarkRunner.Run<PriorityQueue>();
+        //BenchmarkRunner.Run<PriorityQueue>();
+        BenchmarkRunner.Run<BinarySearch>();
 
         // Run commands
         // cd .\ADP_Implementations_Benchmarks\
