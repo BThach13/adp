@@ -72,12 +72,12 @@ public class Tests {
         Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
     }
 
-    public static int binarySearchTest(int[] _array, int value)
+    public static int binarySearchTest(int[] _array, int value, int low, int high)
     {
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
 
-        int result = BinarySearch.Search(_array, value, 0, _array.Length - 1);
+        int result = BinarySearch.Search(_array, value, low, high);
 
         stopWatch.Stop();
         TimeSpan ts = stopWatch.Elapsed;

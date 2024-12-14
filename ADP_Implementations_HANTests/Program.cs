@@ -13,15 +13,17 @@ class Program
         //Tests.PizzaTest_DynamicArray();
         //Tests.PizzaTest_DoubleLinkedList();
 
-        int N = 100;
+        int N = 10;
         int[] _array = new int[N];
-        for (var i = 0; i < N; i++)
+        int _target = new Random().Next(0, N * 3);
+
+        for (int i = 0; i < N; i++)
         {
-            _array[i] = i*3;
+           _array[i] = i * 3;
         }
 
-        Console.WriteLine(Tests.binarySearchTest(_array, 750));
+        //Console.WriteLine(Tests.binarySearchTest(_array, _target, 0, _array.Length - 1));
 
-        Console.WriteLine(Tests.binarySearchTest_DoWhile(_array, 750));
+        Console.WriteLine(Tests.binarySearchTest_DoWhile(_array, _target));
     }
 }

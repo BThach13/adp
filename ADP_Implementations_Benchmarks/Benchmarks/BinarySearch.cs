@@ -39,4 +39,10 @@ public class BinarySearch
     {
         ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search(_array, _target, 0, _array.Length - 1);
     }
+
+    [Benchmark]
+    public void SearchBenchmarkDoWhile()
+    {
+        ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search_DoWhile(_array, _target);
+    }
 }
