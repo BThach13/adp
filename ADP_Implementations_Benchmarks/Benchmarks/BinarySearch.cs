@@ -24,8 +24,6 @@ public class BinarySearch
 
     [Params(10, 100, 1000, 10000, 100000)]
     public int N;
-    private Random _randomIndex = null!;
-    private Random _randomValue = null!;
 
     [IterationSetup]
     public void IterationSetup()
