@@ -6,13 +6,18 @@ namespace ADP_Implementations_Benchmarks;
 public class BinarySearch
 {
     /*
-        | Method          | N      | Mean     | Error    | StdDev    | Median   | Allocated |
-        |---------------- |------- |---------:|---------:|----------:|---------:|----------:|
-        | SearchBenchmark | 10     | 151.0 ns | 22.15 ns |  64.61 ns | 200.0 ns |     400 B |
-        | SearchBenchmark | 100    | 177.9 ns | 16.29 ns |  41.75 ns | 200.0 ns |     400 B |
-        | SearchBenchmark | 1000   | 333.0 ns | 47.91 ns | 138.99 ns | 300.0 ns |     400 B |
-        | SearchBenchmark | 10000  | 580.8 ns | 56.32 ns | 165.17 ns | 600.0 ns |     400 B |
-        | SearchBenchmark | 100000 | 606.7 ns | 65.99 ns | 191.43 ns | 550.0 ns |      64 B |
+        | Method                 | N      | Mean     | Error    | StdDev    | Median   | Allocated |
+        |----------------------- |------- |---------:|---------:|----------:|---------:|----------:|
+        | SearchBenchmark        | 10     | 180.6 ns | 24.44 ns |  71.30 ns | 200.0 ns |     400 B |
+        | SearchBenchmarkDoWhile | 10     | 223.2 ns | 26.15 ns |  76.70 ns | 200.0 ns |     400 B |
+        | SearchBenchmark        | 100    | 151.0 ns | 25.22 ns |  73.56 ns | 100.0 ns |     400 B |
+        | SearchBenchmarkDoWhile | 100    | 251.5 ns | 26.84 ns |  77.88 ns | 300.0 ns |     400 B |
+        | SearchBenchmark        | 1000   | 245.7 ns | 31.72 ns |  89.46 ns | 200.0 ns |     400 B |
+        | SearchBenchmarkDoWhile | 1000   | 440.4 ns | 34.60 ns |  98.72 ns | 500.0 ns |     400 B |
+        | SearchBenchmark        | 10000  | 394.0 ns | 48.40 ns | 142.72 ns | 400.0 ns |      64 B |
+        | SearchBenchmarkDoWhile | 10000  | 430.4 ns | 37.44 ns | 105.60 ns | 400.0 ns |      64 B |
+        | SearchBenchmark        | 100000 | 550.5 ns | 61.49 ns | 180.35 ns | 500.0 ns |     400 B |
+        | SearchBenchmarkDoWhile | 100000 | 610.4 ns | 48.36 ns | 139.53 ns | 600.0 ns |     400 B |
     */
     private int[] _array = null!;
     private int _target = 0;
