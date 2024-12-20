@@ -1,10 +1,10 @@
-using ADP_Implementations.DataStructures.DynamicArray;
 using BenchmarkDotNet.Attributes;
+using ADP_Implementations.DataStructures.DynamicArray;
 
 namespace ADP_Implementations_Benchmarks;
 
 [MemoryDiagnoser]
-public class DynamicArray
+public class DynamicArray_Benchmarks
 {
     /* 
         | Method            | N      | Mean        | Error       | StdDev       | Median      | Allocated |

@@ -1,10 +1,10 @@
-using ADP_Implementations.DataStructures.DoubleLinkedList;
 using BenchmarkDotNet.Attributes;
+using ADP_Implementations.DataStructures.DoubleLinkedList;
 
 namespace ADP_Implementations_Benchmarks;
 
 [MemoryDiagnoser]
-public class DoubleLinkedList
+public class DoubleLinkedList_Benchmarks
 {
     /*
         | Method               | N      | Mean          | Error        | StdDev       | Median       | Allocated |

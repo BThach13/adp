@@ -1,10 +1,9 @@
-using ADP_Implementations.DataStructures.Stack;
 using BenchmarkDotNet.Attributes;
 
 namespace ADP_Implementations_Benchmarks;
 
 [MemoryDiagnoser]
-public class Stack
+public class Stack_Benchmarks
 {
     /*
         | Method        | N     | Mean      | Error    | StdDev   | Median    | Allocated |

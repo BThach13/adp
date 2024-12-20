@@ -1,9 +1,10 @@
 using BenchmarkDotNet.Attributes;
+using ADP_Implementations.Algorithms.BinarySearch;
 
 namespace ADP_Implementations_Benchmarks;
 
 [MemoryDiagnoser]
-public class BinarySearch
+public class BinarySearch_Benchmarks
 {
     /*
         | Method                 | N      | Mean     | Error    | StdDev    | Median   | Allocated |
@@ -40,12 +41,12 @@ public class BinarySearch
     [Benchmark]
     public void SearchBenchmark()
     {
-        ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search(_array, _target, 0, _array.Length - 1);
+        BinarySearch.Search(_array, _target, 0, _array.Length - 1);
     }
 
     [Benchmark]
     public void SearchBenchmarkDoWhile()
     {
-        ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search_DoWhile(_array, _target);
+        BinarySearch.Search_DoWhile(_array, _target);
     }
 }

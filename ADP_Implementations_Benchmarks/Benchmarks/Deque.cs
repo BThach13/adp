@@ -1,10 +1,10 @@
-using ADP_Implementations.DataStructures.Deque;
 using BenchmarkDotNet.Attributes;
+using ADP_Implementations.DataStructures.Deque;
 
 namespace ADP_Implementations_Benchmarks;
 
 [MemoryDiagnoser]
-public class Deque
+public class Deque_Benchmarks
 {
     /*
         | Method               | N      | Mean       | Error     | StdDev      | Median     | Allocated |

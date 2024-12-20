@@ -1,10 +1,10 @@
-using ADP_Implementations.DataStructures.PriorityQueue;
 using BenchmarkDotNet.Attributes;
+using ADP_Implementations.DataStructures.PriorityQueue;
 
 namespace ADP_Implementations_Benchmarks;
 
 [MemoryDiagnoser]
-public class PriorityQueue
+public class PriorityQueue_Benchmarks
 {
     /*
         | Method        | N     | Mean       | Error     | StdDev    | Median     | Allocated |
