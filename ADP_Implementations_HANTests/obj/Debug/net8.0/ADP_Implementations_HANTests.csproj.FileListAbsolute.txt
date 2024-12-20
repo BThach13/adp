@@ -20,3 +20,5 @@ C:\_UserData\GitHub\Repos\adp\ADP_Implementations_HANTests\obj\Debug\net8.0\refi
 C:\_UserData\GitHub\Repos\adp\ADP_Implementations_HANTests\obj\Debug\net8.0\ADP_Implementations_HANTests.pdb
 C:\_UserData\GitHub\Repos\adp\ADP_Implementations_HANTests\obj\Debug\net8.0\ADP_Implementations_HANTests.genruntimeconfig.cache
 C:\_UserData\GitHub\Repos\adp\ADP_Implementations_HANTests\obj\Debug\net8.0\ref\ADP_Implementations_HANTests.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_HANTests\bin\Debug\net8.0\ADP_Implementation_TestData.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_HANTests\bin\Debug\net8.0\ADP_Implementation_TestData.pdb

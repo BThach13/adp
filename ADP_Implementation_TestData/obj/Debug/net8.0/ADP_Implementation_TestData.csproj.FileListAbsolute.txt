@@ -1,0 +1,12 @@
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\bin\Debug\net8.0\ADP_Implementation_TestData.deps.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\bin\Debug\net8.0\ADP_Implementation_TestData.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\bin\Debug\net8.0\ADP_Implementation_TestData.pdb
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.GeneratedMSBuildEditorConfig.editorconfig
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.AssemblyInfoInputs.cache
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.AssemblyInfo.cs
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.csproj.CoreCompileInputs.cache
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.sourcelink.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\refint\ADP_Implementation_TestData.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ADP_Implementation_TestData.pdb
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_TestData\obj\Debug\net8.0\ref\ADP_Implementation_TestData.dll

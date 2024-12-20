@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ADP_Implementations\ADP_Implementations.csproj" />
+    <ProjectReference Include="..\ADP_Implementation_TestData\ADP_Implementation_TestData.csproj" />
   </ItemGroup>
 
 </Project>

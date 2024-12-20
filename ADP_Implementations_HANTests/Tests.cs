@@ -1,6 +1,7 @@
 namespace ADP_Implementations_HANTests;
 
 using System.Diagnostics;
+using ADP_Implementation_TestData;
 using ADP_Implementations.DataStructures.Deque;
 using ADP_Implementations.DataStructures.DoubleLinkedList;
 using ADP_Implementations.DataStructures.DynamicArray;
@@ -69,7 +70,7 @@ public class Tests {
 
         string elapsedTimeInNanoSeconds = String.Format("{0}",
             ts.TotalNanoseconds);
-        Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
+        Console.WriteLine("RunTime in nanoseconds:  " + elapsedTimeInNanoSeconds);
     }
 
     public static int binarySearchTest(int[] _array, int value, int low, int high)
@@ -83,7 +84,7 @@ public class Tests {
         TimeSpan ts = stopWatch.Elapsed;
         string elapsedTimeInNanoSeconds = String.Format("{0}",
             ts.TotalNanoseconds);
-        Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
         return result;
     }
 
@@ -98,7 +99,7 @@ public class Tests {
         TimeSpan ts = stopWatch.Elapsed;
         string elapsedTimeInNanoSeconds = String.Format("{0}",
             ts.TotalNanoseconds);
-        Console.WriteLine("RunTime in nanoseconds " + elapsedTimeInNanoSeconds);
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
         return result;
     }
 

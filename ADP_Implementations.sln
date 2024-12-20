@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementations_HANTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementations_Benchmarks", "ADP_Implementations_Benchmarks\ADP_Implementations_Benchmarks.csproj", "{18F3804E-7689-4CBF-9E53-D5C826503BD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP_Implementation_TestData", "ADP_Implementation_TestData\ADP_Implementation_TestData.csproj", "{42AA941F-032F-4785-BDBB-FF74E3ED04DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18F3804E-7689-4CBF-9E53-D5C826503BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42AA941F-032F-4785-BDBB-FF74E3ED04DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AA941F-032F-4785-BDBB-FF74E3ED04DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AA941F-032F-4785-BDBB-FF74E3ED04DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AA941F-032F-4785-BDBB-FF74E3ED04DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

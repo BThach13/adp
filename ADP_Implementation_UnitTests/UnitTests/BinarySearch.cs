@@ -1,6 +1,7 @@
 namespace ADP_Implementation_UnitTests;
+using ADP_Implementations.Algorithms.BinarySearch;
 
-public class BinarySearch
+public class BinarySearchTests
 {
     [Fact]
     public void Search_ShouldReturnValue()
@@ -12,7 +13,7 @@ public class BinarySearch
             _array[i] = i;
         }
 
-        Assert.Equal(145, ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search(_array, 145, 0, _array.Length - 1));
+        Assert.Equal(145, BinarySearch.Search(_array, 145, 0, _array.Length - 1));
     }
 
     [Fact]
@@ -25,7 +26,7 @@ public class BinarySearch
             _array[i] = i;
         }
 
-        Assert.Equal(145, ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search_DoWhile(_array, 145));
+        Assert.Equal(145, BinarySearch.Search_DoWhile(_array, 145));
     }
 
     [Fact]
@@ -38,6 +39,6 @@ public class BinarySearch
             _array[i] = i;
         }
 
-        Assert.Equal(-1, ADP_Implementations.Algorithms.BinarySearch.BinarySearch.Search_DoWhile(_array, 2024));
+        Assert.Equal(-1, BinarySearch.Search_DoWhile(_array, 2024));
     }
 }

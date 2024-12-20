@@ -1,4 +1,4 @@
-namespace ADP_Implementations_HANTests;
+namespace ADP_Implementation_TestData;
 
 using System.Text.Json.Nodes;
 public class DataSet
