@@ -1718,6 +1718,16 @@
         "runtime": {
           "bin/placeholder/ADP_Implementations.dll": {}
         }
+      },
+      "ADP_Implementation_TestData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ADP_Implementation_TestData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ADP_Implementation_TestData.dll": {}
+        }
       }
     }
   },
@@ -5512,10 +5522,16 @@
       "type": "project",
       "path": "../ADP_Implementations/ADP_Implementations.csproj",
       "msbuildProject": "../ADP_Implementations/ADP_Implementations.csproj"
+    },
+    "ADP_Implementation_TestData/1.0.0": {
+      "type": "project",
+      "path": "../ADP_Implementation_TestData/ADP_Implementation_TestData.csproj",
+      "msbuildProject": "../ADP_Implementation_TestData/ADP_Implementation_TestData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ADP_Implementation_TestData >= 1.0.0",
       "ADP_Implementations >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "coverlet.collector >= 6.0.0",
@@ -5552,6 +5568,9 @@
           "projectReferences": {
             "C:\\_UserData\\GitHub\\Repos\\adp\\ADP_Implementations\\ADP_Implementations.csproj": {
               "projectPath": "C:\\_UserData\\GitHub\\Repos\\adp\\ADP_Implementations\\ADP_Implementations.csproj"
+            },
+            "C:\\_UserData\\GitHub\\Repos\\adp\\ADP_Implementation_TestData\\ADP_Implementation_TestData.csproj": {
+              "projectPath": "C:\\_UserData\\GitHub\\Repos\\adp\\ADP_Implementation_TestData\\ADP_Implementation_TestData.csproj"
             }
           }
         }

@@ -104,3 +104,5 @@ c:\_UserData\GitHub\Repos\adp\ADP_Implementation_UnitTests\obj\Debug\net8.0\refi
 c:\_UserData\GitHub\Repos\adp\ADP_Implementation_UnitTests\obj\Debug\net8.0\ADP_Implementation_UnitTests.pdb
 c:\_UserData\GitHub\Repos\adp\ADP_Implementation_UnitTests\obj\Debug\net8.0\ADP_Implementation_UnitTests.genruntimeconfig.cache
 c:\_UserData\GitHub\Repos\adp\ADP_Implementation_UnitTests\obj\Debug\net8.0\ref\ADP_Implementation_UnitTests.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_UnitTests\bin\Debug\net8.0\ADP_Implementation_TestData.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementation_UnitTests\bin\Debug\net8.0\ADP_Implementation_TestData.pdb

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "ADP_Implementation_UnitTests/1.0.0": {
         "dependencies": {
+          "ADP_Implementation_TestData": "1.0.0",
           "ADP_Implementations": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "coverlet.collector": "6.0.0",
@@ -1028,6 +1029,14 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "ADP_Implementation_TestData/1.0.0": {
+        "runtime": {
+          "ADP_Implementation_TestData.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1661,6 +1670,11 @@
       "hashPath": "xunit.runner.visualstudio.2.5.3.nupkg.sha512"
     },
     "ADP_Implementations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ADP_Implementation_TestData/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -47,7 +47,7 @@ class Program
         //InsertionSort
         string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
         Console.WriteLine("Unsorted list: {0}", string.Join(", ", _array));
-        InsertionSort.Sort(_array);
+        InsertionSort.Sort(_array, InsertionSort.SortDirection.Descending);
         Console.WriteLine("Sorted list: {0}", string.Join(", ", _array));
     }
 }
