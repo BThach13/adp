@@ -1,6 +1,7 @@
 ﻿namespace ADP_Implementations;
 
 using ADP_Implementations.Algorithms.InsertionSort;
+using ADP_Implementations.Algorithms.SelectionSort;
 
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -43,11 +44,19 @@ class Program
             Console.WriteLine("Name: {0}", pqueue2.Poll());
         }
         */
-        
+
+        string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];        
         //InsertionSort
-        string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
         Console.WriteLine("Unsorted list: {0}", string.Join(", ", _array));
+        InsertionSort.Sort(_array, InsertionSort.SortDirection.Ascending);
+        Console.WriteLine("Ascended sorted list: {0}", string.Join(", ", _array));
         InsertionSort.Sort(_array, InsertionSort.SortDirection.Descending);
-        Console.WriteLine("Sorted list: {0}", string.Join(", ", _array));
+        Console.WriteLine("Descended sorted list: {0}", string.Join(", ", _array));
+
+        //SelectionSort
+        SelectionSort.Sort(_array, SelectionSort.SortDirection.Ascending);
+        Console.WriteLine("Ascended sorted list: {0}", string.Join(", ", _array));
+        SelectionSort.Sort(_array, SelectionSort.SortDirection.Descending);
+        Console.WriteLine("Descended sorted list: {0}", string.Join(", ", _array));
     }
 }

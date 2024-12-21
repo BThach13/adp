@@ -8,28 +8,28 @@ public static class InsertionSort
         Descending
     }
 
-    public static void Sort<T>(T[] list, SortDirection direction = SortDirection.Ascending)
+    public static void Sort<T>(T[] array, SortDirection direction = SortDirection.Ascending)
     {
         var comparer = Comparer<T>.Default;
-        for (int i = 1; i < list.Length; i++)
+        for (int i = 1; i < array.Length; i++)
         {
-            T temp = list[i];
+            T temp = array[i];
             int j = i - 1;
 
             if (direction == SortDirection.Ascending) {
-                while (j >= 0 && comparer.Compare(list[j], temp) > 0)
+                while (j >= 0 && comparer.Compare(array[j], temp) > 0)
                 {
-                    list[j + 1] = list[j];
+                    array[j + 1] = array[j];
                     j--;
                 }
             } else {
-                while (j >= 0 && comparer.Compare(list[j], temp) < 0)
+                while (j >= 0 && comparer.Compare(array[j], temp) < 0)
                 {
-                    list[j + 1] = list[j];
+                    array[j + 1] = array[j];
                     j--;
                 }
             }
-            list[j + 1] = temp;
+            array[j + 1] = temp;
         }
     }
 }
