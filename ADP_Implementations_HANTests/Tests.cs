@@ -6,10 +6,10 @@ using ADP_Implementations.DataStructures.Deque;
 using ADP_Implementations.DataStructures.DoubleLinkedList;
 using ADP_Implementations.DataStructures.DynamicArray;
 using ADP_Implementations.DataStructures.PriorityQueue;
-using ADP_Implementations.Algorithms.BinarySearch;
+using ADP_Implementations.Algorithms;
 
 public class Tests {
-    public static void readJsonData(Utilities.Datastructures dataStructure, Utilities.JSonList listToTest) {
+    public static void ReadJsonData(Utilities.Datastructures dataStructure, Utilities.JSonList listToTest) {
         var dynamicArray = new DynamicArray<int>(15);
         var doubleLinkedList = new DoubleLinkedList<int>();
         var stack = new Stack<int>();
@@ -19,8 +19,9 @@ public class Tests {
         DataSet dataSet= new DataSet();
         string ListToTest = listToTest.ToString().ToLower();
         var listAsArray = dataSet.GetList(ListToTest);
+        
+        Console.WriteLine($"RUNNING: '{dataStructure}'");
         Console.WriteLine($"List to read: '{ListToTest}'");
-
 
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
@@ -30,7 +31,6 @@ public class Tests {
             bool success = int.TryParse(x, out number);
             if (success)
             {
-
                 switch (dataStructure)
                 {
                     case Utilities.Datastructures.DynamicArray:
@@ -60,21 +60,95 @@ public class Tests {
         // Get the elapsed time as a TimeSpan value.
         TimeSpan ts = stopWatch.Elapsed;
 
-        // Format and display the TimeSpan value.
-        /*
-        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            ts.Hours, ts.Minutes, ts.Seconds,
-            ts.Milliseconds / 10);
-        Console.WriteLine("RunTime " + elapsedTime);
-        */
-
-        string elapsedTimeInNanoSeconds = String.Format("{0}",
-            ts.TotalNanoseconds);
+        string elapsedTimeInNanoSeconds = String.Format("{0}", ts.TotalNanoseconds);
         Console.WriteLine("RunTime in nanoseconds:  " + elapsedTimeInNanoSeconds);
     }
 
-    public static int binarySearchTest(int[] _array, int value, int low, int high)
+    public static void RunBinarySearchWithOrderedList() {
+        DataSet dataSet= new DataSet();
+        var _stringArrray = dataSet.GetList("lijst_gesorteerd_10");
+        int[] _array = Array.ConvertAll(_stringArrray, int.Parse);
+        int _target = 9;
+
+        Console.WriteLine("RunBinarySearchWithOrderedList");
+        Console.WriteLine("Index: {0}", BinarySearchTest(_array, _target, 0, _array.Length - 1));
+        Console.WriteLine("Index: {0}", BinarySearchTest_DoWhile(_array, _target));
+    }
+
+    public static void RunBinarySearchWithUnorderedList() {
+        DataSet dataSet= new DataSet();
+        var _stringArrray = dataSet.GetList("lijst_willekeurig_10");
+        int[] _array = Array.ConvertAll(_stringArrray, int.Parse);
+        int _target = 9;
+
+        Console.WriteLine("RunBinarySearchWithUnorderedList");
+        Console.WriteLine("Index: {0}", BinarySearchTest(_array, _target, 0, _array.Length - 1));
+        Console.WriteLine("Index: {0}", BinarySearchTest_DoWhile(_array, _target));
+    }
+
+    public static void RunInsertionSort()
     {
+        Console.WriteLine("RUNNING: InsertionSort");
+        DataSet dataSet= new DataSet();
+        var _randomSorted = dataSet.GetList("lijst_willekeurig_10000");
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        InsertionSort.Sort(_randomSorted, InsertionSort.SortDirection.Ascending);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
+        Console.WriteLine("Sorted list: {0}", string.Join(", ", _randomSorted));            
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunSelectionSort()
+    {
+        Console.WriteLine("RUNNING: SelectionSortTest");
+        DataSet dataSet= new DataSet();
+        var _randomSorted = dataSet.GetList("lijst_willekeurig_10000");
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        SelectionSort.Sort(_randomSorted, SelectionSort.SortDirection.Ascending);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
+        Console.WriteLine("Sorted list: {0}", string.Join(", ", _randomSorted));            
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunQuickSort()
+    {
+        Console.WriteLine("RUNNING: QuickSort");
+        DataSet dataSet= new DataSet();
+        var _randomSorted = dataSet.GetList("lijst_willekeurig_10000");
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        QuickSort.Sort(_randomSorted, 0, _randomSorted.Length - 1);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
+        Console.WriteLine("Sorted list: {0}", string.Join(", ", _randomSorted));            
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    private static int BinarySearchTest(int[] _array, int value, int low, int high)
+    {
+        Console.WriteLine("RUNNING: binarySearchTest with recursive");
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
 
@@ -88,8 +162,9 @@ public class Tests {
         return result;
     }
 
-    public static int binarySearchTest_DoWhile(int[] _array, int value)
+    private static int BinarySearchTest_DoWhile(int[] _array, int value)
     {
+        Console.WriteLine("RUNNING: binarySearchTest with do while loop");
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
 

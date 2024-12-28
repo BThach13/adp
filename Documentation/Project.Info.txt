@@ -6,8 +6,8 @@ Develop implementations of a series of algorithms and data structures
 [V] - Deque
 [V] - Priority queue
 [V] - Binary search
-[ ] - Insertion sort
-[ ] - Selection sort
+[V] - Insertion sort
+[V] - Selection sort
 [ ] - Quicksort
 [ ] - Parallele Merge sort
 [ ] - Hashtable

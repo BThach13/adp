@@ -1,4 +1,4 @@
-namespace ADP_Implementations.Algorithms.SelectionSort;
+namespace ADP_Implementations.Algorithms;
 
 public static class SelectionSort
 {

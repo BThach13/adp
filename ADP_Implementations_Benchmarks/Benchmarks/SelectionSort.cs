@@ -1,5 +1,5 @@
 using BenchmarkDotNet.Attributes;
-using ADP_Implementations.Algorithms.SelectionSort;
+using ADP_Implementations.Algorithms;
 
 namespace ADP_Implementations_Benchmarks;
 
@@ -21,7 +21,7 @@ public class SelectionSort_Benchmarks
         | SortDescending | 100000 | 2,531,635.838 us |  7,526.1727 us | 6,284.6950 us | 2,531,378.800 us |     400 B |
     */
     private int[] _array = null!;
-    private Random _random = new Random(42);
+    private Random _random = new Random(36);
 
     [Params(10, 100, 1000, 10000, 100000)]
     public int N;

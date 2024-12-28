@@ -1,4 +1,4 @@
-namespace ADP_Implementations.Algorithms.InsertionSort;
+namespace ADP_Implementations.Algorithms;
 
 public static class InsertionSort
 {

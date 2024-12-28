@@ -1,7 +1,7 @@
 namespace ADP_Implementation_UnitTests;
 
 using ADP_Implementation_TestData;
-using ADP_Implementations.Algorithms.InsertionSort;
+using ADP_Implementations.Algorithms;
 
 public class InsertionSortTests
 {

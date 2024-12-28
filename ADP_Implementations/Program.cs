@@ -1,10 +1,6 @@
 ﻿namespace ADP_Implementations;
 
-using ADP_Implementations.Algorithms.InsertionSort;
-using ADP_Implementations.Algorithms.SelectionSort;
-
-using System.Text.Json;
-using System.Text.Json.Nodes;
+using ADP_Implementations.Algorithms;
 
 class Program
 {
@@ -58,5 +54,9 @@ class Program
         Console.WriteLine("Ascended sorted list: {0}", string.Join(", ", _array));
         SelectionSort.Sort(_array, SelectionSort.SortDirection.Descending);
         Console.WriteLine("Descended sorted list: {0}", string.Join(", ", _array));
+
+        //QuickSort
+        QuickSort.Sort(_array, 0, _array.Length - 1);
+        Console.WriteLine("Sorted list: {0}", string.Join(", ", _array)); 
     }
 }

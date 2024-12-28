@@ -1,4 +1,4 @@
-namespace ADP_Implementations.Algorithms.ParalleleMergeSort;
+namespace ADP_Implementations.Algorithms;
 
 public static class ParalleleMergeSort
 {

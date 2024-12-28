@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.QuickSort_Benchmarks-20241228-135732</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2605)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-MIAKQS : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method  </th><th>N</th><th>Mean  </th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>SortAscending</td><td>10</td><td>2.407 &mu;s</td><td>0.1417 &mu;s</td><td>0.4132 &mu;s</td><td>2.400 &mu;s</td><td>592 B</td>
+</tr><tr><td>SortDescending</td><td>10</td><td>2.926 &mu;s</td><td>0.1528 &mu;s</td><td>0.4506 &mu;s</td><td>2.950 &mu;s</td><td>712 B</td>
+</tr><tr><td>SortAscending</td><td>100</td><td>16.806 &mu;s</td><td>0.7678 &mu;s</td><td>2.2275 &mu;s</td><td>17.400 &mu;s</td><td>3136 B</td>
+</tr><tr><td>SortDescending</td><td>100</td><td>17.297 &mu;s</td><td>0.7490 &mu;s</td><td>2.1848 &mu;s</td><td>17.150 &mu;s</td><td>2656 B</td>
+</tr><tr><td>SortAscending</td><td>1000</td><td>158.093 &mu;s</td><td>7.5181 &mu;s</td><td>21.8114 &mu;s</td><td>149.500 &mu;s</td><td>24400 B</td>
+</tr><tr><td>SortDescending</td><td>1000</td><td>158.818 &mu;s</td><td>5.2491 &mu;s</td><td>14.6323 &mu;s</td><td>153.350 &mu;s</td><td>24784 B</td>
+</tr><tr><td>SortAscending</td><td>10000</td><td>1,343.950 &mu;s</td><td>26.2494 &mu;s</td><td>35.9305 &mu;s</td><td>1,346.400 &mu;s</td><td>241600 B</td>
+</tr><tr><td>SortDescending</td><td>10000</td><td>1,429.931 &mu;s</td><td>115.8030 &mu;s</td><td>330.3926 &mu;s</td><td>1,487.350 &mu;s</td><td>245728 B</td>
+</tr><tr><td>SortAscending</td><td>100000</td><td>7,765.564 &mu;s</td><td>307.0063 &mu;s</td><td>865.9168 &mu;s</td><td>7,413.200 &mu;s</td><td>2421208 B</td>
+</tr><tr><td>SortDescending</td><td>100000</td><td>7,816.876 &mu;s</td><td>164.1187 &mu;s</td><td>457.4973 &mu;s</td><td>7,670.050 &mu;s</td><td>2414248 B</td>
+</tr></tbody></table>
+</body>
+</html>

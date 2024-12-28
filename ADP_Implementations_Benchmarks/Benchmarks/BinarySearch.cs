@@ -1,5 +1,5 @@
 using BenchmarkDotNet.Attributes;
-using ADP_Implementations.Algorithms.BinarySearch;
+using ADP_Implementations.Algorithms;
 
 namespace ADP_Implementations_Benchmarks;
 

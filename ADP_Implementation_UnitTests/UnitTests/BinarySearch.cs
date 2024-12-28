@@ -1,5 +1,5 @@
 namespace ADP_Implementation_UnitTests;
-using ADP_Implementations.Algorithms.BinarySearch;
+using ADP_Implementations.Algorithms;
 
 public class BinarySearchTests
 {

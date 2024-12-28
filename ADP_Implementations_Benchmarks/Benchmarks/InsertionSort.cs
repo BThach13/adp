@@ -1,5 +1,5 @@
 using BenchmarkDotNet.Attributes;
-using ADP_Implementations.Algorithms.InsertionSort;
+using ADP_Implementations.Algorithms;
 
 namespace ADP_Implementations_Benchmarks;
 
@@ -21,7 +21,7 @@ public class InsertionSort_Benchmarks
         | SortDescending | 100000 | 1,753,830.586 us | 24,709.6582 us | 21,904.4684 us | 1,747,588.750 us |     400 B |
     */
     private int[] _array = null!;
-    private Random _random = new Random(42);
+    private Random _random = new Random(36);
 
     [Params(10, 100, 1000, 10000, 100000)]
     public int N;
