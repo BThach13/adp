@@ -39,8 +39,8 @@ public class SelectionSortTests
     public void SelectionSort_ShouldSortAscendingArrayInt()
     {
         DataSet dataSet= new DataSet();
-        var _descSorted = dataSet.GetList("lijst_gesorteerd_aflopend_3");
-        var _ascSorted = dataSet.GetList("lijst_gesorteerd_oplopend_3");
+        var _descSorted = dataSet.GetListAsInt("lijst_gesorteerd_aflopend_3");
+        var _ascSorted = dataSet.GetListAsInt("lijst_gesorteerd_oplopend_3");
         SelectionSort.Sort(_descSorted);
 
         Assert.Equal(_ascSorted, _descSorted);
@@ -50,8 +50,8 @@ public class SelectionSortTests
     public void SelectionSort_ShouldSortADescendingArrayInt()
     {
         DataSet dataSet= new DataSet();
-        var _ascSorted = dataSet.GetList("lijst_gesorteerd_oplopend_3");
-        var _descSorted = dataSet.GetList("lijst_gesorteerd_aflopend_3");
+        var _ascSorted = dataSet.GetListAsInt("lijst_gesorteerd_oplopend_3");
+        var _descSorted = dataSet.GetListAsInt("lijst_gesorteerd_aflopend_3");
         SelectionSort.Sort(_ascSorted, SelectionSort.SortDirection.Descending);
 
         Assert.Equal(_descSorted, _ascSorted);

@@ -10,12 +10,12 @@ public static class QuickSort
 
     public static void Sort<T>(T[] array, int start, int end, SortDirection direction = SortDirection.Ascending) where T : IComparable<T>
     {
-        if (start < end)
-        {
-            int pivot = Partition(array, start, end, direction);
-            Sort(array, start, pivot - 1, direction);
-            Sort(array, pivot + 1, end, direction);
-        }
+        if (start >= end)
+            return;
+
+        int pivot = Partition(array, start, end, direction);
+        Sort(array, start, pivot - 1, direction);
+        Sort(array, pivot + 1, end, direction);
     }
 
     private static int Partition<T>(T[] array, int start, int end, SortDirection direction) where T : IComparable<T>

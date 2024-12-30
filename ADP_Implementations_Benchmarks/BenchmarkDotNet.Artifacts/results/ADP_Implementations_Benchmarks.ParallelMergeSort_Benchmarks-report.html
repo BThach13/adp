@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.ParallelMergeSort_Benchmarks-20241230-122243</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2605)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-LKNGGC : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method              </th><th>N</th><th>Mean   </th><th>Error  </th><th>StdDev </th><th>Median </th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>ParallelSortWithTreshold1</td><td>10</td><td>38.039 &mu;s</td><td>2.9931 &mu;s</td><td>8.6834 &mu;s</td><td>37.400 &mu;s</td><td>-</td><td>-</td><td>5768 B</td>
+</tr><tr><td>ParallelSortWithTreshold2</td><td>10</td><td>44.124 &mu;s</td><td>4.5919 &mu;s</td><td>12.9517 &mu;s</td><td>44.050 &mu;s</td><td>-</td><td>-</td><td>5880 B</td>
+</tr><tr><td>ParallelSortWithTreshold4</td><td>10</td><td>46.853 &mu;s</td><td>3.8360 &mu;s</td><td>11.0063 &mu;s</td><td>45.550 &mu;s</td><td>-</td><td>-</td><td>5880 B</td>
+</tr><tr><td>ParallelSortWithTreshold6</td><td>10</td><td>43.537 &mu;s</td><td>4.0765 &mu;s</td><td>11.8266 &mu;s</td><td>40.800 &mu;s</td><td>-</td><td>-</td><td>5880 B</td>
+</tr><tr><td>ParallelSortWithTreshold10</td><td>10</td><td>2.299 &mu;s</td><td>0.1119 &mu;s</td><td>0.3281 &mu;s</td><td>2.200 &mu;s</td><td>-</td><td>-</td><td>1528 B</td>
+</tr><tr><td>ParalleleOnlySort</td><td>10</td><td>43.629 &mu;s</td><td>3.2570 &mu;s</td><td>9.3972 &mu;s</td><td>41.800 &mu;s</td><td>-</td><td>-</td><td>5880 B</td>
+</tr><tr><td>SeqOnlySort</td><td>10</td><td>1.917 &mu;s</td><td>0.0784 &mu;s</td><td>0.2249 &mu;s</td><td>1.900 &mu;s</td><td>-</td><td>-</td><td>768 B</td>
+</tr><tr><td>ParallelSortWithTreshold1</td><td>100</td><td>83.235 &mu;s</td><td>5.0780 &mu;s</td><td>14.8930 &mu;s</td><td>85.100 &mu;s</td><td>-</td><td>-</td><td>56208 B</td>
+</tr><tr><td>ParallelSortWithTreshold2</td><td>100</td><td>80.410 &mu;s</td><td>6.8668 &mu;s</td><td>19.8122 &mu;s</td><td>79.550 &mu;s</td><td>-</td><td>-</td><td>56320 B</td>
+</tr><tr><td>ParallelSortWithTreshold4</td><td>100</td><td>84.929 &mu;s</td><td>5.7305 &mu;s</td><td>16.5338 &mu;s</td><td>85.400 &mu;s</td><td>-</td><td>-</td><td>56520 B</td>
+</tr><tr><td>ParallelSortWithTreshold6</td><td>100</td><td>88.693 &mu;s</td><td>6.9722 &mu;s</td><td>20.2276 &mu;s</td><td>88.200 &mu;s</td><td>-</td><td>-</td><td>56096 B</td>
+</tr><tr><td>ParallelSortWithTreshold10</td><td>100</td><td>86.940 &mu;s</td><td>5.5471 &mu;s</td><td>16.2688 &mu;s</td><td>89.000 &mu;s</td><td>-</td><td>-</td><td>56320 B</td>
+</tr><tr><td>ParalleleOnlySort</td><td>100</td><td>94.838 &mu;s</td><td>5.5497 &mu;s</td><td>15.8335 &mu;s</td><td>94.300 &mu;s</td><td>-</td><td>-</td><td>56320 B</td>
+</tr><tr><td>SeqOnlySort</td><td>100</td><td>23.843 &mu;s</td><td>0.9683 &mu;s</td><td>2.7784 &mu;s</td><td>24.000 &mu;s</td><td>-</td><td>-</td><td>5624 B</td>
+</tr><tr><td>ParallelSortWithTreshold1</td><td>1000</td><td>279.575 &mu;s</td><td>6.7557 &mu;s</td><td>19.1648 &mu;s</td><td>277.700 &mu;s</td><td>-</td><td>-</td><td>570752 B</td>
+</tr><tr><td>ParallelSortWithTreshold2</td><td>1000</td><td>308.522 &mu;s</td><td>6.9246 &mu;s</td><td>19.7563 &mu;s</td><td>306.950 &mu;s</td><td>-</td><td>-</td><td>570776 B</td>
+</tr><tr><td>ParallelSortWithTreshold4</td><td>1000</td><td>301.560 &mu;s</td><td>9.8648 &mu;s</td><td>28.3038 &mu;s</td><td>299.300 &mu;s</td><td>-</td><td>-</td><td>571320 B</td>
+</tr><tr><td>ParallelSortWithTreshold6</td><td>1000</td><td>282.017 &mu;s</td><td>7.3001 &mu;s</td><td>20.3497 &mu;s</td><td>277.850 &mu;s</td><td>-</td><td>-</td><td>570240 B</td>
+</tr><tr><td>ParallelSortWithTreshold10</td><td>1000</td><td>314.819 &mu;s</td><td>7.4977 &mu;s</td><td>21.5124 &mu;s</td><td>314.000 &mu;s</td><td>-</td><td>-</td><td>570896 B</td>
+</tr><tr><td>ParalleleOnlySort</td><td>1000</td><td>282.638 &mu;s</td><td>6.9661 &mu;s</td><td>19.7616 &mu;s</td><td>281.100 &mu;s</td><td>-</td><td>-</td><td>571296 B</td>
+</tr><tr><td>SeqOnlySort</td><td>1000</td><td>230.887 &mu;s</td><td>4.5063 &mu;s</td><td>11.3880 &mu;s</td><td>229.500 &mu;s</td><td>-</td><td>-</td><td>64728 B</td>
+</tr><tr><td>ParallelSortWithTreshold1</td><td>10000</td><td>2,680.263 &mu;s</td><td>113.5534 &mu;s</td><td>334.8148 &mu;s</td><td>2,640.600 &mu;s</td><td>-</td><td>-</td><td>5835952 B</td>
+</tr><tr><td>ParallelSortWithTreshold2</td><td>10000</td><td>2,527.801 &mu;s</td><td>138.5772 &mu;s</td><td>404.2364 &mu;s</td><td>2,441.400 &mu;s</td><td>-</td><td>-</td><td>5835880 B</td>
+</tr><tr><td>ParallelSortWithTreshold4</td><td>10000</td><td>2,569.045 &mu;s</td><td>151.6975 &mu;s</td><td>440.1020 &mu;s</td><td>2,421.400 &mu;s</td><td>-</td><td>-</td><td>5836744 B</td>
+</tr><tr><td>ParallelSortWithTreshold6</td><td>10000</td><td>2,459.089 &mu;s</td><td>84.4207 &mu;s</td><td>244.9198 &mu;s</td><td>2,475.400 &mu;s</td><td>-</td><td>-</td><td>5836856 B</td>
+</tr><tr><td>ParallelSortWithTreshold10</td><td>10000</td><td>2,599.945 &mu;s</td><td>130.0672 &mu;s</td><td>383.5060 &mu;s</td><td>2,652.500 &mu;s</td><td>-</td><td>-</td><td>5835520 B</td>
+</tr><tr><td>ParalleleOnlySort</td><td>10000</td><td>2,584.200 &mu;s</td><td>161.3736 &mu;s</td><td>468.1740 &mu;s</td><td>2,509.400 &mu;s</td><td>-</td><td>-</td><td>5836880 B</td>
+</tr><tr><td>SeqOnlySort</td><td>10000</td><td>1,902.305 &mu;s</td><td>254.3988 &mu;s</td><td>750.1006 &mu;s</td><td>2,255.500 &mu;s</td><td>-</td><td>-</td><td>792440 B</td>
+</tr><tr><td>ParallelSortWithTreshold1</td><td>100000</td><td>20,649.171 &mu;s</td><td>2,193.8750 &mu;s</td><td>6,434.2562 &mu;s</td><td>17,117.400 &mu;s</td><td>9000.0000</td><td>-</td><td>59634712 B</td>
+</tr><tr><td>ParallelSortWithTreshold2</td><td>100000</td><td>20,125.658 &mu;s</td><td>1,767.2242 &mu;s</td><td>5,098.8463 &mu;s</td><td>17,761.000 &mu;s</td><td>9000.0000</td><td>-</td><td>59637624 B</td>
+</tr><tr><td>ParallelSortWithTreshold4</td><td>100000</td><td>17,507.568 &mu;s</td><td>516.2535 &mu;s</td><td>1,377.9851 &mu;s</td><td>17,099.250 &mu;s</td><td>9000.0000</td><td>1000.0000</td><td>59636720 B</td>
+</tr><tr><td>ParallelSortWithTreshold6</td><td>100000</td><td>20,099.330 &mu;s</td><td>546.9119 &mu;s</td><td>1,459.8188 &mu;s</td><td>19,725.000 &mu;s</td><td>9000.0000</td><td>-</td><td>59637112 B</td>
+</tr><tr><td>ParallelSortWithTreshold10</td><td>100000</td><td>19,663.997 &mu;s</td><td>451.9474 &mu;s</td><td>1,237.1989 &mu;s</td><td>19,368.100 &mu;s</td><td>9000.0000</td><td>-</td><td>59636680 B</td>
+</tr><tr><td>ParalleleOnlySort</td><td>100000</td><td>20,142.794 &mu;s</td><td>499.2868 &mu;s</td><td>1,349.8509 &mu;s</td><td>20,176.900 &mu;s</td><td>9000.0000</td><td>1000.0000</td><td>59637344 B</td>
+</tr><tr><td>SeqOnlySort</td><td>100000</td><td>9,573.760 &mu;s</td><td>190.2120 &mu;s</td><td>542.6857 &mu;s</td><td>9,503.750 &mu;s</td><td>1000.0000</td><td>-</td><td>9231608 B</td>
+</tr></tbody></table>
+</body>
+</html>

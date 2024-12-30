@@ -66,8 +66,7 @@ public class Tests {
 
     public static void RunBinarySearchWithOrderedList() {
         DataSet dataSet= new DataSet();
-        var _stringArrray = dataSet.GetList("lijst_gesorteerd_10");
-        int[] _array = Array.ConvertAll(_stringArrray, int.Parse);
+        var _array = dataSet.GetListAsInt("lijst_gesorteerd_10");
         int _target = 9;
 
         Console.WriteLine("RunBinarySearchWithOrderedList");
@@ -77,8 +76,7 @@ public class Tests {
 
     public static void RunBinarySearchWithUnorderedList() {
         DataSet dataSet= new DataSet();
-        var _stringArrray = dataSet.GetList("lijst_willekeurig_10");
-        int[] _array = Array.ConvertAll(_stringArrray, int.Parse);
+        var _array = dataSet.GetListAsInt("lijst_willekeurig_10");
         int _target = 9;
 
         Console.WriteLine("RunBinarySearchWithUnorderedList");
@@ -90,7 +88,7 @@ public class Tests {
     {
         Console.WriteLine("RUNNING: InsertionSort");
         DataSet dataSet= new DataSet();
-        var _randomSorted = dataSet.GetList("lijst_willekeurig_10000");
+        var _randomSorted = dataSet.GetListAsInt("lijst_willekeurig_10000");
 
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
@@ -110,7 +108,7 @@ public class Tests {
     {
         Console.WriteLine("RUNNING: SelectionSortTest");
         DataSet dataSet= new DataSet();
-        var _randomSorted = dataSet.GetList("lijst_willekeurig_10000");
+        var _randomSorted = dataSet.GetListAsInt("lijst_willekeurig_10000");
 
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
@@ -130,7 +128,7 @@ public class Tests {
     {
         Console.WriteLine("RUNNING: QuickSort");
         DataSet dataSet= new DataSet();
-        var _randomSorted = dataSet.GetList("lijst_willekeurig_10000");
+        var _randomSorted = dataSet.GetListAsInt("lijst_willekeurig_10000");
 
         Stopwatch stopWatch = new Stopwatch();
         stopWatch.Start();
@@ -143,6 +141,66 @@ public class Tests {
             ts.TotalNanoseconds);
 
         Console.WriteLine("Sorted list: {0}", string.Join(", ", _randomSorted));            
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunMergeSortParallel()
+    {
+        Console.WriteLine("RUNNING: RunMergeSortParallel");
+        DataSet dataSet= new DataSet();
+        var _randomSorted = dataSet.GetListAsInt("lijst_willekeurig_10000");
+        //int[] _randomSorted = { 34, 7, 23, 32, 5, 62, 32, 4 };
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        ParallelMergeSort.SortParallel(_randomSorted, 0, _randomSorted.Length);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunMergeSortSeq()
+    {
+        Console.WriteLine("RUNNING: RunMergeSortSeq");
+        DataSet dataSet= new DataSet();
+        var _randomSorted = dataSet.GetListAsInt("lijst_willekeurig_10000");
+        //int[] _randomSorted = { 34, 7, 23, 32, 5, 62, 32, 4 };
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        ParallelMergeSort.SortSeq(_randomSorted, 0, _randomSorted.Length);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunMergeSortSwitch(int treshold = 2)
+    {
+        Console.WriteLine("RUNNING: RunMergeSortSwitch - {0}", treshold);
+        DataSet dataSet= new DataSet();
+        var _randomSorted = dataSet.GetListAsInt("lijst_willekeurig_10000");
+        //int[] _randomSorted = { 34, 7, 23, 32, 5, 62, 32, 4 };
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        ParallelMergeSort.Sort(_randomSorted, 0, _randomSorted.Length, treshold);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
         Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
     }
 

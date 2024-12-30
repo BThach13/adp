@@ -39,8 +39,8 @@ public class QuickSortTests
     public void QuickSort_ShouldSortAscendingArrayInt()
     {
         DataSet dataSet= new DataSet();
-        var _descSorted = dataSet.GetList("lijst_gesorteerd_aflopend_3");
-        var _ascSorted = dataSet.GetList("lijst_gesorteerd_oplopend_3");
+        var _descSorted = dataSet.GetListAsInt("lijst_gesorteerd_aflopend_3");
+        var _ascSorted = dataSet.GetListAsInt("lijst_gesorteerd_oplopend_3");
         QuickSort.Sort(_descSorted, 0, _descSorted.Length - 1);
 
         Assert.Equal(_ascSorted, _descSorted);
@@ -50,8 +50,8 @@ public class QuickSortTests
     public void QuickSort_ShouldSortADescendingArrayInt()
     {
         DataSet dataSet= new DataSet();
-        var _ascSorted = dataSet.GetList("lijst_gesorteerd_oplopend_3");
-        var _descSorted = dataSet.GetList("lijst_gesorteerd_aflopend_3");
+        var _ascSorted = dataSet.GetListAsInt("lijst_gesorteerd_oplopend_3");
+        var _descSorted = dataSet.GetListAsInt("lijst_gesorteerd_aflopend_3");
         QuickSort.Sort(_ascSorted, 0, _ascSorted.Length - 1, QuickSort.SortDirection.Descending);
 
         Assert.Equal(_descSorted, _ascSorted);

@@ -1,5 +1,6 @@
 namespace ADP_Implementation_TestData;
 
+using System.Globalization;
 using System.Text.Json.Nodes;
 public class DataSet
 {
@@ -14,6 +15,38 @@ public class DataSet
         lijstenString = lijstenString.Trim('[', ']');
 
         return lijstenString.Split(',');
+    }
+    
+    public int[] GetListAsInt(string listName) {
+        string jsonString = GetAll();
+
+        // Create a JsonNode DOM from a JSON string.
+        JsonNode lijsten = JsonNode.Parse(jsonString)!;
+
+        JsonNode lijstenNode = lijsten![listName]!;
+        var lijstenString = lijstenNode.ToJsonString();
+        lijstenString = lijstenString.Trim('[', ']');
+
+        return lijstenString.Split(',')
+            .Where(s => int.TryParse(s, out _))
+            .Select(int.Parse)
+            .ToArray();
+    }
+
+    public float[] GetListAsFloat(string listName) {
+        string jsonString = GetAll();
+
+        // Create a JsonNode DOM from a JSON string.
+        JsonNode lijsten = JsonNode.Parse(jsonString)!;
+
+        JsonNode lijstenNode = lijsten![listName]!;
+        var lijstenString = lijstenNode.ToJsonString();
+        lijstenString = lijstenString.Trim('[', ']');
+
+        return lijstenString.Split(',')
+            .Where(s => float.TryParse(s, out _))
+            .Select(s => float.Parse(s, CultureInfo.InvariantCulture))
+            .ToArray();
     }
 
     public string GetAll() {    

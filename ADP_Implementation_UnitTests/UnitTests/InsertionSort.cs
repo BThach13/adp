@@ -39,8 +39,8 @@ public class InsertionSortTests
     public void InsertionSort_ShouldSortAAscendingArrayInt()
     {
         DataSet dataSet= new DataSet();
-        var _descSorted = dataSet.GetList("lijst_gesorteerd_aflopend_3");
-        var _ascSorted = dataSet.GetList("lijst_gesorteerd_oplopend_3");
+        var _descSorted = dataSet.GetListAsInt("lijst_gesorteerd_aflopend_3");
+        var _ascSorted = dataSet.GetListAsInt("lijst_gesorteerd_oplopend_3");
 
         InsertionSort.Sort(_descSorted);
 
@@ -51,8 +51,8 @@ public class InsertionSortTests
     public void InsertionSort_ShouldSortADescendingArrayInt()
     {
         DataSet dataSet= new DataSet();
-        var _ascSorted = dataSet.GetList("lijst_gesorteerd_oplopend_3");
-        var _descSorted = dataSet.GetList("lijst_gesorteerd_aflopend_3");
+        var _ascSorted = dataSet.GetListAsInt("lijst_gesorteerd_oplopend_3");
+        var _descSorted = dataSet.GetListAsInt("lijst_gesorteerd_aflopend_3");
 
         InsertionSort.Sort(_ascSorted, InsertionSort.SortDirection.Descending);
 

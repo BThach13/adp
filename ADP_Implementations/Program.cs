@@ -40,8 +40,8 @@ class Program
             Console.WriteLine("Name: {0}", pqueue2.Poll());
         }
         */
-
-        string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];        
+    /*
+        string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
         //InsertionSort
         Console.WriteLine("Unsorted list: {0}", string.Join(", ", _array));
         InsertionSort.Sort(_array, InsertionSort.SortDirection.Ascending);
@@ -58,5 +58,15 @@ class Program
         //QuickSort
         QuickSort.Sort(_array, 0, _array.Length - 1);
         Console.WriteLine("Sorted list: {0}", string.Join(", ", _array)); 
+    */
+
+        //QuickSort
+        string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
+        //int[] _array = { 34, 7, 23, 32, 5, 62, 32, 4 };
+        Console.WriteLine("Unsorted list: {0}", string.Join(", ", _array));
+        ParallelMergeSort.Sort(_array, 0, _array.Length);
+        Console.WriteLine("Sort: {0}", string.Join(", ", _array));
+        ParallelMergeSort.SortSeq(_array, 0, _array.Length);
+        Console.WriteLine("SortSeq: {0}", string.Join(", ", _array)); 
     }
 }
