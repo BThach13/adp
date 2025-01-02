@@ -1,5 +1,8 @@
 namespace ADP_Implementations.DataStructures.DoubleLinkedList;
 
+using System.Collections;
+using System.Collections.Generic;
+
 /*
     - [V]  Add(T element)
     - [V]  Get(int index)
@@ -12,7 +15,7 @@ namespace ADP_Implementations.DataStructures.DoubleLinkedList;
     EqualityComparer beter implementeren
 */
 
-public class DoubleLinkedList<T>
+public class DoubleLinkedList<T> : IEnumerable<T>
 {
     private Node<T>? _head;
     private Node<T>? _tail;
@@ -240,6 +243,21 @@ public class DoubleLinkedList<T>
 
     public int Size() {
         return _count;
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        Node<T>? current = _head;
+        while (current != null)
+        {
+            yield return current.Data;
+            current = current.Next;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 
     private void CheckIndex(int index) {

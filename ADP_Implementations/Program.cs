@@ -61,12 +61,50 @@ class Program
     */
 
         //QuickSort
-        string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
+        //string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
         //int[] _array = { 34, 7, 23, 32, 5, 62, 32, 4 };
-        Console.WriteLine("Unsorted list: {0}", string.Join(", ", _array));
-        ParallelMergeSort.Sort(_array, 0, _array.Length);
-        Console.WriteLine("Sort: {0}", string.Join(", ", _array));
-        ParallelMergeSort.SortSeq(_array, 0, _array.Length);
-        Console.WriteLine("SortSeq: {0}", string.Join(", ", _array)); 
+        //Console.WriteLine("Unsorted list: {0}", string.Join(", ", _array));
+        //ParallelMergeSort.Sort(_array, 0, _array.Length);
+        //Console.WriteLine("Sort: {0}", string.Join(", ", _array));
+        //ParallelMergeSort.SortSeq(_array, 0, _array.Length);
+        //Console.WriteLine("SortSeq: {0}", string.Join(", ", _array));
+
+        //HashTable
+        var hashTable = new HashTable<string>(10);
+        //hashTable.Display();
+        hashTable.Insert("key_00", "User 0");
+        Console.WriteLine(hashTable.Get("key_01"));
+        //Console.WriteLine(hashTable.Update("key_01", "Kaas"));
+        //Console.WriteLine(hashTable.Delete("key_00"));
+        /*
+        Console.WriteLine("---------------------");
+        hashTable.Insert("key_00", "User 0");
+        hashTable.Insert("key_01", "User 1");
+        hashTable.Display();
+        Console.WriteLine("---------------------");
+        hashTable.Insert("key_02", "User 2");
+        hashTable.Insert("key_03", "User 3");
+        hashTable.Update("key_01", "Kaas");
+        hashTable.Display();
+        Console.WriteLine("---------------------");
+        hashTable.Insert("key_04", "User 4");
+        hashTable.Insert("key_05", "User 5");
+        hashTable.Delete("key_14");
+        hashTable.Insert("key_06", "User 6");
+        hashTable.Display();
+        hashTable.Insert("key_07", "User 7");
+        hashTable.Insert("key_08", "User 8");
+        hashTable.Insert("key_09", "User 9");
+        hashTable.Insert("key_10", "User 10");
+        hashTable.Insert("key_11", "User 11");
+        hashTable.Insert("key_12", "User 12");
+        hashTable.Insert("key_13", "User 13");
+        hashTable.Insert("key_14", "User 14");
+        
+        Console.WriteLine(hashTable.Get("key_14"));
+        
+        
+        hashTable.Display();
+        */
     }
 }
