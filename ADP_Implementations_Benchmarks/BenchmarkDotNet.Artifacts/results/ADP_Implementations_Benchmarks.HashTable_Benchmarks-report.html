@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.HashTable_Benchmarks-20250106-230232</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2605)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-LETKZZ : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>N</th><th>Mean   </th><th>Error  </th><th>StdDev </th><th>Median </th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>InsertBulk</td><td>10</td><td>7.504 &mu;s</td><td>0.4713 &mu;s</td><td>1.3821 &mu;s</td><td>7.200 &mu;s</td><td>-</td><td>-</td><td>-</td><td>2856 B</td>
+</tr><tr><td>Insert</td><td>10</td><td>4.418 &mu;s</td><td>0.2521 &mu;s</td><td>0.7274 &mu;s</td><td>4.400 &mu;s</td><td>-</td><td>-</td><td>-</td><td>616 B</td>
+</tr><tr><td>Get</td><td>10</td><td>2.302 &mu;s</td><td>0.1469 &mu;s</td><td>0.4284 &mu;s</td><td>2.300 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Delete</td><td>10</td><td>2.723 &mu;s</td><td>0.1934 &mu;s</td><td>0.5642 &mu;s</td><td>2.700 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Update</td><td>10</td><td>2.312 &mu;s</td><td>0.1594 &mu;s</td><td>0.4676 &mu;s</td><td>2.200 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>InsertBulk</td><td>100</td><td>49.856 &mu;s</td><td>3.9418 &mu;s</td><td>11.3097 &mu;s</td><td>50.300 &mu;s</td><td>-</td><td>-</td><td>-</td><td>24456 B</td>
+</tr><tr><td>Insert</td><td>100</td><td>4.563 &mu;s</td><td>0.2803 &mu;s</td><td>0.8041 &mu;s</td><td>4.400 &mu;s</td><td>-</td><td>-</td><td>-</td><td>616 B</td>
+</tr><tr><td>Get</td><td>100</td><td>2.515 &mu;s</td><td>0.1526 &mu;s</td><td>0.4378 &mu;s</td><td>2.500 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Delete</td><td>100</td><td>2.571 &mu;s</td><td>0.1461 &mu;s</td><td>0.4168 &mu;s</td><td>2.600 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Update</td><td>100</td><td>2.202 &mu;s</td><td>0.1363 &mu;s</td><td>0.3955 &mu;s</td><td>2.300 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>InsertBulk</td><td>1000</td><td>323.734 &mu;s</td><td>18.3490 &mu;s</td><td>49.6076 &mu;s</td><td>308.100 &mu;s</td><td>-</td><td>-</td><td>-</td><td>240456 B</td>
+</tr><tr><td>Insert</td><td>1000</td><td>3.832 &mu;s</td><td>0.2325 &mu;s</td><td>0.6482 &mu;s</td><td>3.750 &mu;s</td><td>-</td><td>-</td><td>-</td><td>616 B</td>
+</tr><tr><td>Get</td><td>1000</td><td>2.379 &mu;s</td><td>0.1228 &mu;s</td><td>0.3443 &mu;s</td><td>2.300 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Delete</td><td>1000</td><td>3.084 &mu;s</td><td>0.2668 &mu;s</td><td>0.7525 &mu;s</td><td>2.800 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Update</td><td>1000</td><td>2.225 &mu;s</td><td>0.1014 &mu;s</td><td>0.2809 &mu;s</td><td>2.200 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>InsertBulk</td><td>10000</td><td>1,472.407 &mu;s</td><td>66.9345 &mu;s</td><td>184.3570 &mu;s</td><td>1,406.400 &mu;s</td><td>-</td><td>-</td><td>-</td><td>2400120 B</td>
+</tr><tr><td>Insert</td><td>10000</td><td>5.609 &mu;s</td><td>0.9024 &mu;s</td><td>2.5305 &mu;s</td><td>5.300 &mu;s</td><td>-</td><td>-</td><td>-</td><td>616 B</td>
+</tr><tr><td>Get</td><td>10000</td><td>6.231 &mu;s</td><td>0.8739 &mu;s</td><td>2.5493 &mu;s</td><td>6.000 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Delete</td><td>10000</td><td>7.961 &mu;s</td><td>0.9770 &mu;s</td><td>2.8188 &mu;s</td><td>7.650 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Update</td><td>10000</td><td>6.426 &mu;s</td><td>1.0353 &mu;s</td><td>3.0365 &mu;s</td><td>5.900 &mu;s</td><td>-</td><td>-</td><td>-</td><td>112 B</td>
+</tr><tr><td>InsertBulk</td><td>100000</td><td>53,964.563 &mu;s</td><td>1,071.2049 &mu;s</td><td>1,603.3292 &mu;s</td><td>53,629.400 &mu;s</td><td>4000.0000</td><td>2000.0000</td><td>1000.0000</td><td>24002120 B</td>
+</tr><tr><td>Insert</td><td>100000</td><td>8.049 &mu;s</td><td>0.3992 &mu;s</td><td>1.0994 &mu;s</td><td>7.900 &mu;s</td><td>-</td><td>-</td><td>-</td><td>616 B</td>
+</tr><tr><td>Get</td><td>100000</td><td>5.880 &mu;s</td><td>0.8073 &mu;s</td><td>2.3031 &mu;s</td><td>6.450 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Delete</td><td>100000</td><td>7.126 &mu;s</td><td>1.1790 &mu;s</td><td>3.4017 &mu;s</td><td>8.000 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr><tr><td>Update</td><td>100000</td><td>5.318 &mu;s</td><td>0.8474 &mu;s</td><td>2.4450 &mu;s</td><td>4.650 &mu;s</td><td>-</td><td>-</td><td>-</td><td>448 B</td>
+</tr></tbody></table>
+</body>
+</html>

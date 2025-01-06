@@ -5,7 +5,7 @@ using System.Text.Json.Nodes;
 public class DataSet
 {
     public string[] GetList(string listName) {
-        string jsonString = GetAll();
+        string jsonString = GetAllSortData();
 
         // Create a JsonNode DOM from a JSON string.
         JsonNode lijsten = JsonNode.Parse(jsonString)!;
@@ -18,7 +18,7 @@ public class DataSet
     }
     
     public int[] GetListAsInt(string listName) {
-        string jsonString = GetAll();
+        string jsonString = GetAllSortData();
 
         // Create a JsonNode DOM from a JSON string.
         JsonNode lijsten = JsonNode.Parse(jsonString)!;
@@ -34,7 +34,7 @@ public class DataSet
     }
 
     public float[] GetListAsFloat(string listName) {
-        string jsonString = GetAll();
+        string jsonString = GetAllSortData();
 
         // Create a JsonNode DOM from a JSON string.
         JsonNode lijsten = JsonNode.Parse(jsonString)!;
@@ -49,7 +49,7 @@ public class DataSet
             .ToArray();
     }
 
-    public string GetAll() {    
+    private string GetAllSortData() {    
         return """
                 {
                 "lijst_aflopend_2": [1, -10033224],
@@ -2029,6 +2029,49 @@ public class DataSet
                 "lijst_willekeurig_10": [3, 9, 20, 14, 8, 19, 4, 10, 12, 1],
                 "lijst_gesorteerd_10": [1, 3, 4, 8, 9, 10, 12, 14, 19, 20]
                 }
+            """;
+    }
+
+
+    public JsonNode GetHashTableData() {
+        string jsonString = GetAllHashTableData();
+
+        // Create a JsonNode DOM from a JSON string.
+        return JsonNode.Parse(jsonString)!;
+    }
+    private string GetAllHashTableData() {    
+        return """
+            {
+                "hashtabelsleutelswaardes": {
+                    "a": [0],
+                    "b": [1],
+                    "c": [2],
+                    "d": [3, 4],
+                    "e": [],
+                    "f": [],
+                    "g": [],
+                    "h": [],
+                    "i": [],
+                    "j": [2],
+                    "k": [2],
+                    "l": [2],
+                    "m": [2],
+                    "n": [2],
+                    "o": [2],
+                    "p": [4545],
+                    "q": [4545],
+                    "r": [4545],
+                    "s": [4545],
+                    "t": [4545],
+                    "u": [4545, 4233],
+                    "v": [4545],
+                    "w": [4545, 334344, 45454, 6576, -1],
+                    "x": [4545],
+                    "y": [4545],
+                    "z": [4545],
+                    "z0": [99]
+                }
+            }
             """;
     }
 }

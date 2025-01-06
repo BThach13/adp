@@ -1,12 +1,15 @@
 namespace ADP_Implementations_HANTests;
 
 using System.Diagnostics;
+using System.Text.Json;
+
 using ADP_Implementation_TestData;
 using ADP_Implementations.DataStructures.Deque;
 using ADP_Implementations.DataStructures.DoubleLinkedList;
 using ADP_Implementations.DataStructures.DynamicArray;
 using ADP_Implementations.DataStructures.PriorityQueue;
 using ADP_Implementations.Algorithms;
+
 
 public class Tests {
     public static void ReadJsonData(Utilities.Datastructures dataStructure, Utilities.JSonList listToTest) {
@@ -195,6 +198,45 @@ public class Tests {
         stopWatch.Start();
 
         ParallelMergeSort.Sort(_randomSorted, 0, _randomSorted.Length, treshold);
+
+        stopWatch.Stop();
+        TimeSpan ts = stopWatch.Elapsed;
+        string elapsedTimeInNanoSeconds = String.Format("{0}",
+            ts.TotalNanoseconds);
+
+        Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunHashTable()
+    {
+        Console.WriteLine("RUNNING: RunHashTable");
+        DataSet dataSet= new DataSet();
+        var hashTableData = dataSet.GetHashTableData();
+
+        var data = JsonSerializer.Deserialize<HashingData>(hashTableData);
+        HashingData _data = data!;
+
+        Console.WriteLine("Expected Item Counts: " + _data.hashtabelsleutelswaardes.Count);
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        var hashTable = new HashTable<List<int>>(_data.hashtabelsleutelswaardes.Count);
+        foreach (var pair in _data.hashtabelsleutelswaardes)
+        {
+            hashTable.Insert(pair.Key, pair.Value);
+        }
+        
+        foreach (var pair in _data.hashtabelsleutelswaardes)
+        {
+            var value = hashTable.Get(pair.Key);
+            if (value != null) {
+                foreach (var item in value)
+                {
+                    Console.WriteLine("Key {0} - Item {1}", pair.Key, item);
+                }
+            }
+        }
 
         stopWatch.Stop();
         TimeSpan ts = stopWatch.Elapsed;

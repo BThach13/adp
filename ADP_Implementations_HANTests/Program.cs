@@ -21,13 +21,14 @@ class Program
         //Tests.RunInsertionSort();
         //Tests.RunSelectionSort();
         //Tests.RunQuickSort();
-        Tests.RunMergeSortParallel();
-        Tests.RunMergeSortSeq();
-        Tests.RunMergeSortSwitch(1);
-        Tests.RunMergeSortSwitch(2);
-        Tests.RunMergeSortSwitch(4);
-        Tests.RunMergeSortSwitch(8);
-        Tests.RunMergeSortSwitch(10);
+        //Tests.RunMergeSortParallel();
+        //Tests.RunMergeSortSeq();
+        //Tests.RunMergeSortSwitch(1);
+        //Tests.RunMergeSortSwitch(2);
+        //Tests.RunMergeSortSwitch(4);
+        //Tests.RunMergeSortSwitch(8);
+        //Tests.RunMergeSortSwitch(10);
+        Tests.RunHashTable();
     }
 
 
