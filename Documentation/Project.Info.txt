@@ -10,7 +10,7 @@ Develop implementations of a series of algorithms and data structures
 [V] - Selection sort
 [V] - Quicksort
 [V] - Parallel Merge sort
-[ ] - Hashtable
+[V] - Hashtable
 [ ] - Graph / Graaf
 [ ] - Dijkstra's algorithm / Dijkstra’s kortstepadenalgoritme
 [ ] - AVL tree / AVL-zoekboom

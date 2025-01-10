@@ -102,9 +102,103 @@ class Program
         hashTable.Insert("key_14", "User 14");
         
         Console.WriteLine(hashTable.Get("key_14"));
-        
-        
         hashTable.Display();
         */
+        Graph graph= new Graph();
+
+        Vertex Arnhem = new Vertex();
+        Arnhem.Name = "Arnhem";
+
+        Vertex Kampen = new Vertex();
+        Kampen.Name = "Kampen";
+
+        Vertex Amsterdam = new Vertex();
+        Amsterdam.Name = "Amsterdam";
+
+        Vertex Maastricht = new Vertex();
+        Maastricht.Name = "Maastricht";
+
+        Vertex Zwolle = new Vertex();
+        Zwolle.Name = "Zwolle";
+
+        Vertex Groningen = new Vertex();
+        Groningen.Name = "Groningen";
+
+        graph.AddVertex(Arnhem);
+        graph.AddVertex(Kampen);
+        graph.AddVertex(Amsterdam);
+        graph.AddVertex(Maastricht);
+        graph.AddVertex(Zwolle);
+
+        Edge ArnhemKampen = new Edge();
+        ArnhemKampen.Source = Arnhem;
+        ArnhemKampen.Destination = Kampen;
+        ArnhemKampen.Weight = 84.0;
+
+        graph.AddEdge(ArnhemKampen, false);
+
+        Edge ArnhemAmsterdam = new Edge();
+        ArnhemAmsterdam.Source = Arnhem;
+        ArnhemAmsterdam.Destination = Amsterdam;
+        ArnhemAmsterdam.Weight = 109.0;
+
+        graph.AddEdge(ArnhemAmsterdam, true);
+
+        Edge KampenAmsterdam = new Edge();
+        KampenAmsterdam.Source = Kampen;
+        KampenAmsterdam.Destination = Amsterdam;
+        KampenAmsterdam.Weight = 89.6;
+
+        graph.AddEdge(KampenAmsterdam);
+
+        Edge KampenMaastricht = new Edge();
+        KampenMaastricht.Source = Kampen;
+        KampenMaastricht.Destination = Maastricht;
+        KampenMaastricht.Weight = 239.0;
+
+        graph.AddEdge(KampenMaastricht);
+/*
+        Console.WriteLine("De stad {0} bestaat: {1}", Kampen.Name, graph.HasVertex(Kampen));
+        Console.WriteLine("");
+
+        Console.WriteLine("De stad {0} bestaat: {1}", Groningen.Name, graph.HasVertex(Groningen));
+        Console.WriteLine("");
+
+        Console.WriteLine("Verbinding tussen {0} en {1} bestaat: {2}", Kampen.Name, Maastricht.Name, graph.HasEdge(Kampen, Maastricht));
+        Console.WriteLine("");
+
+        Console.WriteLine("Verbinding tussen {0} en {1} bestaat: {2}", Kampen.Name, Zwolle.Name, graph.HasEdge(Kampen, Zwolle));
+        Console.WriteLine("");
+
+        Console.WriteLine("Buren van Arnhem");
+        List<Edge> BurenArnhem = graph.GetNeighbors("Arnhem");
+        foreach (Edge e in BurenArnhem)
+        {
+            Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
+        }
+        Console.WriteLine("");
+        Console.WriteLine("Buren van Kampen");
+        List<Edge> BurenKampen = graph.GetNeighbors("Kampen");
+        foreach (Edge e in BurenKampen)
+        {
+            Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
+        }
+        Console.WriteLine("");
+        Console.WriteLine("Buren van Amsterdam");
+        List<Edge> BurenAmsterdam = graph.GetNeighbors("Amsterdam");
+        foreach (Edge e in BurenAmsterdam)
+        {
+            Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("Buren van Maastricht");
+        List<Edge> BurenMaastricht = graph.GetNeighbors("Maastricht");
+        foreach (Edge e in BurenMaastricht)
+        {
+            Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
+        }
+*/
+        graph.displayShortestPath(Amsterdam);
     }
 }
