@@ -121,6 +121,9 @@ class Program
         Vertex Zwolle = new Vertex();
         Zwolle.Name = "Zwolle";
 
+        Vertex Rotterdam = new Vertex();
+        Rotterdam.Name = "Rotterdam";
+
         Vertex Groningen = new Vertex();
         Groningen.Name = "Groningen";
 
@@ -130,19 +133,33 @@ class Program
         graph.AddVertex(Maastricht);
         graph.AddVertex(Zwolle);
 
-        Edge ArnhemKampen = new Edge();
-        ArnhemKampen.Source = Arnhem;
-        ArnhemKampen.Destination = Kampen;
-        ArnhemKampen.Weight = 84.0;
-
-        graph.AddEdge(ArnhemKampen, false);
-
         Edge ArnhemAmsterdam = new Edge();
         ArnhemAmsterdam.Source = Arnhem;
         ArnhemAmsterdam.Destination = Amsterdam;
         ArnhemAmsterdam.Weight = 109.0;
 
-        graph.AddEdge(ArnhemAmsterdam, true);
+        graph.AddEdge(ArnhemAmsterdam);
+
+        Edge ArnhemMaastricht = new Edge();
+        ArnhemMaastricht.Source = Arnhem;
+        ArnhemMaastricht.Destination = Maastricht;
+        ArnhemMaastricht.Weight = 159.0;
+
+        graph.AddEdge(ArnhemMaastricht);
+
+        Edge AmsterdamRotterdam = new Edge();
+        AmsterdamRotterdam.Source = Amsterdam;
+        AmsterdamRotterdam.Destination = Rotterdam;
+        AmsterdamRotterdam.Weight = 78.0;
+
+        graph.AddEdge(AmsterdamRotterdam);
+
+        Edge RotterdamMaastricht = new Edge();
+        RotterdamMaastricht.Source = Rotterdam;
+        RotterdamMaastricht.Destination = Maastricht;
+        RotterdamMaastricht.Weight = 198.0;
+
+        graph.AddEdge(RotterdamMaastricht);
 
         Edge KampenAmsterdam = new Edge();
         KampenAmsterdam.Source = Kampen;
@@ -158,16 +175,16 @@ class Program
 
         graph.AddEdge(KampenMaastricht);
 /*
-        Console.WriteLine("De stad {0} bestaat: {1}", Kampen.Name, graph.HasVertex(Kampen));
+        Console.WriteLine("De stad {0} bestaat: {1}", Kampen.Name, graph.HasVertex("Kampen"));
         Console.WriteLine("");
 
-        Console.WriteLine("De stad {0} bestaat: {1}", Groningen.Name, graph.HasVertex(Groningen));
+        Console.WriteLine("De stad {0} bestaat: {1}", Groningen.Name, graph.HasVertex("Groningen"));
         Console.WriteLine("");
 
-        Console.WriteLine("Verbinding tussen {0} en {1} bestaat: {2}", Kampen.Name, Maastricht.Name, graph.HasEdge(Kampen, Maastricht));
+        Console.WriteLine("Verbinding tussen {0} en {1} bestaat: {2}", Kampen.Name, Maastricht.Name, graph.HasEdge("Kampen", "Maastricht"));
         Console.WriteLine("");
 
-        Console.WriteLine("Verbinding tussen {0} en {1} bestaat: {2}", Kampen.Name, Zwolle.Name, graph.HasEdge(Kampen, Zwolle));
+        Console.WriteLine("Verbinding tussen {0} en {1} bestaat: {2}", Kampen.Name, Zwolle.Name, graph.HasEdge("Kampen", "Zwolle"));
         Console.WriteLine("");
 
         Console.WriteLine("Buren van Arnhem");
@@ -199,6 +216,8 @@ class Program
             Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
         }
 */
-        graph.displayShortestPath(Amsterdam);
+        graph.displayShortestPath("Amsterdam");
+        Dictionary<string, double> shortestPaths = graph.Dijkstra("Amsterdam");
+        Console.WriteLine(shortestPaths["Maastricht"]);
     }
 }

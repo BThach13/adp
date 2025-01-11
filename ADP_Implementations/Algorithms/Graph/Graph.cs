@@ -47,22 +47,22 @@ public class Graph
         _edges.Remove(edge);
     }
 
-    public bool HasVertex(Vertex vertex)
+    public bool HasVertex(string vertex)
     {
         foreach (var v in _vertices)
         {
-            if (v.Key == vertex.Name)
+            if (v.Key.ToLower() == vertex.ToLower())
                 return true;
         }
 
         return false;
     }
 
-    public bool HasEdge(Vertex source, Vertex destination)
+    public bool HasEdge(string source, string destination)
     {
         foreach (Edge edge in _edges)
         {
-            if ((edge.Source.Name == source.Name) && (edge.Destination.Name == destination.Name))
+            if ((edge.Source.Name.ToLower() == source.ToLower()) && (edge.Destination.Name.ToLower() == destination.ToLower()))
                 return true;
         }
 
@@ -83,9 +83,8 @@ public class Graph
         return neighbors;
     }
 
-    public Dictionary<string, double> Dijkstra(Vertex source)
+    public Dictionary<string, double> Dijkstra(string startName)
     {
-        string startName = source.Name;
         var distances = _vertices.ToDictionary(v => v.Key, v => double.MaxValue);
         var priorityQueue = new SortedSet<(double Distance, string Vertex)>();
         var visited = new HashSet<string>();
@@ -125,11 +124,11 @@ public class Graph
         return distances;
     }
 
-    public void displayShortestPath(Vertex source)
+    public void displayShortestPath(string source)
     {
         Dictionary<string, double> shortestPaths = Dijkstra(source);
 
-        Console.WriteLine("Kortste afstanden van {0}:", source.Name);
+        Console.WriteLine("Kortste afstanden van {0}:", source);
         foreach (var path in shortestPaths)
         {
             string vertex = path.Key;
