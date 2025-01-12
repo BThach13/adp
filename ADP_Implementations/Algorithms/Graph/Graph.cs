@@ -9,23 +9,23 @@ public class Graph
 
     public void AddVertex(Vertex vertex)
     {
-        _vertices.TryAdd(vertex.Name, vertex);
+        if (!HasVertex(vertex.Name.ToLower()))
+            _vertices.TryAdd(vertex.Name, vertex);
     }
 
     public void AddEdge(Edge edge, bool isDirected = false)
     {
-        _edges.AddFirst(edge);
-        if (!_vertices.ContainsKey(edge.Source.Name))
-            AddVertex(edge.Source);
-
-        if (!_vertices.ContainsKey(edge.Destination.Name))
-            AddVertex(edge.Destination);
-        
-        if (!isDirected) {
-            Edge inDirectEdge = new Edge {  Source = edge.Destination,
-                                            Destination = edge.Source,
-                                            Weight = edge.Weight };
-            _edges.AddFirst(inDirectEdge);
+        if (!HasEdge(edge.Source.Name, edge.Destination.Name))
+        {
+            if (HasVertex(edge.Source.Name) && HasVertex(edge.Destination.Name))
+                _edges.AddFirst(edge);
+            
+            if (!isDirected) {
+                Edge inDirectEdge = new Edge {  Source = edge.Destination,
+                                                Destination = edge.Source,
+                                                Weight = edge.Weight };
+                _edges.AddFirst(inDirectEdge);
+            }
         }
     }
 

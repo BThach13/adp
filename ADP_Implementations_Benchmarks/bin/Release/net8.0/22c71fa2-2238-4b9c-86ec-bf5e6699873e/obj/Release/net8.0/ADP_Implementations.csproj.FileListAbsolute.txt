@@ -1,0 +1,15 @@
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\bin\Release\net8.0\ADP_Implementations.exe
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\bin\Release\net8.0\ADP_Implementations.deps.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\bin\Release\net8.0\ADP_Implementations.runtimeconfig.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\bin\Release\net8.0\ADP_Implementations.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\bin\Release\net8.0\ADP_Implementations.pdb
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.GeneratedMSBuildEditorConfig.editorconfig
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.AssemblyInfoInputs.cache
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.AssemblyInfo.cs
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.csproj.CoreCompileInputs.cache
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.sourcelink.json
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\refint\ADP_Implementations.dll
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.pdb
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ADP_Implementations.genruntimeconfig.cache
+C:\_UserData\GitHub\Repos\adp\ADP_Implementations_Benchmarks\bin\Release\net8.0\22c71fa2-2238-4b9c-86ec-bf5e6699873e\obj\Release\net8.0\ref\ADP_Implementations.dll

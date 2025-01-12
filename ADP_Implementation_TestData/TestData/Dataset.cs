@@ -2075,8 +2075,7 @@ public class DataSet
             """;
     }
 
-    public string GetGraphLijnLijstData() {    
-        
+    public string GetGraphLijnLijstData() {  
         return @"
         {
             ""lijnlijst"": [
@@ -2092,8 +2091,7 @@ public class DataSet
         }";
     }
 
-    public string GetGraphVerbindingsLijstData() {    
-        
+    public string GetGraphVerbindingsLijstData() {
         return @"
         {
             ""verbindingslijst"": [
@@ -2104,6 +2102,69 @@ public class DataSet
                 [2, 3, 5],
                 [4, 6],
                 [5]
+            ]
+        }";
+    }
+
+    public string GetGraphVerbindingsMatrixData() {
+        return @"
+        {
+            ""verbindingsmatrix"": [
+                [0, 1, 1, 0, 0, 0, 0],
+                [1, 0, 1, 1, 0, 0, 0],
+                [1, 1, 0, 0, 1, 0, 0],
+                [0, 1, 0, 0, 1, 0, 0],
+                [0, 0, 1, 1, 0, 1, 0],
+                [0, 0, 0, 0, 1, 0, 1],
+                [0, 0, 0, 0, 0, 1, 0]
+            ]
+        }";
+    }
+
+    public string GetGraphLijnLijstGewogenData() {
+        return @"
+        {
+            ""lijnlijst_gewogen"": [
+                [0, 1, 99],
+                [0, 2, 50],
+                [1, 2, 50],
+                [1, 3, 50],
+                [1, 4, 50],
+                [2, 3, 99],
+                [3, 4, 75]
+            ]
+        }";
+    }
+
+    public string GetGraphVerbindingsLijstGewogenData() {  
+        return @"
+        {
+            ""verbindingslijst_gewogen"": [
+                [
+                [1, 99],
+                [2, 50]
+                ],
+                [
+                [2, 50],
+                [3, 50],
+                [4, 50]
+                ],
+                [[3, 99]],
+                [[4, 75]],
+                []
+            ]
+        }";
+    }
+
+    public string GetGraphVerbindingsMatrixGewogenData() {  
+        return @"
+        {
+            ""verbindingsmatrix_gewogen"": [
+                [0, 99, 50, 0, 0],
+                [0, 0, 50, 50, 50],
+                [0, 0, 0, 99, 0],
+                [0, 0, 0, 0, 75],
+                [0, 0, 0, 0, 0]
             ]
         }";
     }

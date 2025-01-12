@@ -30,8 +30,11 @@ class Program
         //Tests.RunMergeSortSwitch(10);
         //Tests.RunHashTable();
 
-        Tests.RunGraphWithEdgeList(6);
+        //Tests.RunGraphWithEdgeList(1);
+        //Tests.RunGraphWithAdjacencyList(1);
+        //Tests.RunGraphWithAdjacencyMatrix(1);
+        //Tests.RunGraphWithWeightedEdgeList(2);
+        //Tests.RunGraphWithWeightedAdjacencyList(1);
+        Tests.RunGraphWithWeightedAdjacencyMatrix(1);
     }
-
-
 }

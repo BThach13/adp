@@ -252,35 +252,93 @@ public class Tests {
         string jsonString = dataSet.GetGraphLijnLijstData();
         var data = JsonSerializer.Deserialize<GraphData>(jsonString);
 
-        var graph = BuildFromEdgeList(data.lijnlijst);
-        graph.GetNeighbors("Node 4");
+        var graph = BuildGraphFromEdgeList(data.lijnlijst);
 
         List<Edge> Edges = graph.GetNeighbors("Node " + nodeNumber);
         foreach (Edge e in Edges)
         {
-            Console.WriteLine("{0} -> {1} : {2}", e.Source.Name, e.Destination.Name, e.Weight);
+            Console.WriteLine("{0} -> {1}", e.Source.Name, e.Destination.Name);
         }
     }
-    
-    private static Graph BuildFromEdgeList(List<List<int>> edgeList)
+
+    public static void RunGraphWithAdjacencyList(int nodeNumber)
+    {
+        DataSet dataSet= new DataSet();
+        string jsonString = dataSet.GetGraphVerbindingsLijstData();
+        var data = JsonSerializer.Deserialize<GraphData>(jsonString);
+
+        var graph = BuildGraphFromAdjacencyList(data.verbindingslijst);
+
+        List<Edge> Edges = graph.GetNeighbors("Node " + nodeNumber);
+        foreach (Edge e in Edges)
+        {
+            Console.WriteLine("{0} -> {1}", e.Source.Name, e.Destination.Name);
+        }
+    }
+
+    public static void RunGraphWithAdjacencyMatrix(int nodeNumber)
+    {
+        DataSet dataSet= new DataSet();
+        string jsonString = dataSet.GetGraphVerbindingsMatrixData();
+        var data = JsonSerializer.Deserialize<GraphData>(jsonString);
+
+        var graph = BuildGraphFromAdjacencyMatrix(data.verbindingsmatrix);
+
+        List<Edge> Edges = graph.GetNeighbors("Node " + nodeNumber);
+        foreach (Edge e in Edges)
+        {
+            Console.WriteLine("{0} -> {1}", e.Source.Name, e.Destination.Name);
+        }
+    }
+
+    public static void RunGraphWithWeightedEdgeList(int nodeNumber)
+    {
+        DataSet dataSet= new DataSet();
+        string jsonString = dataSet.GetGraphLijnLijstGewogenData();
+        var data = JsonSerializer.Deserialize<GraphData>(jsonString);
+
+        var graph = BuildGraphFromWeightedEdgeList(data.lijnlijst_gewogen);
+        graph.DisplayShortestPath("Node " + nodeNumber);
+    }
+ 
+    public static void RunGraphWithWeightedAdjacencyList(int nodeNumber)
+    {
+        DataSet dataSet= new DataSet();
+        string jsonString = dataSet.GetGraphVerbindingsLijstGewogenData();
+        var data = JsonSerializer.Deserialize<GraphData>(jsonString);
+
+        var graph = BuildGraphFromWeightedAdjacencyList(data.verbindingslijst_gewogen);
+        graph.DisplayShortestPath("Node " + nodeNumber);
+    }
+
+    public static void RunGraphWithWeightedAdjacencyMatrix(int nodeNumber)
+    {
+        DataSet dataSet= new DataSet();
+        string jsonString = dataSet.GetGraphVerbindingsMatrixGewogenData();
+        var data = JsonSerializer.Deserialize<GraphData>(jsonString);
+
+        var graph = BuildGraphFromWeightedAdjacencyMatrix(data.verbindingsmatrix_gewogen);
+        graph.DisplayShortestPath("Node " + nodeNumber);
+    }
+
+    private static Graph BuildGraphFromEdgeList(List<List<int>> edgeList)
     {
         var graph = new Graph();
         foreach (var edgeData in edgeList)
         {
             var fromVertex = new Vertex { Name = "Node " + edgeData[0].ToString() };
             var toVertex = new Vertex { Name = "Node " + edgeData[1].ToString() };
-
             var edge = new Edge
             {
                 Source = fromVertex,
-                Destination = toVertex,
+                Destination = toVertex
             };
-            graph.AddEdge(edge);
+            graph.AddEdge(edge, true);
         }
         return graph;
     }
 
-    private static Graph BuildFromAdjacencyList(List<List<int>> adjacencyList)
+    private static Graph BuildGraphFromAdjacencyList(List<List<int>> adjacencyList)
     {
         var graph = new Graph();
         for (int i = 0; i < adjacencyList.Count; i++)
@@ -292,9 +350,98 @@ public class Tests {
                 var edge = new Edge
                 {
                     Source = fromVertex,
-                    Destination = toVertex,
+                    Destination = toVertex
                 };
-                graph.AddEdge(edge);
+                graph.AddEdge(edge, true);
+            }
+        }
+        return graph;
+    }
+
+    private static Graph BuildGraphFromAdjacencyMatrix(List<List<int>> adjacencyMatrix)
+    {
+        var graph = new Graph();
+        for (int i = 0; i < adjacencyMatrix.Count; i++)
+        {
+            for (int j = 0; j < adjacencyMatrix[i].Count; j++)
+            {
+                if (adjacencyMatrix[i][j] != 0)
+                {
+                    var fromVertex = new Vertex { Name = "Node " + i.ToString() };
+                    var toVertex = new Vertex { Name = "Node " + j.ToString() };
+                    var edge = new Edge
+                    {
+                        Source = fromVertex,
+                        Destination = toVertex
+                    };
+                    graph.AddEdge(edge, true);;
+                }
+            }
+        }
+        return graph;
+    }
+
+    private static Graph BuildGraphFromWeightedEdgeList(List<List<double>> weightedEdgeList)
+    {
+        var graph = new Graph();
+        foreach (var edgeData in weightedEdgeList)
+        {
+            var fromVertex = new Vertex { Name = "Node " + edgeData[0].ToString() };
+            var toVertex = new Vertex { Name = "Node " + edgeData[1].ToString() };
+            var weight = edgeData[2];
+            var edge = new Edge
+            {
+                Source = fromVertex,
+                Destination = toVertex,
+                Weight = weight
+            };
+            graph.AddEdge(edge, true);
+        }
+        return graph;
+    }
+
+    private static Graph BuildGraphFromWeightedAdjacencyList(List<List<List<double>>> weightedAdjacencyList)
+    {
+        var graph = new Graph();
+        for (int i = 0; i < weightedAdjacencyList.Count; i++)
+        {
+            foreach (var adjacent in weightedAdjacencyList[i])
+            {
+                var fromVertex = new Vertex { Name = "Node " + i.ToString() };
+                var toVertex = new Vertex { Name = "Node " + adjacent[0].ToString() };
+                var weight = adjacent[1];
+                var edge = new Edge
+                {
+                    Source = fromVertex,
+                    Destination = toVertex,
+                    Weight = weight
+                };
+                graph.AddEdge(edge, true);
+            }
+        }
+        return graph;
+    }
+
+    private static Graph BuildGraphFromWeightedAdjacencyMatrix(List<List<double>> weightedAdjacencyMatrix)
+    {
+        var graph = new Graph();
+        for (int i = 0; i < weightedAdjacencyMatrix.Count; i++)
+        {
+            for (int j = 0; j < weightedAdjacencyMatrix[i].Count; j++)
+            {
+                var weight = weightedAdjacencyMatrix[i][j];
+                if (weight != 0)
+                {
+                    var fromVertex = new Vertex { Name = "Node " + i.ToString() };
+                    var toVertex = new Vertex { Name = "Node " + j.ToString() };
+                    var edge = new Edge
+                    {
+                        Source = fromVertex,
+                        Destination = toVertex,
+                        Weight = weight
+                    };
+                    graph.AddEdge(edge, true);
+                }
             }
         }
         return graph;

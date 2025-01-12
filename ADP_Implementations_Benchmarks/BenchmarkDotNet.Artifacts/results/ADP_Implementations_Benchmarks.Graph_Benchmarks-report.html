@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.Graph_Benchmarks-20250112-170611</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2605)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-ZALWEV : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method  </th><th>N</th><th>Mean        </th><th>Error     </th><th>StdDev   </th><th>Median      </th><th>Gen0 </th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>AddVertices</td><td>10</td><td>8,254.1 ns</td><td>558.81 ns</td><td>1,630.1 ns</td><td>7,600.0 ns</td><td>-</td><td>-</td><td>3512 B</td>
+</tr><tr><td>AddEdges</td><td>10</td><td>8,427.7 ns</td><td>484.54 ns</td><td>1,382.4 ns</td><td>7,950.0 ns</td><td>-</td><td>-</td><td>5072 B</td>
+</tr><tr><td>RemoveVertices</td><td>10</td><td>787.8 ns</td><td>55.97 ns</td><td>163.3 ns</td><td>800.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>RemoveEdges</td><td>10</td><td>804.0 ns</td><td>66.60 ns</td><td>195.3 ns</td><td>800.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>AddVertices</td><td>100</td><td>259,465.5 ns</td><td>5,173.84 ns</td><td>13,899.2 ns</td><td>256,850.0 ns</td><td>-</td><td>-</td><td>212512 B</td>
+</tr><tr><td>AddEdges</td><td>100</td><td>489,210.8 ns</td><td>9,715.26 ns</td><td>16,497.3 ns</td><td>484,100.0 ns</td><td>-</td><td>-</td><td>408992 B</td>
+</tr><tr><td>RemoveVertices</td><td>100</td><td>2,758.0 ns</td><td>158.94 ns</td><td>468.6 ns</td><td>2,600.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>RemoveEdges</td><td>100</td><td>2,476.5 ns</td><td>188.72 ns</td><td>550.5 ns</td><td>2,200.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>AddVertices</td><td>1000</td><td>13,342,390.0 ns</td><td>872,313.56 ns</td><td>2,431,661.7 ns</td><td>12,389,500.0 ns</td><td>3000.0000</td><td>-</td><td>20122536 B</td>
+</tr><tr><td>AddEdges</td><td>1000</td><td>19,268,388.0 ns</td><td>364,285.45 ns</td><td>920,595.9 ns</td><td>19,045,900.0 ns</td><td>6000.0000</td><td>-</td><td>40088192 B</td>
+</tr><tr><td>RemoveVertices</td><td>1000</td><td>18,577.1 ns</td><td>1,140.65 ns</td><td>3,291.0 ns</td><td>17,600.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>RemoveEdges</td><td>1000</td><td>20,158.9 ns</td><td>607.62 ns</td><td>1,693.8 ns</td><td>19,800.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>AddVertices</td><td>10000</td><td>1,205,377,214.3 ns</td><td>10,215,008.53 ns</td><td>9,055,339.0 ns</td><td>1,206,839,200.0 ns</td><td>318000.0000</td><td>-</td><td>2001142328 B</td>
+</tr><tr><td>AddEdges</td><td>10000</td><td>1,834,520,776.9 ns</td><td>16,209,358.04 ns</td><td>13,535,548.1 ns</td><td>1,829,830,700.0 ns</td><td>637000.0000</td><td>1000.0000</td><td>4000880192 B</td>
+</tr><tr><td>RemoveVertices</td><td>10000</td><td>81,802.0 ns</td><td>9,174.21 ns</td><td>27,050.4 ns</td><td>68,550.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr><tr><td>RemoveEdges</td><td>10000</td><td>128,717.4 ns</td><td>2,513.00 ns</td><td>3,178.1 ns</td><td>128,600.0 ns</td><td>-</td><td>-</td><td>400 B</td>
+</tr></tbody></table>
+</body>
+</html>
