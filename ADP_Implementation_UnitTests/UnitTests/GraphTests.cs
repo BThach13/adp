@@ -172,6 +172,8 @@ public class GraphTests
         graph.AddVertex(Amsterdam);
         graph.AddVertex(Maastricht);
         graph.AddVertex(Zwolle);
+        graph.AddVertex(Rotterdam);
+        graph.AddVertex(Groningen);
 
         Edge ArnhemAmsterdam = new Edge();
         ArnhemAmsterdam.Source = Arnhem;

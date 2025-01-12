@@ -321,6 +321,65 @@ public class Tests {
         graph.DisplayShortestPath("Node " + nodeNumber);
     }
 
+    public static void RunAVLInsert(Utilities.JSonList listToTest)
+    {
+        var avlTree = new AVL<int>();
+        DataSet dataSet= new DataSet();
+        string ListToTest = listToTest.ToString().ToLower();
+        var listAsArray = dataSet.GetListAsInt(ListToTest);
+
+        Console.WriteLine($"List to read: '{ListToTest}'");
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+
+        foreach (var item in listAsArray)
+        {
+            avlTree.Insert(item);
+        }
+
+        var _expected = -10033224;
+        var minimum = avlTree.FindMin();
+        Console.WriteLine("---FindMin");
+        Console.WriteLine("Expected: {0}", _expected);
+        Console.WriteLine("Reality: {0}", minimum);
+
+        _expected = 1;
+        var maximum = avlTree.FindMax();
+        Console.WriteLine("---FindMax");
+        Console.WriteLine("Expected: {0}", _expected);
+        Console.WriteLine("Reality: {0}", maximum);
+
+        Console.WriteLine("--Find");
+        var find = avlTree.Find(-10033224);
+        Console.WriteLine("Find: {0}", find);
+
+        avlTree.Remove(-10033224);
+
+        Console.WriteLine("---Find after remove");
+        var notfound = avlTree.Find(-10033224);
+        Console.WriteLine("Found: {0}", notfound);
+
+        stopWatch.Stop();
+        // Get the elapsed time as a TimeSpan value.
+        TimeSpan ts = stopWatch.Elapsed;
+
+        string elapsedTimeInNanoSeconds = String.Format("{0}", ts.TotalNanoseconds);
+        Console.WriteLine("RunTime in nanoseconds:  " + elapsedTimeInNanoSeconds);
+    }
+
+    public static void RunAVLInsertInt()
+    {
+        int N = 10;
+        var _avlTree = new AVL<int>();
+        var random = new Random();
+
+        for (int i = 0; i < N; i++)
+        {
+            _avlTree.Insert(random.Next());
+        }
+    }
+
     private static Graph BuildGraphFromEdgeList(List<List<int>> edgeList)
     {
         var graph = new Graph();

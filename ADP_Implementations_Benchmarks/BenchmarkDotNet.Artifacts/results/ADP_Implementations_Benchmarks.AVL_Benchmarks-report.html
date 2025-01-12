@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ADP_Implementations_Benchmarks.AVL_Benchmarks-20250112-210325</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2605)
+11th Gen Intel Core i7-1195G7 2.90GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.402
+  [Host]     : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  Job-YZKLRK : .NET 8.0.10 (8.0.1024.46610), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Insert</td><td>100</td><td>2,954.3 ns</td><td>190.73 ns</td><td>544.16 ns</td><td>3,050.0 ns</td><td>512 B</td>
+</tr><tr><td>Remove</td><td>100</td><td>955.1 ns</td><td>72.03 ns</td><td>210.12 ns</td><td>900.0 ns</td><td>400 B</td>
+</tr><tr><td>FindMin</td><td>100</td><td>193.0 ns</td><td>29.82 ns</td><td>87.91 ns</td><td>200.0 ns</td><td>400 B</td>
+</tr><tr><td>FindMax</td><td>100</td><td>242.9 ns</td><td>30.13 ns</td><td>88.36 ns</td><td>250.0 ns</td><td>400 B</td>
+</tr><tr><td>Find</td><td>100</td><td>468.5 ns</td><td>31.06 ns</td><td>87.62 ns</td><td>500.0 ns</td><td>400 B</td>
+</tr><tr><td>Insert</td><td>1000</td><td>2,890.4 ns</td><td>207.40 ns</td><td>591.71 ns</td><td>2,800.0 ns</td><td>512 B</td>
+</tr><tr><td>Remove</td><td>1000</td><td>964.0 ns</td><td>55.81 ns</td><td>154.66 ns</td><td>900.0 ns</td><td>400 B</td>
+</tr><tr><td>FindMin</td><td>1000</td><td>275.5 ns</td><td>22.81 ns</td><td>65.07 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>FindMax</td><td>1000</td><td>267.0 ns</td><td>22.63 ns</td><td>64.57 ns</td><td>300.0 ns</td><td>400 B</td>
+</tr><tr><td>Find</td><td>1000</td><td>424.5 ns</td><td>38.47 ns</td><td>112.20 ns</td><td>400.0 ns</td><td>400 B</td>
+</tr><tr><td>Insert</td><td>10000</td><td>5,500.0 ns</td><td>717.96 ns</td><td>2,036.73 ns</td><td>5,400.0 ns</td><td>512 B</td>
+</tr><tr><td>Remove</td><td>10000</td><td>1,241.7 ns</td><td>243.04 ns</td><td>701.23 ns</td><td>1,000.0 ns</td><td>400 B</td>
+</tr><tr><td>FindMin</td><td>10000</td><td>597.9 ns</td><td>103.69 ns</td><td>297.50 ns</td><td>500.0 ns</td><td>400 B</td>
+</tr><tr><td>FindMax</td><td>10000</td><td>515.8 ns</td><td>104.60 ns</td><td>300.11 ns</td><td>400.0 ns</td><td>400 B</td>
+</tr><tr><td>Find</td><td>10000</td><td>695.8 ns</td><td>123.89 ns</td><td>357.45 ns</td><td>600.0 ns</td><td>400 B</td>
+</tr></tbody></table>
+</body>
+</html>

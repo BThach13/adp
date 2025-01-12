@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*
+    /*
         var pqueue = new PriorityQueue<int>();
         pqueue.Add(75);
         pqueue.Add(41);
@@ -39,7 +39,7 @@ class Program
             i++;
             Console.WriteLine("Name: {0}", pqueue2.Poll());
         }
-        */
+    */
     /*
         string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
         //InsertionSort
@@ -58,7 +58,6 @@ class Program
         //QuickSort
         QuickSort.Sort(_array, 0, _array.Length - 1);
         Console.WriteLine("Sorted list: {0}", string.Join(", ", _array)); 
-    */
 
         //QuickSort
         //string[] _array = ["Marco H.", "Deniz", "Sjaak", "Boy", "Olaf", "Jacqueline", "Wouter", "Marco B.", "Frank", "Daan", "Daniël", "Leonie", "Marc"];
@@ -103,7 +102,7 @@ class Program
         
         Console.WriteLine(hashTable.Get("key_14"));
         hashTable.Display();
-        */
+
         Graph graph= new Graph();
 
         Vertex Arnhem = new Vertex();
@@ -174,7 +173,7 @@ class Program
         KampenMaastricht.Weight = 239.0;
 
         graph.AddEdge(KampenMaastricht);
-/*
+
         Console.WriteLine("De stad {0} bestaat: {1}", Kampen.Name, graph.HasVertex("Kampen"));
         Console.WriteLine("");
 
@@ -215,9 +214,11 @@ class Program
         {
             Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
         }
-*/
+
         graph.DisplayShortestPath("Amsterdam");
         Dictionary<string, double> shortestPaths = graph.Dijkstra("Amsterdam");
         Console.WriteLine(shortestPaths["Maastricht"]);
+    */
+        
     }
 }

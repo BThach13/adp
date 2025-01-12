@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADP_Implementation_TestData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+732b239c64e07d08a6dadf27f7d02111c02c590d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c94ae2f0c7ea14294bf0a3a752df12464790ec8f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADP_Implementation_TestData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADP_Implementation_TestData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -17,7 +17,8 @@ public class Program
         //BenchmarkRunner.Run<ParallelMergeSort_Benchmarks>();
         //BenchmarkRunner.Run<HashTable_Benchmarks>();
         //BenchmarkRunner.Run<Graph_Benchmarks>();
-        BenchmarkRunner.Run<Dijkstra_Benchmarks>();
+        //BenchmarkRunner.Run<Dijkstra_Benchmarks>();
+        BenchmarkRunner.Run<AVL_Benchmarks>();
 
         // Run commands
         // cd .\ADP_Implementations_Benchmarks\
