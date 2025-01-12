@@ -216,7 +216,7 @@ class Program
             Console.WriteLine("{0} -> {1} => Afstand: {2}", e.Source.Name, e.Destination.Name, e.Weight);
         }
 */
-        graph.displayShortestPath("Amsterdam");
+        graph.DisplayShortestPath("Amsterdam");
         Dictionary<string, double> shortestPaths = graph.Dijkstra("Amsterdam");
         Console.WriteLine(shortestPaths["Maastricht"]);
     }

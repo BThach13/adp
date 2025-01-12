@@ -124,7 +124,7 @@ public class Graph
         return distances;
     }
 
-    public void displayShortestPath(string source)
+    public void DisplayShortestPath(string source)
     {
         Dictionary<string, double> shortestPaths = Dijkstra(source);
 

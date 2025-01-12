@@ -246,6 +246,60 @@ public class Tests {
         Console.WriteLine("RunTime in nanoseconds: " + elapsedTimeInNanoSeconds);
     }
 
+    public static void RunGraphWithEdgeList(int nodeNumber)
+    {
+        DataSet dataSet= new DataSet();
+        string jsonString = dataSet.GetGraphLijnLijstData();
+        var data = JsonSerializer.Deserialize<GraphData>(jsonString);
+
+        var graph = BuildFromEdgeList(data.lijnlijst);
+        graph.GetNeighbors("Node 4");
+
+        List<Edge> Edges = graph.GetNeighbors("Node " + nodeNumber);
+        foreach (Edge e in Edges)
+        {
+            Console.WriteLine("{0} -> {1} : {2}", e.Source.Name, e.Destination.Name, e.Weight);
+        }
+    }
+    
+    private static Graph BuildFromEdgeList(List<List<int>> edgeList)
+    {
+        var graph = new Graph();
+        foreach (var edgeData in edgeList)
+        {
+            var fromVertex = new Vertex { Name = "Node " + edgeData[0].ToString() };
+            var toVertex = new Vertex { Name = "Node " + edgeData[1].ToString() };
+
+            var edge = new Edge
+            {
+                Source = fromVertex,
+                Destination = toVertex,
+            };
+            graph.AddEdge(edge);
+        }
+        return graph;
+    }
+
+    private static Graph BuildFromAdjacencyList(List<List<int>> adjacencyList)
+    {
+        var graph = new Graph();
+        for (int i = 0; i < adjacencyList.Count; i++)
+        {
+            foreach (var adjacent in adjacencyList[i])
+            {
+                var fromVertex = new Vertex { Name = "Node " + i.ToString() };
+                var toVertex = new Vertex { Name = "Node " + adjacent.ToString() };
+                var edge = new Edge
+                {
+                    Source = fromVertex,
+                    Destination = toVertex,
+                };
+                graph.AddEdge(edge);
+            }
+        }
+        return graph;
+    }
+
     private static int BinarySearchTest(int[] _array, int value, int low, int high)
     {
         Console.WriteLine("RUNNING: binarySearchTest with recursive");

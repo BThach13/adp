@@ -18,8 +18,8 @@ class Program
         //Tests.RunBinarySearchWithOrderedList();
         //Tests.RunBinarySearchWithUnorderedList();
 
-        Tests.RunInsertionSort();
-        Tests.RunSelectionSort();
+        //Tests.RunInsertionSort();
+        //Tests.RunSelectionSort();
         //Tests.RunQuickSort();
         //Tests.RunMergeSortParallel();
         //Tests.RunMergeSortSeq();
@@ -29,6 +29,8 @@ class Program
         //Tests.RunMergeSortSwitch(8);
         //Tests.RunMergeSortSwitch(10);
         //Tests.RunHashTable();
+
+        Tests.RunGraphWithEdgeList(6);
     }
 
 

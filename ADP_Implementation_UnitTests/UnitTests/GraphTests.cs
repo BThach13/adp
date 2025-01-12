@@ -226,5 +226,4 @@ public class GraphTests
         int _expected = 268;
         Assert.Equal(_expected, shortestPaths["Maastricht"]);
     }
-    
 }

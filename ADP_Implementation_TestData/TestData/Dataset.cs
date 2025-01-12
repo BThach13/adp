@@ -1,6 +1,7 @@
 namespace ADP_Implementation_TestData;
 
 using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 public class DataSet
 {
@@ -2032,7 +2033,6 @@ public class DataSet
             """;
     }
 
-
     public JsonNode GetHashTableData() {
         string jsonString = GetAllHashTableData();
 
@@ -2073,5 +2073,38 @@ public class DataSet
                 }
             }
             """;
+    }
+
+    public string GetGraphLijnLijstData() {    
+        
+        return @"
+        {
+            ""lijnlijst"": [
+                [0, 1],
+                [0, 2],
+                [1, 2],
+                [1, 3],
+                [2, 4],
+                [3, 4],
+                [4, 5],
+                [5, 6]
+            ]
+        }";
+    }
+
+    public string GetGraphVerbindingsLijstData() {    
+        
+        return @"
+        {
+            ""verbindingslijst"": [
+                [1, 2],
+                [0, 2, 3],
+                [0, 1, 4],
+                [1, 4],
+                [2, 3, 5],
+                [4, 6],
+                [5]
+            ]
+        }";
     }
 }
