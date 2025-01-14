@@ -33,10 +33,10 @@ class Program
         //Tests.RunGraphWithEdgeList(1);
         //Tests.RunGraphWithAdjacencyList(1);
         //Tests.RunGraphWithAdjacencyMatrix(1);
-        //Tests.RunGraphWithWeightedEdgeList(2);
+        Tests.RunGraphWithWeightedEdgeList(2);
         //Tests.RunGraphWithWeightedAdjacencyList(1);
         //Tests.RunGraphWithWeightedAdjacencyMatrix(1);
-        Tests.RunAVLInsert(Utilities.JSonList.Lijst_aflopend_2);
+        //Tests.RunAVLInsert(Utilities.JSonList.Lijst_aflopend_2);
         //Tests.RunAVLInsertInt();
     }
 }

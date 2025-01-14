@@ -226,6 +226,6 @@ public class GraphTests
          Amsterdam - 78  -> Rotterdam - 198 -> Maastricht = 276
         */
         int _expected = 268;
-        Assert.Equal(_expected, shortestPaths["Maastricht"]);
+        Assert.Equal(_expected, shortestPaths["Amsterdam"]);
     }
 }

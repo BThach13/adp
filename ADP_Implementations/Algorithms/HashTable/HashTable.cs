@@ -114,7 +114,7 @@ public class HashTable<TValue>
         }
     }
 
-    private int GetRowIndex(String key)
+    private int GetRowIndex(string key)
     {
         int hashCode = key!.GetHashCode();
         int index = hashCode % _capacity;
